@@ -63,7 +63,10 @@ export const shared = defineConfig({
         },
       },
     }, */
-    socialLinks: [{ icon: "gitee", link: "https://gitee.com/zimo493" }],
+    socialLinks: [
+      { icon: "github", link: "https://github.com/zimo493" },
+      { icon: "gitee", link: "https://gitee.com/zimo493" },
+    ],
   },
   markdown: {
     lineNumbers: true, // 显示行号
