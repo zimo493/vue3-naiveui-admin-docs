@@ -1,3 +1,7 @@
+<script setup>
+import { NSpace, NButton, NTag } from 'naive-ui'
+</script>
+
 # Markdown Extension Examples
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
@@ -5,6 +9,39 @@ This page demonstrates some of the built-in markdown extensions provided by Vite
 ## Syntax Highlighting
 
 VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
+
+## NaiveUI
+
+> Button
+
+<NSpace>
+  <NButton>Default</NButton>
+  <NButton type="primary">Primary</NButton>
+  <NButton type="info">Info</NButton>
+  <NButton type="success">Success</NButton>
+  <NButton type="warning">Warning</NButton>
+  <NButton type="error">Error</NButton>
+</NSpace>
+
+> Tag
+
+<NSpace>
+  <NTag :bordered="false">
+  爱在西元前
+  </NTag>
+  <NTag :bordered="false" type="success">
+  不该
+  </NTag>
+  <NTag :bordered="false" type="warning">
+  超人不会飞
+  </NTag>
+  <NTag :bordered="false" type="error">
+  手写的从前
+  </NTag>
+  <NTag :bordered="false" type="info">
+  哪里都是你
+  </NTag>
+</NSpace>
 
 **Input**
 
