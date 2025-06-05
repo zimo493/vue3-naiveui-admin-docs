@@ -14,7 +14,9 @@ const CssRenderStyle = defineComponent({
       style: collect(),
     };
   },
-  render: () => h("css-render-style", { innerHTML: this.style }),
+  render() {
+    return h("css-render-style", { innerHTML: this.style });
+  },
 });
 
 const VitepressPath = defineComponent({
