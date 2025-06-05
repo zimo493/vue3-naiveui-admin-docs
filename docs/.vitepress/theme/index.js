@@ -3,10 +3,8 @@ import { defineComponent, h, inject, computed } from "vue";
 import { NConfigProvider, darkTheme } from "naive-ui";
 import { setup } from "@css-render/vue3-ssr";
 import { useRoute, useData } from "vitepress";
-
 import "./style.css";
 
-const { Layout } = DefaultTheme;
 const CssRenderStyle = defineComponent({
   setup: () => {
     const collect = inject("css-render-collect");
@@ -46,7 +44,7 @@ const NaiveUIProvider = defineComponent({
       },
       {
         default: () => [
-          h(Layout, null, {
+          h(DefaultTheme.Layout, null, {
             default: this.$slots.default?.(),
           }),
           import.meta.env.SSR ? [h(CssRenderStyle), h(VitepressPath)] : null,
