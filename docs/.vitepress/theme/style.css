@@ -59,11 +59,6 @@
   --vp-c-purple-3: #8e5cd9;
   --vp-c-purple-soft: rgba(159, 122, 234, 0.14);
 
-  --vp-c-orange-1: #ff914d;
-  --vp-c-orange-2: #ffaa66;
-  --vp-c-orange-3: #ffc399;
-  --vp-c-orange-soft: rgba(255, 145, 77, 0.14);
-
   --vp-c-green-1: #18794e;
   --vp-c-green-2: #299764;
   --vp-c-green-3: #30a46c;
@@ -97,11 +92,6 @@
   --vp-c-purple-2: #a879e6;
   --vp-c-purple-3: #8e5cd9;
   --vp-c-purple-soft: rgba(159, 122, 234, 0.16);
-
-  --vp-c-orange-1: #ffc399;
-  --vp-c-orange-2: #ffaa66;
-  --vp-c-orange-3: #e07d3a;
-  --vp-c-orange-soft: rgba(255, 145, 77, 0.16);
 
   --vp-c-green-1: #3dd68c;
   --vp-c-green-2: #30a46c;
@@ -222,10 +212,10 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-orange-1);
-  --vp-c-brand-2: var(--vp-c-orange-2);
-  --vp-c-brand-3: var(--vp-c-orange-3);
-  --vp-c-brand-soft: var(--vp-c-orange-soft);
+  --vp-c-brand-1: var(--vp-c-purple-1);
+  --vp-c-brand-2: var(--vp-c-purple-2);
+  --vp-c-brand-3: var(--vp-c-purple-3);
+  --vp-c-brand-soft: var(--vp-c-purple-soft);
 
   /* DEPRECATED: Use `--vp-c-brand-1` instead. */
   --vp-c-brand: var(--vp-c-brand-1);
@@ -245,10 +235,10 @@
   --vp-c-success-3: var(--vp-c-green-3);
   --vp-c-success-soft: var(--vp-c-green-soft);
 
-  --vp-c-important-1: var(--vp-c-orange-1);
-  --vp-c-important-2: var(--vp-c-orange-2);
-  --vp-c-important-3: var(--vp-c-orange-3);
-  --vp-c-important-soft: var(--vp-c-orange-soft);
+  --vp-c-important-1: var(--vp-c-purple-1);
+  --vp-c-important-2: var(--vp-c-purple-2);
+  --vp-c-important-3: var(--vp-c-purple-3);
+  --vp-c-important-soft: var(--vp-c-purple-soft);
 
   --vp-c-warning-1: var(--vp-c-yellow-1);
   --vp-c-warning-2: var(--vp-c-yellow-2);
@@ -526,14 +516,14 @@
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
-    var(--vp-c-orange-1) 30%,
+    #6f42c1 30%,
     #37b6ff
   );
 
   --vp-home-hero-image-background-image: linear-gradient(
     -45deg,
     #37b6ff 50%,
-    var(--vp-c-orange-1) 50%
+    #ff914d 50%
   );
   --vp-home-hero-image-filter: blur(44px);
 }
