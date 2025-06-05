@@ -102,6 +102,11 @@ export const zh = defineConfig({
         second: "2-digit",
       },
     },
+    notFound: {
+      title: "资源不存在",
+      quote: "抱歉！有些链接，就像错过的公交，下一班会更好。 ",
+      linkText: "返回首页",
+    },
 
     langMenuLabel: "多语言",
     returnToTopLabel: "回到顶部",
