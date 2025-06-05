@@ -43,8 +43,9 @@ export const en = defineConfig({
     },
 
     editLink: {
-      pattern: "https://github.com/zimo493/vue3-naiveui-admin-docs/edit/main/docs/src/:path",
-      text: "Edit this page on GitHub",
+      pattern:
+        "https://github.com/zimo493/vue3-naiveui-admin-docs/edit/main/docs/src/:path",
+      text: "Help improve this page",
     },
 
     footer: {
