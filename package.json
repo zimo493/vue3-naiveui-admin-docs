@@ -2,6 +2,7 @@
   "name": "vue3-naiveui-admin-docs",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
@@ -11,6 +12,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@css-render/vue3-ssr": "^0.15.14",
+    "naive-ui": "^2.41.0",
     "vitepress": "^1.6.3"
+  },
+  "dependencies": {
+    "vue": "^3.5.16"
   }
 }
