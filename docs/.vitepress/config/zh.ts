@@ -3,40 +3,33 @@ import { type DefaultTheme, defineConfig } from "vitepress";
 /**
  * 导航栏
  */
-const nav = (): DefaultTheme.NavItem[] => {
-  return [
-    {
-      text: "指南",
-      link: "/demo/api-examples",
-      activeMatch: "/demo/",
-    },
-    {
-      text: "关于",
-      items: [
-        { text: "Vue3", link: "https://cn.vuejs.org/" },
-        { text: "NaiveUI", link: "https://www.naiveui.com/zh-CN/os-theme" },
-        { text: "Pinia", link: "https://pinia.vuejs.org/zh/" },
-        { text: "Vite", link: "https://cn.vitejs.dev/" },
-        { text: "TypeScript", link: "https://www.typescriptlang.org/" },
-        { text: "UnoCSS", link: "https://unocss.dev/" },
-      ],
-    },
-  ];
-};
+const nav = (): DefaultTheme.NavItem[] => [
+  { text: "指南", link: "/demo/api-examples", activeMatch: "/demo/" },
+  {
+    text: "关于",
+    items: [
+      { text: "Vue3", link: "https://cn.vuejs.org/" },
+      { text: "NaiveUI", link: "https://www.naiveui.com/zh-CN/os-theme" },
+      { text: "Pinia", link: "https://pinia.vuejs.org/zh/" },
+      { text: "Vite", link: "https://cn.vitejs.dev/" },
+      { text: "TypeScript", link: "https://www.typescriptlang.org/" },
+      { text: "UnoCSS", link: "https://unocss.dev/" },
+    ],
+  },
+];
+
 /**
  * 侧边栏
  */
-const sidebarDemo = (): DefaultTheme.SidebarItem[] => {
-  return [
-    {
-      text: "指南",
-      items: [
-        { text: "Api例子", link: "api-examples" },
-        { text: "Markdown例子", link: "markdown-examples" },
-      ],
-    },
-  ];
-};
+const sidebarDemo = (): DefaultTheme.SidebarItem[] => [
+  {
+    text: "指南",
+    items: [
+      { text: "Api例子", link: "api-examples" },
+      { text: "Markdown例子", link: "markdown-examples" },
+    ],
+  },
+];
 
 export const zh = defineConfig({
   lang: "zh-CN",
@@ -49,6 +42,7 @@ export const zh = defineConfig({
       "/demo/": { base: "/demo/", items: sidebarDemo() },
     },
 
+    /** local 搜索配置 */
     search: {
       provider: "local",
       options: {
@@ -77,7 +71,8 @@ export const zh = defineConfig({
     },
 
     editLink: {
-      pattern: "https://github.com/xxxx/edit/main/src/:path",
+      pattern:
+        "https://github.com/zimo493/vue3-naiveui-admin-docs/edit/main/docs/src/:path",
       text: "在 GitHub 上编辑此页面",
     },
 
@@ -97,6 +92,15 @@ export const zh = defineConfig({
 
     lastUpdated: {
       text: "最后更新于",
+      formatOptions: {
+        weekday: "long",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      },
     },
 
     langMenuLabel: "多语言",
