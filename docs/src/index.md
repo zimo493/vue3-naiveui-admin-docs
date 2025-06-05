@@ -10,7 +10,7 @@ hero:
     alt: Vue3 Naive Admin"
   actions:
     - theme: brand
-      text: 起步
+      text: 起步 🚀
       link: /demo/api-examples
     - theme: alt
       text: Github
