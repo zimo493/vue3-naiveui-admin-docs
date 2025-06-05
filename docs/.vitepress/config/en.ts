@@ -6,7 +6,7 @@ import { defineConfig, type DefaultTheme } from "vitepress";
 const nav = (): DefaultTheme.NavItem[] => [
   { text: "Guide", link: "/en/demo/api-examples", activeMatch: "/en/demo/" },
   {
-    text: "About",
+    text: "Related links",
     items: [
       { text: "Vue3", link: "https://cn.vuejs.org/" },
       { text: "NaiveUI", link: "https://www.naiveui.com/zh-CN/os-theme" },
