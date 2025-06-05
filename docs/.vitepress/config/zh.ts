@@ -24,6 +24,7 @@ const nav = (): DefaultTheme.NavItem[] => [
 const sidebarDemo = (): DefaultTheme.SidebarItem[] => [
   {
     text: "指南",
+    collapsed: true, // 默认展开
     items: [
       { text: "Api例子", link: "api-examples" },
       { text: "Markdown例子", link: "markdown-examples" },
@@ -104,7 +105,7 @@ export const zh = defineConfig({
     },
     notFound: {
       title: "资源不存在",
-      quote: "抱歉！有些链接，就像错过的公交，下一班会更好。 ",
+      quote: "抱歉！有些链接，就像错过的公交，下一班会更好。",
       linkText: "返回首页",
     },
 

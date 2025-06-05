@@ -24,6 +24,7 @@ const nav = (): DefaultTheme.NavItem[] => [
 const sidebarDemo = (): DefaultTheme.SidebarItem[] => [
   {
     text: "Guide",
+    collapsed: true, // 默认展开
     items: [
       { text: "api-examples", link: "api-examples" },
       { text: "markdown-examples", link: "markdown-examples" },
