@@ -83,3 +83,31 @@ This is a details block.
 ## More
 
 Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
+
+## NaiveUI
+
+<script setup>
+import { NSpace, NButton } from 'naive-ui'
+</script>
+
+<NSpace>
+  <NButton>Default</NButton>
+  <NButton type="tertiary">
+    Tertiary
+  </NButton>
+  <NButton type="primary">
+    Primary
+  </NButton>
+  <NButton type="info">
+    Info
+  </NButton>
+  <NButton type="success">
+    Success
+  </NButton>
+  <NButton type="warning">
+    Warning
+  </NButton>
+  <NButton type="error">
+     Error
+  </NButton>
+</NSpace>
