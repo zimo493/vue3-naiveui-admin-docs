@@ -11,12 +11,12 @@ VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shi
 ````md
 ```js{4}
 export default {
-  data () {
+  data() {
     return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+      msg: "Highlighted!",
+    };
+  },
+};
 ```
 ````
 
@@ -24,12 +24,12 @@ export default {
 
 ```js{4}
 export default {
-  data () {
+  data() {
     return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+      msg: "Highlighted!",
+    };
+  },
+};
 ```
 
 ## Custom Containers
