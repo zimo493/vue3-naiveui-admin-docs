@@ -1,6 +1,6 @@
 import DefaultTheme from "vitepress/theme";
-import { defineComponent, h, inject, computed, VNode } from "vue";
-import { NConfigProvider, darkTheme, GlobalTheme } from "naive-ui";
+import { defineComponent, h, inject, computed } from "vue";
+import { NConfigProvider, darkTheme } from "naive-ui";
 import { setup } from "@css-render/vue3-ssr";
 import { useRoute, useData } from "vitepress";
 
@@ -8,41 +8,31 @@ import "./style.css";
 
 const { Layout } = DefaultTheme;
 const CssRenderStyle = defineComponent({
-  setup() {
-    const collect = inject("css-render-collect") as () => string;
+  setup: () => {
+    const collect = inject("css-render-collect");
     return {
       style: collect(),
     };
   },
-  render() {
-    return h("css-render-style", {
-      innerHTML: this.style,
-    });
-  },
+  render: () => h("css-render-style", { innerHTML: this.style }),
 });
 
 const VitepressPath = defineComponent({
-  setup() {
+  setup: () => {
     const route = useRoute();
-    return () => {
-      return h("vitepress-path", null, [route.path]);
-    };
+    return () => h("vitepress-path", null, [route.path]);
   },
 });
 
 const NaiveUIProvider = defineComponent({
-  setup() {
+  setup: () => {
     // 获取VitePress的主题状态
     const { isDark } = useData();
 
     // 根据VitePress的主题状态计算NaiveUI的主题
-    const theme = computed<GlobalTheme | null>(() =>
-      isDark.value ? darkTheme : null
-    );
+    const theme = computed(() => (isDark.value ? darkTheme : null));
 
-    return {
-      theme,
-    };
+    return { theme };
   },
   render() {
     return h(
@@ -55,7 +45,7 @@ const NaiveUIProvider = defineComponent({
       {
         default: () => [
           h(Layout, null, {
-            default: this.$slots.default?.() as VNode | VNode[] | undefined,
+            default: this.$slots.default?.(),
           }),
           import.meta.env.SSR ? [h(CssRenderStyle), h(VitepressPath)] : null,
         ],
