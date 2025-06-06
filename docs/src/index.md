@@ -46,3 +46,35 @@ features:
     icon: 📝
     details: 遵循 Airbnb JavaScript Style Guide 的代码规范，使用 Eslint、Prettier 等工具保证代码质量
 ---
+
+<script setup>
+import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme'
+
+const coreMembers = [
+  {
+    avatar: '/logo.svg',
+    name: '张三',
+    title: '核心成员',
+    links: [
+      { icon: 'github', link: 'https://github.com/user1' },
+      { icon: 'linkedin', link: 'https://linkedin.com/in/user1' }
+    ]
+  },
+  {
+    avatar: '/logo.svg',
+    name: '李四',
+    title: '核心成员' ,
+    links: [
+      { icon: 'github', link: 'https://github.com/user2' },
+      { icon: 'twitter', link: 'https://twitter.com/user2' }
+    ]
+  }
+]
+</script>
+
+<VPTeamPage>
+  <VPTeamPageTitle>
+    <template #title>我们的团队</template>
+  </VPTeamPageTitle>
+  <VPTeamMembers :members="coreMembers" />
+</VPTeamPage>
