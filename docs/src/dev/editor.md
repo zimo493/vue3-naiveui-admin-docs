@@ -28,7 +28,7 @@ const download = (url) => window.open(url)
 
 ## Visual Studio Code
 
-`VSCode` `VS Code` 是由 `Microsoft` 开发的一款 **免费、开源、跨平台** 的现代化代码编辑器，凭借其 **轻量高效、插件丰富、高度可定制** 的特点，已成为全球最受欢迎的开发者工具之一。
+`VS Code` 是由 `Microsoft` 开发的一款 **免费、开源、跨平台** 的现代化代码编辑器，凭借其 **轻量高效、插件丰富、高度可定制** 的特点，已成为全球最受欢迎的开发者工具之一。
 
 <NFlex align="center">
   <NButton type="primary" @click="download('https://code.visualstudio.com/')">下载 VS Code</NButton>
