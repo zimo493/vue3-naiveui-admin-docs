@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 起步 🚀
-      link: /demo/api-examples
+      link: /guide/introduction
     - theme: alt
       text: Github
       link:
@@ -23,7 +23,7 @@ features:
   - title: 快速上手
     icon: 🚀
     details: 基于 Vue3、Vite6、TypeScript、NaiveUI、UnoCSS、TSX 等最新技术栈开发
-    link: /demo/api-examples
+    link: /guide/introduction
     linkText: 去查看
 
   - title: 系统功能

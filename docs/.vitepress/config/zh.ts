@@ -4,7 +4,8 @@ import { type DefaultTheme, defineConfig } from "vitepress";
  * 导航栏
  */
 const nav = (): DefaultTheme.NavItem[] => [
-  { text: "指南", link: "/demo/api-examples", activeMatch: "/demo/" },
+  { text: "指南", link: "/guide/introduction", activeMatch: "/guide/" },
+  { text: "开发配置", link: "/dev/editor", activeMatch: "/dev/" },
   {
     text: "相关连接",
     items: [
@@ -19,16 +20,28 @@ const nav = (): DefaultTheme.NavItem[] => [
 ];
 
 /**
- * 侧边栏
+ * 指南侧边栏
  */
-const sidebarDemo = (): DefaultTheme.SidebarItem[] => [
+const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
   {
     text: "指南",
     collapsed: true, // 默认展开
     items: [
-      { text: "Api例子", link: "api-examples" },
-      { text: "Markdown例子", link: "markdown-examples" },
+      { text: "介绍", link: "introduction" },
+      { text: "快速开始", link: "start" },
+      { text: "目录结构", link: "directory-structure" },
     ],
+  },
+];
+
+/**
+ * 开发配置侧边栏
+ */
+const sidebarDev = (): DefaultTheme.SidebarItem[] => [
+  {
+    text: "开发配置",
+    collapsed: true, // 默认展开
+    items: [{ text: "代码编辑器", link: "editor" }],
   },
 ];
 
@@ -40,7 +53,8 @@ export const zh = defineConfig({
     nav: nav(),
 
     sidebar: {
-      "/demo/": { base: "/demo/", items: sidebarDemo() },
+      "/guide/": { base: "/guide/", items: sidebarGuide() },
+      "/dev/": { base: "/dev/", items: sidebarDev() },
     },
 
     /** local 搜索配置 */
