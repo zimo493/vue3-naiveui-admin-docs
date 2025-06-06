@@ -25,7 +25,7 @@ const nav = (): DefaultTheme.NavItem[] => [
 const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
   {
     text: "指南",
-    collapsed: true, // 默认展开
+    collapsed: false, // 默认收起
     items: [
       { text: "介绍", link: "introduction" },
       { text: "快速开始", link: "start" },
@@ -40,8 +40,16 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
 const sidebarDev = (): DefaultTheme.SidebarItem[] => [
   {
     text: "开发配置",
-    collapsed: true, // 默认展开
+    collapsed: false, // 默认收起
     items: [{ text: "代码编辑器", link: "editor" }],
+  },
+  {
+    text: "开发环境",
+    collapsed: false, // 默认收起
+    items: [
+      { text: "Git", link: "git" },
+      { text: "NodeJS", link: "nodejs" },
+    ],
   },
 ];
 
