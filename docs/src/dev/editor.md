@@ -47,6 +47,7 @@ const download = (url) => window.open(url)
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)：代码美化插件
 - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)：使用 `.editorconfig` 支持编辑器格式配置
 - [UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)：UnoCSS 支持插件
+- [To Unocss](https://marketplace.visualstudio.com/items?itemName=simonhe.to-unocss)：鼠标移入你写的样式提示出 UnoCSS 样式
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)：错误提示
 - [Parameter Hints](https://marketplace.visualstudio.com/items?itemName=DominicVonk.parameter-hints)：函数参数提示
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)：自动闭合标签
