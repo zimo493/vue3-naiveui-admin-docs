@@ -5,22 +5,28 @@ import { setup } from "@css-render/vue3-ssr";
 import { useRoute, useData } from "vitepress";
 import "./style.css";
 
+const { Layout } = DefaultTheme;
+
 const CssRenderStyle = defineComponent({
-  setup: () => {
+  setup() {
     const collect = inject("css-render-collect");
     return {
       style: collect(),
     };
   },
   render() {
-    return h("css-render-style", { innerHTML: this.style });
+    return h("css-render-style", {
+      innerHTML: this.style,
+    });
   },
 });
 
 const VitepressPath = defineComponent({
-  setup: () => {
+  setup() {
     const route = useRoute();
-    return () => h("vitepress-path", null, [route.path]);
+    return () => {
+      return h("vitepress-path", null, [route.path]);
+    };
   },
 });
 
@@ -37,16 +43,10 @@ const NaiveUIProvider = defineComponent({
   render() {
     return h(
       NConfigProvider,
-      {
-        abstract: true,
-        inlineThemeDisabled: true,
-        theme: this.theme, // 使用计算得到的主题
-      },
+      { abstract: true, inlineThemeDisabled: true, theme: this.theme },
       {
         default: () => [
-          h(DefaultTheme.Layout, null, {
-            default: this.$slots.default?.(),
-          }),
+          h(Layout, null, { default: this.$slots.default?.() }),
           import.meta.env.SSR ? [h(CssRenderStyle), h(VitepressPath)] : null,
         ],
       }

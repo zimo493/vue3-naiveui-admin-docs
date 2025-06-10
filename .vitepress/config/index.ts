@@ -32,7 +32,7 @@ export default defineConfig({
     if (!html) return;
     const style = fileAndStyles[`/${html}`];
     if (style) {
-      return code.replace(/<\/head>/, style + "</head>");
+      return code.replace(/<\/head>/, `${style}</head>`);
     }
   },
 });
