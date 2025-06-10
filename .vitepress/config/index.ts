@@ -1,7 +1,7 @@
 import { defineConfig } from "vitepress";
-import { shared } from "./config/shared";
-import { zh } from "./config/zh";
-import { en } from "./config/en";
+import { shared } from "./shared";
+import { zh } from "./zh";
+import { en } from "./en";
 
 const fileAndStyles: Record<string, string> = {};
 

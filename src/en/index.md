@@ -7,7 +7,7 @@ hero:
   tagline: Vue3、TypeScript、NaiveUI
   image:
     src: /logo.svg
-    alt: Vue3 Naive Admin"
+    alt: Vue3 Naive Admin
   actions:
     - theme: brand
       text: Start 🚀

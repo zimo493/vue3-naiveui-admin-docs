@@ -41,25 +41,26 @@ pnpm docs:preview
 ## 项目结构
 
 ```
-├── docs/                 # 文档源文件
-│   ├── .vitepress/         # VitePress 配置
-│   │   ├── config/           # 配置文件目录
-│   │   ├── theme/            # 主题配置
-│   │   └── config.mts        # 主配置文件
-│   └── src/                # 文档内容
-│       ├── demo/             # 示例文档
-│       ├── en/               # 英文文档
-│       ├── index.md          # 首页
-│       └── logo.svg          # 项目 Logo
-├── .gitignore            # Git 忽略文件
-├── package.json          # 项目配置文件
-├── pnpm-lock.yaml        # 依赖锁定文件
-└── README.md             # 项目文档
+
+├── .vitepress/         # VitePress 配置
+│   ├── config/          # 配置文件目录
+│   └── theme/           # 主题配置
+├── src/                # 文档内容
+|   ├── dev/             # 开发配置
+|   ├── en/              # 英文文档
+|   ├── guide/           # 指南
+|   ├── index.md         # 首页
+|   └── logo.svg         # 项目 Logo
+├── .gitignore          # Git 忽略文件
+├── package.json        # 项目配置文件
+├── pnpm-lock.yaml      # 依赖锁定文件
+└── README.md           # 项目文档
 ```
 
 ## 多语言支持
 
 本文档站点支持中文和英文两种语言：
+
 - 中文（默认）：`/`
 - 英文：`/en/`
 

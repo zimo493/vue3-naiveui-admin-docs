@@ -1,7 +1,7 @@
 <script setup>
-import { NButton, NTag, NFlex } from 'naive-ui'
+import { NButton } from 'naive-ui'
 
-const download = (url) => window.open(url)
+const open = (url) => window.open(url)
 </script>
 
 # Node.js 入门指南
@@ -107,7 +107,7 @@ NVM 是一个 **Node.js 版本管理工具**，允许你在同一台机器上安
 ### Windows 安装
 
 <br />
-<NButton type="primary" @click="download('https://github.com/coreybutler/nvm-windows/releases')">下载 NVM</NButton>
+<NButton type="primary" @click="open('https://github.com/coreybutler/nvm-windows/releases')">下载 NVM</NButton>
 
 ### macOS/Linux 安装
 

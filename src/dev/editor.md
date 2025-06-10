@@ -1,7 +1,7 @@
 <script setup>
 import { NButton, NTag, NFlex } from 'naive-ui'
 
-const download = (url) => window.open(url)
+const open = (url) => window.open(url)
 </script>
 
 # 代码编辑器
@@ -12,7 +12,7 @@ const download = (url) => window.open(url)
 `2024年10月24日` 正值程序员节之际，JetBrains 正式宣布：`针对非商业用途` **WebStorm 个人版现已全面免费开放使用**
 
 <NFlex align="center">
-  <NButton type="primary" @click="download('https://www.jetbrains.com/webstorm/')">下载 WebStorm</NButton>
+  <NButton type="primary" @click="open('https://www.jetbrains.com/webstorm/')">下载 WebStorm</NButton>
   <NTag type="warning">
     相比 VS Code，内存占用较高
   </NTag>
@@ -31,7 +31,7 @@ const download = (url) => window.open(url)
 `VS Code` 是由 `Microsoft` 开发的一款 **免费、开源、跨平台** 的现代化代码编辑器，凭借其 **轻量高效、插件丰富、高度可定制** 的特点，已成为全球最受欢迎的开发者工具之一。
 
 <NFlex align="center">
-  <NButton type="primary" @click="download('https://code.visualstudio.com/')">下载 VS Code</NButton>
+  <NButton type="primary" @click="open('https://code.visualstudio.com/')">下载 VS Code</NButton>
   <NTag type="warning">
     复杂项目调试，可能不如 WebStorm
   </NTag>
