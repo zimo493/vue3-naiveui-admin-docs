@@ -38,7 +38,7 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
     items: [
       { text: "基本设置", link: "basic-settings" },
       { text: "请求服务配置", link: "request-service" },
-      // { text: "目录结构", link: "directory-structure" },
+      { text: "路由与菜单", link: "ruotes" },
     ],
   },
 ];
