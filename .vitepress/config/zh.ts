@@ -105,7 +105,7 @@ export const zh = defineConfig({
 
     editLink: {
       pattern:
-        "https://github.com/zimo493/vue3-naiveui-admin-docs/edit/main/docs/src/:path",
+        "https://github.com/zimo493/vue3-naiveui-admin-docs/edit/main/src/:path",
       text: "帮助改进此页",
     },
 
