@@ -103,4 +103,5 @@
 设置全局存储的前缀，默认为 `store-`，在使用 `src\utils\storage.ts` 时 `localStorage` 和 `sessionStorage` 中的数据都会加上 `store-` 前缀，例如 `store-user`
 
 ### 生产环境
+
 配置生产环境变量，例如 `.env.production` 文件中定义这些变量， 配置和 `开发环境` 相同，
