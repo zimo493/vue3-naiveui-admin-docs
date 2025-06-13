@@ -37,7 +37,7 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
     collapsed: false, // 默认展开
     items: [
       { text: "基本设置", link: "basic-settings" },
-      // { text: "快速开始", link: "start" },
+      { text: "请求服务配置", link: "request-service" },
       // { text: "目录结构", link: "directory-structure" },
     ],
   },
