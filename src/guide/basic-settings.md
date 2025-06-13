@@ -81,13 +81,6 @@
 
 配置 WebSocket 地址
 
-#### VITE_MOCK_DEV_SERVER (实现中)
-
-- **类型**：`boolean`
-- **默认值**：`false`
-
-配置是否开启 Mock 服务，默认为 `false`
-
 #### VITE_DEFAULT_LANG (实现中)
 
 - **类型**：`zhCN` `enUS` `zhTW`
