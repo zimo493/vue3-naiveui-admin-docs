@@ -25,11 +25,20 @@ const nav = (): DefaultTheme.NavItem[] => [
 const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
   {
     text: "指南",
-    collapsed: false, // 默认收起
+    collapsed: false, // 默认展开
     items: [
       { text: "介绍", link: "introduction" },
       { text: "快速开始", link: "start" },
       { text: "目录结构", link: "directory-structure" },
+    ],
+  },
+  {
+    text: "项目配置",
+    collapsed: false, // 默认展开
+    items: [
+      { text: "基本设置", link: "basic-settings" },
+      // { text: "快速开始", link: "start" },
+      // { text: "目录结构", link: "directory-structure" },
     ],
   },
 ];
@@ -40,12 +49,12 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
 const sidebarDev = (): DefaultTheme.SidebarItem[] => [
   {
     text: "开发配置",
-    collapsed: false, // 默认收起
+    collapsed: false, // 默认展开
     items: [{ text: "代码编辑器", link: "editor" }],
   },
   {
     text: "开发环境",
-    collapsed: false, // 默认收起
+    collapsed: false, // 默认展开
     items: [
       { text: "Git", link: "git" },
       { text: "NodeJS", link: "nodejs" },
