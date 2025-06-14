@@ -42,6 +42,13 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
       { text: "自定义主题", link: "theme" },
     ],
   },
+  {
+    text: "组件封装",
+    collapsed: false,
+    items: [
+      { text: "搜索表格", link: "search-table" },
+    ],
+  },
 ];
 
 /**
