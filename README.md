@@ -1,6 +1,6 @@
 # Vue3 Naive Admin 文档站点
 
-基于 VitePress 构建的 Vue3 Naive Admin 中后台管理系统文档站点。
+基于 `VitePress` 构建的 Vue3 Naive Admin 中后台管理系统文档站点。
 
 ## 项目介绍
 
@@ -8,9 +8,9 @@
 
 ## 技术栈
 
-- [VitePress](https://vitepress.dev/) - 基于 Vite 和 Vue 的静态站点生成器
-- [Vue3](https://vuejs.org/) - 渐进式 JavaScript 框架
-- [Naive UI](https://www.naiveui.com/) - 一个 Vue3 组件库，使用 TypeScript
+- [VitePress](https://vitepress.dev/) 基于 Vite 和 Vue 的静态站点生成器
+- [Vue3](https://vuejs.org/) 渐进式 JavaScript 框架
+- [Naive UI](https://www.naiveui.com/) 一个 Vue3 组件库，使用 TypeScript
 
 ## 本地开发
 
@@ -23,19 +23,19 @@ pnpm install
 ### 启动开发服务器
 
 ```bash
-pnpm docs:dev
+pnpm dev
 ```
 
 ### 构建文档站点
 
 ```bash
-pnpm docs:build
+pnpm build
 ```
 
 ### 本地预览构建结果
 
 ```bash
-pnpm docs:preview
+pnpm preview
 ```
 
 ## 项目结构
