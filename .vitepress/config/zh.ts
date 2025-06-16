@@ -48,6 +48,7 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
     items: [
       { text: "FormPro (表单)", link: "form-pro" },
       { text: "SearchTable (搜索表格)", link: "search-table" },
+      { text: "DrawerForm (抽屉表单)", link: "drawer-form" },
     ],
   },
 ];

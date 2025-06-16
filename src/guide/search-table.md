@@ -5,10 +5,10 @@
 搜索表格组件包含 **搜索表单**、**表格**、**分页** 组件
 
 - 搜索表单基于 [🔗FormPro](/guide/form-pro) 封装
-- 表格采用 [🔗NDataTable](https://www.naiveui.com/zh-CN/os-theme/components/data-table) 未经过封装
+- 表格采用 [🔗NDataTable](https://www.naiveui.com/zh-CN/os-theme/components/data-table) 组件
 - 分页基于 [🔗NPagination](https://www.naiveui.com/zh-CN/os-theme/components/pagination) 封装
 
-## 基本使用案例
+## 基本使用
 
 具体使用可查看项目代码或 [🔗案例](https://gitee.com/zimo493/vue3-naiveui-admin/blob/main/src/views/demo/curd/index.vue)
 

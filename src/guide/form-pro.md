@@ -4,7 +4,7 @@
 
 表单组件封装，基于 [🔗NForm](https://www.naiveui.com/zh-CN/os-theme/components/form) 封装，采用简单的配置就可实现一个表单
 
-## 基本使用案例
+## 基本使用
 
 ::: warning
 `FormPro` 组件单独使用情况较少，一般配合 `SearchTable` `Drawer` `Dialog` 使用，可从以下内容查看
