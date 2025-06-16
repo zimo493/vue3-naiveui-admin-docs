@@ -1,22 +1,22 @@
-# DrawerForm 组件
+# DialogForm 组件
 
 ## 介绍
 
-以抽屉形式展示表单，收集数据。
+我感觉和 [`🔗DrawerForm`](/guide/drawer-form) 功能差不太多，位置有点差别。
 
 - 表单组件基于 [🔗FormPro](/guide/form-pro) 封装
-- 抽屉组件采用 [🔗NDrawer](https://www.naiveui.com/zh-CN/os-theme/components/drawer) 组件
+- 对话框组件采用 [🔗NModal](https://www.naiveui.com/zh-CN/os-theme/components/modal) 组件
 
 ## 基本使用
 
 ```vue
 <template>
   <!-- 新增、编辑 -->
-  <DrawerForm
-    ref="drawerForm"
+  <DialogForm
+    ref="dialogForm"
     :form-config="editConfig"
     :model-value="modelValue"
-    :width="580"
+    :width="800"
     :loading="spin"
     @submit="submitForm"
   />
@@ -56,18 +56,18 @@ const modelValue = ref<User.Form>({
   status: 1,
 });
 
-/** 打开抽屉 */
-const drawerFormRef = useTemplateRef("drawerForm");
+/** 打开对话框 */
+const dialogFormRef = useTemplateRef("dialogForm");
 const openDrawer = (row?: User.VO) => {
-  drawerFormRef.value?.open(row ? "编辑用户" : "新增用户", modelValue.value);
+  dialogFormRef.value?.open(row ? "编辑用户" : "新增用户", modelValue.value);
 
   if (row) {
-    drawerFormRef.value?.startLoading();
+    dialogFormRef.value?.startLoading();
     UserAPI.getFormData(row.id)
       .then((data) => {
         modelValue.value = { ...data };
       })
-      .finally(() => drawerFormRef.value?.hideLoading());
+      .finally(() => dialogFormRef.value?.hideLoading());
   }
 };
 
@@ -76,7 +76,7 @@ const submitForm = (val: User.Form) =>
   executeAsync(
     () => (val.id ? UserAPI.update(val.id, val) : UserAPI.create(val)),
     () => {
-      drawerFormRef.value?.close();
+      dialogFormRef.value?.close();
       handleQuery();
     }
   );
@@ -89,10 +89,10 @@ const submitForm = (val: User.Form) =>
 | --- | --- | --- | --- | --- |
 | v-model 或 model-value | `Object` | 是 | | 表单参数 |
 | form-config | [`🔗FormOption<T>`](/guide/form-pro#formoption) | 是 | | 表单配置项 |
-| placement | `'top' \| 'right' \| 'bottom' \| 'left'` | 否 | `right` | 抽屉展示的位置 |
-| width | `Number` | 否 | `502` | 抽屉的宽度 |
+| width | `Number` | 否 | `700` | 对话框的宽度 |
 | is-look | `Boolean` | 否 | `false` | 是否是查看模式 |
 | loading | `Boolean` | 否 | `false` | 表单加载状态 |
+| draggable | `Boolean` | 否 | `false` | 是否允许拖拽 |
 
 ## Slots
 
@@ -104,8 +104,8 @@ const submitForm = (val: User.Form) =>
 ## Expose
 | 函数名 | 参数 | 说明 |
 | --- | --- | --- |
-| open | `(title: string, data: Object) => void` | 打开抽屉方法。`title` 为抽屉标题，`data` 为表单数据|
-| close | `() => void` | 关闭抽屉。会重置表单 |
+| open | `(title: string, data: Object) => void` | 打开对话框方法。`title` 为对话框标题，`data` 为表单数据|
+| close | `() => void` | 关闭对话框。会重置表单 |
 | startLoading | `() => void` | 开始加载 |
 | hideLoading | `() => void` | 关闭加载 |
 
@@ -115,3 +115,4 @@ const submitForm = (val: User.Form) =>
 | --- | --- | --- |
 | submit | `(val) => void` | 触发提交 |
 | cancel | `() => void` | 触发取消 |
+
