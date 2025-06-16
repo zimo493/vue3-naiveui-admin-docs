@@ -1,4 +1,4 @@
-# DialogForm 组件
+# 模态框表单 DialogForm
 
 ## 介绍
 

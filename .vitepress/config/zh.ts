@@ -50,6 +50,7 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
       { text: "SearchTable (搜索表格)", link: "search-table" },
       { text: "DrawerForm (抽屉表单)", link: "drawer-form" },
       { text: "DialogForm (模态框表单)", link: "dialolg-form" },
+      { text: "UploadFile (文件上传)", link: "upload-file" },
     ],
   },
 ];
