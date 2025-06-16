@@ -52,9 +52,7 @@ const modelValue = ref<FormFields>({
 </script>
 ```
 
-## API
-
-### Props
+## Props
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
 | --- | --- | --- | --- | --- |
