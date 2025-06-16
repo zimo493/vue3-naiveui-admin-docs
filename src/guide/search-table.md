@@ -70,7 +70,7 @@ const columns = ref<DataTableColumns<User.VO>>([
 | loading | `Boolean` | 否 | `false` | 表格是否加载中 |
 | controls-span | `Number` | 否 | `4` | 按钮操作区的宽度，最大值：24 |
 | collapse-length | `Number` | 否 | `3` | 搜索项的折叠长度。超出则会被折叠 |
-| operation-button-position | `left \|right` | 否 | `right` | 搜索按钮的展示位置。紧贴搜索项显示还是靠最右侧显示 |
+| operation-button-position | `left \| right` | 否 | `right` | 搜索按钮的展示位置。紧贴搜索项显示还是靠最右侧显示 |
 | table-events | [`🔗DataTable-Methods`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#DataTable-Methods) | 否 | `{}` | `NDataTable` 事件配置 |
 | 其他参数 | [`🔗DataTable Props`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#API) | 否 | `{}` | `NDataTable` 组件参数 |
 
