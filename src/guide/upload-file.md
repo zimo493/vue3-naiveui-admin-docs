@@ -6,7 +6,7 @@
 
 - 基于 [🔗NUpload](https://www.naiveui.com/zh-CN/os-theme/components/upload) 封装
 
-## 文件类型
+## 类型定义
 
 ::: code-group
 
