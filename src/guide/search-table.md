@@ -61,14 +61,18 @@ const columns = ref<DataTableColumns<User.VO>>([
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
 | --- | --- | --- | --- | --- |
-| table-data | `Array` | 是 | `""` | 需要展示的数据 |
+| table-data | `Array<object>` | 是 | | 需要展示的数据 |
+| row-key | `(rowData: object) => (number \| string)` | 是 | | 表格行数据的 key |
 | v-model 或 model-value | `Object` | 否 | `{}` | 搜索参数，与 `form-config` 一起使用。如果不传递则不显示搜索表单 |
 | form-config | [`🔗FormOption<T>`](/guide/form-pro#formoption) | 否 | `{}` | 表单配置项 |
 | columns | [`🔗DataTableColumn`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#DataTable-Props) | 否 | `[]` | 需要展示的列 |
 | total | `Number` | 否 | `0` | 总条数，为零0则不显示分页组件 |
+| loading | `Boolean` | 否 | `false` | 表格是否加载中 |
 | controls-span | `Number` | 否 | `4` | 按钮操作区的宽度，最大值：24 |
 | collapse-length | `Number` | 否 | `3` | 搜索项的折叠长度。超出则会被折叠 |
-| operation-button-position | `left / right` | 否 | `right` | 搜索按钮的展示位置。紧贴搜索项显示还是靠最右侧显示 |
+| operation-button-position | `left \|right` | 否 | `right` | 搜索按钮的展示位置。紧贴搜索项显示还是靠最右侧显示 |
+| table-events | [`🔗DataTable-Methods`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#DataTable-Methods) | 否 | `{}` | `NDataTable` 事件配置 |
+| 其他参数 | [`🔗DataTable Props`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#API) | 否 | `{}` | `NDataTable` 组件参数 |
 
 ## Slots
 

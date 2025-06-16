@@ -46,8 +46,8 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
     text: "组件封装",
     collapsed: false,
     items: [
-      { text: "FormPro", link: "form-pro" },
-      { text: "SearchTable", link: "search-table" },
+      { text: "FormPro (表单)", link: "form-pro" },
+      { text: "SearchTable (搜索表格)", link: "search-table" },
     ],
   },
 ];

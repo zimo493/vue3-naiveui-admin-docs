@@ -63,13 +63,13 @@ const modelValue = ref<FormFields>({
 | rules | [`🔗FormRules`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | `{}` | c |
 | show-label | `Boolean` | 否 | `true` | 是否显示标签 |
 | label-width | `Number` | 否 | `auto` | 表单字段标签宽度，在 `show-label` 为 `true` 时有效 |
-| label-placement | `left / top` | 否 | `left` | 表单字段标签的位置 |
-| label-align | `left / right` | 否 | `right` | 表单字段标签的对齐方式 |
+| label-placement | `left \| top` | 否 | `left` | 表单字段标签的位置 |
+| label-align | `left \| right` | 否 | `right` | 表单字段标签的对齐方式 |
 | is-look | `Boolean` | 否 | `false` | 是否为查看模式 |
-| use-type | `search / submit` | 否 | `search` | 表单使用方式，在 `submit` 模式下不会显示 `搜索` 和 `重置` 按钮 |` |
+| use-type | `search \| submit` | 否 | `search` | 表单使用方式，在 `submit` 模式下不会显示 `搜索` 和 `重置` 按钮 |` |
 | show-feedback | `Boolean` | 否 | `false` | 是否显示表单字段的错误信息，`is-look` 为 `true` 时默认为 `false`， 提交表单时默认为 `true` |
 | gutter | `Number` | 否 | `16` | 表单字段的间隔。在 `is-look` 为 `true` 时默认为 `12`，在 `use-type` 为 `submit` 时 `y-gap` 默认为 `0`|
-| 其他参数 | [`🔗Form-Props`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | | NForm 组件参数 |
+| 其他参数 | [`🔗Form-Props`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | | `NForm` 组件参数 |
 
 ### FormOption
 
