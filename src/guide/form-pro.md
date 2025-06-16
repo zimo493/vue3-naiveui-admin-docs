@@ -2,7 +2,7 @@
 
 ## 介绍
 
-表单组件封装，基于 [NForm](https://www.naiveui.com/zh-CN/os-theme/components/form) 封装
+表单组件封装，基于 [NForm](https://www.naiveui.com/zh-CN/os-theme/components/form) 封装，采用简单的配置就可实现一个表单
 
 ## 基本使用案例
 
@@ -31,7 +31,7 @@ interface FormFields {
 // 表单配置
 const formConfig = ref<TablePro.FormOption<FormFields>>({
   fields: [
-    { field: "name", label: "姓名", type: "input" },
+    { field: "name", label: "姓名" },
     { field: "age", label: "年龄", type: "number" },
     {
       field: "sex",
@@ -69,10 +69,11 @@ const modelValue = ref<FormFields>({
 | use-type | `search / submit` | 否 | `search` | 表单使用方式，在 `submit` 模式下不会显示 `搜索` 和 `重置` 按钮 |` |
 | show-feedback | `Boolean` | 否 | `false` | 是否显示表单字段的错误信息，`is-look` 为 `true` 时默认为 `false`， 提交表单时默认为 `true` |
 | gutter | `Number` | 否 | `16` | 表单字段的间隔。在 `is-look` 为 `true` 时默认为 `12`，在 `use-type` 为 `submit` 时 `y-gap` 默认为 `0`|
+| 其他参数 | [`Form-Props`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | | NForm 组件参数 |
 
 ### FormOption
 
-使用 `v-band` 绑定 `form-config`
+使用 `v-bind` 绑定 `form-config`
 
 | 名称 | 说明 | 名称 | 说明 |
 | --- | --- | --- | --- |
@@ -86,7 +87,7 @@ const modelValue = ref<FormFields>({
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
 | --- | --- | --- | --- | --- |
-| field | `keyof V & "dateRange"` | 是 | `/` | 表单字段名称 |
+| field | `keyof V` | 是 | `/` | 表单字段名称 |
 | label-message | `String` | 否 | `""` | 表单字段标签提示信息 |
 | type | [`FormItemType`](/guide/form-pro#表单项类型-formitemtype) | 否 | `input` | 表单字段标签 |
 | label | `String` | 否 | `""` | 输入框标题 |
@@ -104,6 +105,7 @@ const modelValue = ref<FormFields>({
 | other-events | `{ [key: string]: (...args: any[]) => any }` | 否 | `{}` | 表单事件配置 |
 
 ### 表单项类型 `FormItemType`
+
 | 名称 | 类型 | 名称 | 类型 |
 | --- | --- | --- | --- |
 | input | `文本输入框` | number | `数字输入框` |
@@ -115,18 +117,25 @@ const modelValue = ref<FormFields>({
 
 
 ### 选择器选项 `ItemOption`
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | label | `String` | 选项标签 |
 | value | `String` | 选项值 |
 | disabled | `Boolean` | 是否禁用 |
 
+## Slots
+| 属性 | 参数 | 说明 |
+| --- | --- | --- |
+| header | `()` | 头部内容，展示在表单上方 |
+
 ## Methods
+
 ::: tip 💡提示
 触发方法返回的 `val` 类型为传递的 `v-model` 绑定值类型
 :::
+
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
-| submit | `(val) => void` | 触发提交 |
-| search | `(val) => void` | 触发搜索 |
+| submit | `(val) => void` | 触发搜索 |
 | reset | `(val) => void` | 重置表单 |
