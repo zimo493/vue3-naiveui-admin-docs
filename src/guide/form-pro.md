@@ -11,8 +11,8 @@
 :::
 
 - [SearchTable](/guide/search-table)
-- [Drawer](/guide/drawer-form)
-- [Dialog](/guide/dialog-form)
+- [DrawerForm](/guide/drawer-form)
+- [DialogForm](/guide/dialog-form)
 
 ```vue
 <template>
@@ -120,3 +120,13 @@ const modelValue = ref<FormFields>({
 | label | `String` | 选项标签 |
 | value | `String` | 选项值 |
 | disabled | `Boolean` | 是否禁用 |
+
+## Methods
+::: tip 💡提示
+触发方法返回的 `val` 类型为传递的 `v-model` 绑定值类型
+:::
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| submit | `(val) => void` | 触发提交 |
+| search | `(val) => void` | 触发搜索 |
+| reset | `(val) => void` | 重置表单 |
