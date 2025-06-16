@@ -46,7 +46,8 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
     text: "组件封装",
     collapsed: false,
     items: [
-      { text: "搜索表格", link: "search-table" },
+      { text: "FormPro", link: "form-pro" },
+      { text: "SearchTable", link: "search-table" },
     ],
   },
 ];
@@ -127,6 +128,7 @@ export const zh = defineConfig({
     },
 
     outline: {
+      level: [2, 6], // 显示 h2 到 h6
       label: "页面导航",
     },
 
