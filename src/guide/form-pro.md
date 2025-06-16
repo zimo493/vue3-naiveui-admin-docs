@@ -2,7 +2,9 @@
 
 ## 介绍
 
-表单组件封装，基于 [🔗NForm](https://www.naiveui.com/zh-CN/os-theme/components/form) 封装，采用简单的配置就可实现一个表单
+采用简单的配置就可实现一个表单
+
+- 基于 [🔗NForm](https://www.naiveui.com/zh-CN/os-theme/components/form) 封装，
 
 ## 基本使用
 
