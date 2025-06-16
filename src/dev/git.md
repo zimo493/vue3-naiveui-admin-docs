@@ -15,7 +15,7 @@ Git 是一个开源的分布式版本控制系统，由 Linus Torvalds 于 2005 
 
 ### Windows 系统
 
-1. 访问官方下载页面：[https://git-scm.com/downloads](https://git-scm.com/downloads)
+1. 访问官方下载页面：[🔗https://git-scm.com/downloads](https://git-scm.com/downloads)
 2. 下载最新版 Windows 安装包
 3. 运行安装程序，按向导完成安装
 4. 安装时建议选择：
@@ -81,7 +81,7 @@ git --version
 
 - Git GUI（内置）
 - GitHub Desktop
-- [TortoiseGit（可视化工具）](https://tortoisegit.org/download/)
+- [🔗TortoiseGit（可视化工具）](https://tortoisegit.org/download/)
 
 ## 学习资源
 

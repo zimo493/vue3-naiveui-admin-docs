@@ -2,10 +2,10 @@
 
 ## 环境准备
 
-Vue3 NaiveUI Admin 是基于最新 Vite 版本开发，所以需要 [Node.js](https://nodejs.org/en/) 20+ 版本来支持。
-包管理器推荐使用 [pnpm](https://pnpm.io/) 9+ 版本
+Vue3 NaiveUI Admin 是基于最新 Vite 版本开发，所以需要 [🔗Node.js](https://nodejs.org/en/) 20+ 版本来支持。
+包管理器推荐使用 [🔗pnpm](https://pnpm.io/) 9+ 版本
 
-- [Node.js 安装和使用教程](/dev/nodejs)
+- [🔗Node.js 安装和使用教程](/dev/nodejs)
 
 ## 获取代码
 

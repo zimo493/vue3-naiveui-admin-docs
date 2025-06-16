@@ -2,11 +2,11 @@
 
 ## 项目介绍 📖
 
-[vue3-naiveui-admin](https://gitee.com/zimo493/vue3-naiveui-admin) 基于 `Vue3` `Vite` `TypeScript` 和 `Naive UI` 搭建的极简开箱即用企业级后台管理前端模板。 配套 Java 后端 [youlai-boot](https://gitee.com/youlaiorg/youlai-boot) 和 Node 后端 [youlai-nest](https://gitee.com/youlaiorg/youlai-nest) 。 提供`Element Plus`三版本供开发者快速开发。
+[🔗vue3-naiveui-admin](https://gitee.com/zimo493/vue3-naiveui-admin) 基于 `Vue3` `Vite` `TypeScript` 和 `Naive UI` 搭建的极简开箱即用企业级后台管理前端模板。 配套 Java 后端 [🔗youlai-boot](https://gitee.com/youlaiorg/youlai-boot) 和 Node 后端 [🔗youlai-nest](https://gitee.com/youlaiorg/youlai-nest) 。 提供`Element Plus`三版本供开发者快速开发。
 
-- **标准版:** [vue3-element-admin](https://gitee.com/youlaiorg/vue3-element-admin)
-- **精简版:** [vue3-element-template](https://gitee.com/youlaiorg/vue3-element-template)
-- **JS 版本:** [vue3-element-admin-js](https://gitee.com/youlaiorg/vue3-element-admin)
+- **标准版:** [🔗vue3-element-admin](https://gitee.com/youlaiorg/vue3-element-admin)
+- **精简版:** [🔗vue3-element-template](https://gitee.com/youlaiorg/vue3-element-template)
+- **JS 版本:** [🔗vue3-element-admin-js](https://gitee.com/youlaiorg/vue3-element-admin)
 
 ## 在线体验 👀
 

@@ -8,9 +8,9 @@
 
 ## 技术栈
 
-- [VitePress](https://vitepress.dev/) 基于 Vite 和 Vue 的静态站点生成器
-- [Vue3](https://vuejs.org/) 渐进式 JavaScript 框架
-- [Naive UI](https://www.naiveui.com/) 一个 Vue3 组件库，使用 TypeScript
+- [🔗VitePress](https://vitepress.dev/) 基于 Vite 和 Vue 的静态站点生成器
+- [🔗Vue3](https://vuejs.org/) 渐进式 JavaScript 框架
+- [🔗Naive UI](https://www.naiveui.com/) 一个 Vue3 组件库，使用 TypeScript
 
 ## 本地开发
 

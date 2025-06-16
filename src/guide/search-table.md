@@ -4,13 +4,13 @@
 
 搜索表格组件包含 **搜索表单**、**表格**、**分页** 组件
 
-- 搜索表单基于 [FormPro](/guide/form-pro) 封装
-- 表格采用 [NDataTable](https://www.naiveui.com/zh-CN/os-theme/components/data-table) 未经过封装
-- 分页基于 [NPagination](https://www.naiveui.com/zh-CN/os-theme/components/pagination) 封装
+- 搜索表单基于 [🔗FormPro](/guide/form-pro) 封装
+- 表格采用 [🔗NDataTable](https://www.naiveui.com/zh-CN/os-theme/components/data-table) 未经过封装
+- 分页基于 [🔗NPagination](https://www.naiveui.com/zh-CN/os-theme/components/pagination) 封装
 
 ## 基本使用案例
 
-具体使用可查看项目代码或 [案例](https://gitee.com/zimo493/vue3-naiveui-admin/blob/main/src/views/demo/curd/index.vue)
+具体使用可查看项目代码或 [🔗案例](https://gitee.com/zimo493/vue3-naiveui-admin/blob/main/src/views/demo/curd/index.vue)
 
 ```vue
 <template>
@@ -63,8 +63,8 @@ const columns = ref<DataTableColumns<User.VO>>([
 | --- | --- | --- | --- | --- |
 | table-data | `Array` | 是 | `""` | 需要展示的数据 |
 | v-model 或 model-value | `Object` | 否 | `{}` | 搜索参数，与 `form-config` 一起使用。如果不传递则不显示搜索表单 |
-| form-config | [`FormOption<T>`](/guide/form-pro#formoption) | 否 | `{}` | 表单配置项 |
-| columns | [`DataTableColumn`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#DataTable-Props) | 否 | `[]` | 需要展示的列 |
+| form-config | [`🔗FormOption<T>`](/guide/form-pro#formoption) | 否 | `{}` | 表单配置项 |
+| columns | [`🔗DataTableColumn`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#DataTable-Props) | 否 | `[]` | 需要展示的列 |
 | total | `Number` | 否 | `0` | 总条数，为零0则不显示分页组件 |
 | controls-span | `Number` | 否 | `4` | 按钮操作区的宽度，最大值：24 |
 | collapse-length | `Number` | 否 | `3` | 搜索项的折叠长度。超出则会被折叠 |
