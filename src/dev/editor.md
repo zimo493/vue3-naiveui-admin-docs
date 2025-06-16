@@ -45,14 +45,14 @@ const open = (url) => window.open(url)
 - [🔗Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify)：编辑器可视化图标
 - [🔗ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)：ESlint 支持插件
 - [🔗Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)：代码美化插件
-- [vEditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)：使用 `.editorconfig` 支持编辑器格式配置
+- [🔗EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)：使用 `.editorconfig` 支持编辑器格式配置
 - [🔗UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)：UnoCSS 支持插件
 - [🔗To Unocss](https://marketplace.visualstudio.com/items?itemName=simonhe.to-unocss)：鼠标移入你写的样式提示出 UnoCSS 样式
 - [🔗Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)：错误提示
 - [🔗Parameter Hints](https://marketplace.visualstudio.com/items?itemName=DominicVonk.parameter-hints)：函数参数提示
 - [🔗Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)：自动闭合标签
 - [🔗Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)：自动重命名标签
-- [vcolorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize)：可视化颜色
+- [🔗colorize](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize)：可视化颜色
 - [🔗DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)：`.env` 文件支持高亮
 - [🔗Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)：Git 分支查看
 - [🔗Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)：查看文件 Git 历史
