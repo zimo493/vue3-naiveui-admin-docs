@@ -1,9 +1,3 @@
----
-
-outline: [2,3,4,5,6]
-
----
-
 # SearchTable 组件
 
 ## 介绍
@@ -63,13 +57,11 @@ const columns = ref<DataTableColumns<User.VO>>([
 </script>
 ```
 
-## API
-
-### Props
+## Props
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
 | --- | --- | --- | --- | --- |
-| tableData | `Array` | 是 | `""` | 需要展示的数据 |
+| table-data | `Array` | 是 | `""` | 需要展示的数据 |
 | v-model 或 model-value | `Object` | 否 | `{}` | 搜索参数，与 `form-config` 一起使用。如果不传递则不显示搜索表单 |
 | form-config | [`FormOption<T>`](/guide/form-pro#formoption) | 否 | `{}` | 表单配置项 |
 | columns | [`DataTableColumn`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#DataTable-Props) | 否 | `[]` | 需要展示的列 |
@@ -77,3 +69,21 @@ const columns = ref<DataTableColumns<User.VO>>([
 | controls-span | `Number` | 否 | `4` | 按钮操作区的宽度，最大值：24 |
 | collapse-length | `Number` | 否 | `3` | 搜索项的折叠长度。超出则会被折叠 |
 | operation-button-position | `left / right` | 否 | `right` | 搜索按钮的展示位置。紧贴搜索项显示还是靠最右侧显示 |
+
+## Slots
+
+| 属性 | 参数 | 说明 |
+| --- | --- | --- |
+| header | `()` | 头部内容，展示在搜索表单上方 |
+| controls | `()` | 表格操作区内容，比如 `新增` 等按钮 |
+
+## Events
+
+::: tip 💡提示
+触发方法返回的 `val` 类型为传递的 `v-model` 绑定值类型
+:::
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| search | `(val) => void` | 触发搜索 |
+| reset | `(val) => void` | 重置表单 |
