@@ -123,4 +123,4 @@ const imgUrls = ref<string[]>([]); // 图片地址，数组类型
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
 | upload | `(val: FileInfo) => val` | 文件上传成功回调 |
-| remove | `(val: FileInfo) => val` | 移除文件回调 |
+| remove | `(val: RemoveFile) => val` | 移除文件回调 |
