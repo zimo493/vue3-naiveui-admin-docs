@@ -52,9 +52,9 @@ import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme'
 
 const coreMembers = [
   {
-    avatar: 'https://avatars.githubusercontent.com/u/88411811',
-    name: '子陌',
-    title: '团队成员',
+    avatar: 'https://gitee.com/zimo493.png',
+    name: 'zimo493',
+    title: 'Do everything with love.',
     links: [
       { icon: 'github', link: 'https://github.com/zimo493' },
       // { icon: 'linkedin', link: 'https://linkedin.com/in/user1' }
