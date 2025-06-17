@@ -6,7 +6,7 @@ import { type DefaultTheme, defineConfig } from "vitepress";
 const nav = (): DefaultTheme.NavItem[] => [
   { text: "💡指南", link: "/guide/introduction", activeMatch: "/guide/" },
   { text: "⚙️开发设置", link: "/dev/editor", activeMatch: "/dev/" },
-  { text: "❓常见问题", link: "/question/faq", activeMatch: "/question/" },
+  { text: "❓常见问题", link: "/faq/white-screen", activeMatch: "/faq/" },
   {
     text: "🔗相关连接",
     items: [
@@ -79,11 +79,11 @@ const sidebarDev = (): DefaultTheme.SidebarItem[] => [
 /**
  * 常见问题侧边栏
  */
-const sidebarQuestion = (): DefaultTheme.SidebarItem[] => [
+const sidebarFAQ = (): DefaultTheme.SidebarItem[] => [
   {
     text: "常见问题",
     collapsed: false, // 默认展开
-    items: [{ text: "问题", link: "faq" }],
+    items: [{ text: "页面白屏", link: "white-screen" }],
   },
 ];
 
@@ -97,7 +97,7 @@ export const zh = defineConfig({
     sidebar: {
       "/guide/": { base: "/guide/", items: sidebarGuide() },
       "/dev/": { base: "/dev/", items: sidebarDev() },
-      "/question/": { base: "/question/", items: sidebarQuestion() },
+      "/faq/": { base: "/faq/", items: sidebarFAQ() },
     },
 
     /** local 搜索配置 */
