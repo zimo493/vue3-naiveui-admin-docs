@@ -64,6 +64,10 @@ pnpm preview
 - 中文（默认）：`/`
 - 英文：`/en/`
 
+## 贡献者
+ 
+@contributors
+
 ## 贡献指南
 
 欢迎提交 Issue 或 Pull Request 来帮助改进文档！
