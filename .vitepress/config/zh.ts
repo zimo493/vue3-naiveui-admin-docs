@@ -5,7 +5,7 @@ import { type DefaultTheme, defineConfig } from "vitepress";
  */
 const nav = (): DefaultTheme.NavItem[] => [
   { text: "💡指南", link: "/guide/introduction", activeMatch: "/guide/" },
-  { text: "⚙️开发配置", link: "/dev/editor", activeMatch: "/dev/" },
+  { text: "⚙️开发设置", link: "/dev/editor", activeMatch: "/dev/" },
   {
     text: "🔗相关连接",
     items: [
@@ -61,7 +61,7 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
  */
 const sidebarDev = (): DefaultTheme.SidebarItem[] => [
   {
-    text: "开发配置",
+    text: "开发设置",
     collapsed: false, // 默认展开
     items: [{ text: "代码编辑器", link: "editor" }],
   },
