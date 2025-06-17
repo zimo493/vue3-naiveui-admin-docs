@@ -4,10 +4,10 @@ import { type DefaultTheme, defineConfig } from "vitepress";
  * 导航栏
  */
 const nav = (): DefaultTheme.NavItem[] => [
-  { text: "指南", link: "/guide/introduction", activeMatch: "/guide/" },
-  { text: "开发配置", link: "/dev/editor", activeMatch: "/dev/" },
+  { text: "💡指南", link: "/guide/introduction", activeMatch: "/guide/" },
+  { text: "⚙️开发配置", link: "/dev/editor", activeMatch: "/dev/" },
   {
-    text: "相关连接",
+    text: "🔗相关连接",
     items: [
       { text: "Vue3", link: "https://cn.vuejs.org/" },
       { text: "NaiveUI", link: "https://www.naiveui.com/zh-CN/os-theme" },
