@@ -6,6 +6,7 @@ import { useRoute, useData } from "vitepress";
 // 导入git-changelog插件的客户端样式和组件
 import { NolebaseGitChangelogPlugin } from "@nolebase/vitepress-plugin-git-changelog/client";
 import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
+import 'virtual:group-icons.css'
 import "./style.css";
 
 const { Layout } = DefaultTheme;
