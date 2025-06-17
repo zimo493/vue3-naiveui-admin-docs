@@ -182,7 +182,7 @@ export default {
 
 - 重写 baseURL
 
-```ts
+```ts [/src/api/upload.ts]
 import { request } from "@/utils/request";
 
 export default {
@@ -204,7 +204,7 @@ export default {
 - 添加代理
   在 `build/serverOptions.ts` 文件中添加代理配置
 
-```ts
+```ts [build/serverOptions.ts]
 export const serverOptions = (env: ImportMetaEnv): ServerOptions => {
   return {
     // 允许IP访问

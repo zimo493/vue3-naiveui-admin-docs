@@ -6,32 +6,49 @@
 
 - **更新** `index.html`
 
-  在根目录下的 `index.html` 文件中，找到 `<title>` 标签，并将其内容替换为新的项目名称
+在根目录下的 `index.html` 文件中，找到 `<title>` 标签，并将其内容替换为新的项目名称
 
-  ```html
-  <title>vue3-naiveui-admin</title>
-  ```
+```html [index.html]
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vue3-naiveui-admin</title> <!-- [!code --] -->
+  <title>自定义内容</title> <!-- [!code ++] -->
+</head>
+```
 
 - **更新** `package.json`
 
-  在 `package.json` 文件中，找到 `"name"` 字段，并将其值替换为新的项目名称
+在 `package.json` 文件中，找到 `"name"` 字段，并将其值替换为新的项目名称
 
-  ```json
-  {
-    "name": "vue3-naiveui-admin"
-  }
-  ```
+::: code-group
+
+```json [package.json]
+{
+  "name": "vue3-naiveui-admin", // [!code focus]
+  "version": "1.0.0",
+  "description": "",
+  "type": "module"
+}
+```
+
+:::
 
 - **动态标题** 配置
 
-  如果不希望项目有动态页签，请注释 `src/router/modules/guard.ts` 中动态标题配置
+如果不希望项目有动态页签，请注释 `src/router/modules/guard.ts` 中动态标题配置
 
-  ```ts
-  router.afterEach((to) => {
-    // 注释以下设置
-    // document.title = to.meta?.title ? to.meta?.title : pkg.name;
-  });
-  ```
+::: code-group
+
+```ts [src/router/modules/guard.ts]
+router.afterEach((to) => {
+  // 注释以下设置
+  // document.title = to.meta?.title ? to.meta?.title : pkg.name; [!code --]
+});
+```
+
+:::
 
 ## 环境变量
 

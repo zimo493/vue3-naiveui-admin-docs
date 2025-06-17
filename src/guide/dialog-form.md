@@ -9,7 +9,7 @@
 
 ## 基本使用
 
-```vue
+```vue [vue]
 <template>
   <!-- 新增、编辑 -->
   <DialogForm

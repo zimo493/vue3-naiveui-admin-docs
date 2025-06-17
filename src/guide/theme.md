@@ -33,7 +33,7 @@
 
 修改 `src/store/models/app/theme.ts` ，添加你需要的样式变量，具体可参考 [🔗Naive-UI](https://www.naiveui.com/zh-CN/dark/docs/customize-theme#调整组件主题变量)
 
-```ts
+```ts [src/store/models/app/theme.ts]
 import type { GlobalThemeOverrides } from "naive-ui";
 
 /** 默认主色 */

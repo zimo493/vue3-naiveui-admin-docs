@@ -16,7 +16,7 @@
 - [🔗DrawerForm](/guide/drawer-form)
 - [🔗DialogForm](/guide/dialog-form)
 
-```vue
+```vue [vue]
 <template>
   <FormPro v-model="modelValue" v-bind="formConfig" use-type="submit" />
 </template>

@@ -12,7 +12,7 @@
 
 具体使用可查看项目代码或 [🔗案例](https://gitee.com/zimo493/vue3-naiveui-admin/blob/main/src/views/demo/curd/index.vue)
 
-```vue
+```vue [vue]
 <template>
   <SearchTable
     :form-config="formConfig"

@@ -18,13 +18,13 @@
 
 在有些情况下，某些路由不需要登录就可以访问，比如 `/login`、`/404` 等，此时可以在 `src/router/modules/guard.ts` 中添加白名单。
 
-```ts
+```ts [src/router/modules/guard.ts]
 const whiteList = ["/login", "/404"];
 ```
 
 ## 路由数据结构
 
-```ts
+```ts [src/types/ruoter.d.ts]
 declare namespace AppRoute {
   /** RouteVO，路由对象 */
   interface RouteVO {

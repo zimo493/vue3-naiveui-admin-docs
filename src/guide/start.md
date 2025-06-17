@@ -9,6 +9,10 @@ Vue3 NaiveUI Admin 是基于最新 Vite 版本开发，所以需要 [🔗Node.js
 
 ## 获取代码
 
+安装 Git，使用 Git 命令行工具拉取代码。
+
+- [🔗Git 安装和使用教程](/dev/git)
+
 ### 仓库拉取
 
 ::: code-group
@@ -23,7 +27,7 @@ git clone https://gitee.com/zimo493/vue3-naiveui-admin.git
 
 :::
 
-::: tip 提示
+::: tip 💡 提示
 或者直接下载 zip 包进行解压
 :::
 
@@ -31,13 +35,13 @@ git clone https://gitee.com/zimo493/vue3-naiveui-admin.git
 
 ### 全局安装 pnpm
 
-```bash
+```bash [npm]
 npm i -g pnpm
 ```
 
 ### 安装依赖
 
-```bash
+```bash [pnpm]
 pnpm config set registry https://registry.npmmirror.com # 设置镜像源（可忽略）
 
 pnpm i
@@ -45,13 +49,13 @@ pnpm i
 
 ### 本地开发
 
-```bash
+```bash [pnpm]
 pnpm dev
 ```
 
 ### 打包构建
 
-```bash
+```bash [pnpm]
 pnpm build
 ```
 
