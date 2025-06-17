@@ -1,4 +1,10 @@
 import { defineConfig } from "vitepress";
+import { groupIconVitePlugin } from "vitepress-plugin-group-icons";
+import {
+  GitChangelog,
+  GitChangelogMarkdownSection,
+} from "@nolebase/vitepress-plugin-git-changelog/vite";
+
 import { shared } from "./shared";
 import { zh } from "./zh";
 import { en } from "./en";
@@ -15,6 +21,14 @@ export default defineConfig({
     ssr: {
       noExternal: ["naive-ui", "date-fns", "vueuc"],
     },
+    plugins: [
+      groupIconVitePlugin(),
+      GitChangelog({
+        // 设置您的仓库URL
+        repoURL: () => "https://github.com/zimo493/vue3-naiveui-admin-docs",
+      }),
+      GitChangelogMarkdownSection(),
+    ],
   },
   postRender(context) {
     const styleRegex = /<css-render-style>((.|\s)+)<\/css-render-style>/;

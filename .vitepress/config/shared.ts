@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { groupIconMdPlugin } from "vitepress-plugin-group-icons";
 
 export const shared = defineConfig({
   title: "Vue3 Naive Admin",
@@ -70,5 +71,8 @@ export const shared = defineConfig({
   },
   markdown: {
     lineNumbers: true, // 显示行号
+    config(md) {
+      md.use(groupIconMdPlugin);
+    },
   },
 });
