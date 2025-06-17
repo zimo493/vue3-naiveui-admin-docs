@@ -55,6 +55,14 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
       { text: "DictTag (字典标签)", link: "dict-tag" },
     ],
   },
+  {
+    text: "扩展使用",
+    collapsed: false,
+    items: [
+      { text: "使用图标", link: "use-icons" },
+      { text: "国际化", link: "i18n" },
+    ],
+  },
 ];
 
 /**
