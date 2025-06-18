@@ -40,7 +40,9 @@ export default defineConfig({
         // 设置您的仓库URL
         repoURL: () => "https://github.com/zimo493/vue3-naiveui-admin-docs",
       }),
-      GitChangelogMarkdownSection(),
+      GitChangelogMarkdownSection({
+        exclude: (id) => id.endsWith("index.md"), // 排除 index.md
+      }),
     ],
   },
   postRender(context) {
