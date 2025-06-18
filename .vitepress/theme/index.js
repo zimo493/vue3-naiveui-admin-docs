@@ -3,19 +3,24 @@ import { defineComponent, h, inject, computed } from "vue";
 import { NConfigProvider, darkTheme } from "naive-ui";
 import { setup } from "@css-render/vue3-ssr";
 import { useRoute, useData } from "vitepress";
-// 导入git-changelog插件的客户端样式和组件
+// 导入git-changelog插件的客户端组件
 import { NolebaseGitChangelogPlugin } from "@nolebase/vitepress-plugin-git-changelog/client";
-import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
-
+// 导入增强阅读abilities插件
 import {
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
 } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
 
+// 导入git-changelog插件的样式
+import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
+// 导入增强阅读abilities样式
 import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
-
+// 导入代码块图标
 import "virtual:group-icons.css";
-import "./style.css";
+// 导入主题样式
+import "./styles/style.css";
+// 导入链接样式
+import "./styles/links.css";
 
 const { Layout } = DefaultTheme;
 

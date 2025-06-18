@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+/* 链接 */
+.vp-doc a:not([href^='https://img.shields.io/'])[target="_blank"]::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^="./"]::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^="../"]::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^="/"]::before
+{
+  content: "";
+  background-image: url(https://api.iconify.design/heroicons-solid:link.svg?color=%23409eff);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  background-size: cover;
+  top: -2px;
+  margin-right: 2px;
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='./']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='../']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://note.weizwz.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://www.note.weizwz.com']::before
+{
+  background-image: url("https://p.weizwz.com/logo_a4353391cbf0889b.webp");
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://vitepress.dev']::before
+{
+  background-image: url("https://vitepress.dev/vitepress-logo-mini.svg");
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://hexo.io']::before
+{
+  width: 16px;
+  height: 18px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:hexo.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://git-scm.com']::before
+{
+  width: 18px;
+  height: 18px;
+  margin-left: 1px;
+  margin-right: 3px;
+  background-image: url(https://api.iconify.design/logos:git.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://github.com']::before
+{
+  background-image: url(https://api.iconify.design/mdi:github.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://gitee.com']::before
+{
+  width: 18px;
+  height: 18px;
+  margin-left: 1px;
+  margin-right: 3px;
+  background-image: url(https://api.iconify.design/simple-icons:gitee.svg?color=%23C71E23);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://developer.mozilla.org']::before
+{
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos/mdn.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://cn.vite.dev']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://vite.dev']::before
+{
+  width: 18px;
+  height: 18px;
+  margin-left: 1px;
+  margin-right: 3px;
+  background-image: url(https://api.iconify.design/logos:vitejs.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://webpack.js']::before
+{
+  background-image: url(https://api.iconify.design/devicon:webpack.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://vuejs.org']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://cn.vuejs.org']::before
+{
+  width: 18px;
+  height: 16px;
+  margin: 2px 3px 0 1px;
+  background-image: url(https://api.iconify.design/logos/vue.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://twikoo.js.org']::before
+{
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url("https://twikoo.js.org/twikoo-logo-mini.png");
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://element-plus.org']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://element.eleme.cn']::before
+{
+  width: 16px;
+  height: 18px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:element.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://nodejs.org']::before
+{
+  width: 16px;
+  height: 18px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:nodejs-icon.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://npmjs.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://www.npmjs.com']::before
+{
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:npm-icon.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://pnpm.io']::before
+{
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:pnpm.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://react.dev']::before
+{
+  width: 20px;
+  height: 18px;
+  background-image: url(https://api.iconify.design/logos:react.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://typescriptlang.org']::before
+{
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:typescript-icon.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://uniapp.dcloud.net.cn']::before
+{
+  background-image: url(https://api.iconify.design/mynaui/letter-u-square-solid.svg?color=%232D8E3B);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href*='https://siliconflow.cn']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href*='https://cloud.siliconflow.cn']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href*='https://docs.siliconflow.cn']::before
+{
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://static01.siliconflow.cn/f/static/cn/logo.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href*='https://www.deepseek.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href*='https://platform.deepseek.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href*='https://chat.deepseek.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href*='https://api-docs.deepseek.com']::before
+{
+  width: 18px;
+  height: 14px;
+  margin-left: 1px;
+  margin-right: 3px;
+  background-image: url(https://cdn.deepseek.com/logo.png?x-image-process=image%2Fresize%2Cw_1920);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://code.visualstudio.com']::before
+{
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:visual-studio-code.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://marketplace.visualstudio.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://learn.microsoft.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://www.microsoft.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://support.microsoft.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://microsoftedge.microsoft.com']::before
+{
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:microsoft-icon.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://support.google.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://www.google.com']::before
+{
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:google-icon.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://chromewebstore.google.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://chrome.google.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://www.google.com/chrome']::before
+{
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:chrome.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://mp.weixin.qq.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://open.weixin.qq.com']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://developers.weixin.qq.com']::before
+{
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/simple-icons:wechat.svg?color=%231AAD1A);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://www.naiveui.com/']::before
+{
+  width: 16px;
+  height: 18px;
+  margin-right: 4px;
+  background-image: url(https://api.iconify.design/logos:naiveui.svg);
+}
+
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://plugins.jetbrains.com/']::before,
+.vp-doc a:not([href^='https://img.shields.io/'])[href^='https://jetbrains.com/']::before
+{
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+PHBhdGggZD0iTTAgMGgyNTZ2MjU2SDB6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI3Ljg2MSAyMDhoOTZ2MTZoLTk2em0tNC4wMS0xNDEuOTk1bDcuMTI1LTYuNzQxYTguMDIgOC4wMiAwIDAgMCA2LjI3MiAzLjcxMmMyLjczIDAgNC41MjMtMS45MiA0LjUyMy01LjYzMlYzMi4wODVoMTEuMDA4VjU3LjQzYTE0LjY4IDE0LjY4IDAgMCAxLTMuOTI2IDExLjIyMmExNS4wMiAxNS4wMiAwIDAgMS0xMC4wMjUgNC4yNjZoLS45NGExNi4zOCAxNi4zOCAwIDAgMS0xMy40NS02LjEzMnptMzMuODc3LTMzLjkyaDMyLjEyOHY5LjM0NEg2OC41MjN2Ni4xMDJIODcuNjh2OC41MzNINjguNjkzdjYuMzU3aDIxLjMzNHY5LjM4N0g1Ny42em00Ny43ODcgOS42ODZIOTMuNTY4di05LjY4NmgzNS4wM3Y5LjY4NmgtMTEuOTl2MzAuMjVoLTExLjA5M3pNMjguMjg4IDg3LjgwOGgxOC44NTljMy45NTQtLjMyNSA3Ljg3NC45NSAxMC44OCAzLjU0MWE4LjkyIDguOTIgMCAwIDEgMi42MDIgNi40ODZhOS4zIDkuMyAwIDAgMS02LjE4NiA4LjkxN2E5LjY4NSA5LjY4NSAwIDAgMSA3LjkzNiA5Ljc3YzAgNy4yMTEtNS41OSAxMS40NzgtMTUuMTQ3IDExLjQ3OEgyOC4yODh6bTIxLjMzMyAxMi4zM2MwLTIuMjE4LTEuNzkyLTMuNDEzLTUuMDM0LTMuNDEzaC01LjUwNHY2Ljk5OGg1LjMzM2MzLjMyOCAwIDUuMjktMS4xNTIgNS4yOS0zLjQ1NnptLTMuODQgMTEuMzVoLTYuNjk4djcuMzgxaDYuOTEyYzMuNDEzIDAgNS4yOS0xLjMyMiA1LjI5LTMuNjY5Yy0uMDgtMi4xMS0xLjQ5Ny0zLjUxNS00LjcwNC0zLjY5M3pNODguNzA0IDEyOGwtOC4wNjQtMTIuMTE3aC0zLjcxMlYxMjhINjUuODM1bC4wODUtNDAuMTkyaDE3LjcwN2ExNy42NiAxNy42NiAwIDAgMSAxMy4wMTMgNC4yNjdhMTIuNDYgMTIuNDYgMCAwIDEgMy41NTIgOC40MzlsLS4wMS44NjJhMTIuOCAxMi44IDAgMCAxLTguMjM1IDEyLjMzbDcuNzk1IDExLjY2MWwxNS44NDItMzcuODU4aDEwLjY2N2wxNy4wNjYgNDAuMjc4aC0xMS45MDRsLTIuODU4LTcuMjExaC0xNS40ODhMMTEwLjIwOCAxMjh6bTMyLjEyOC0yNy4zNWwtNC41MjMgMTEuMzA3aDkuMDAzem0tMzcuODg4LTMuMjQyaC01LjkzdjkuNjg1bDUuOTczLS4wODVjMy43MTIgMCA1Ljk3My0xLjgzNSA1Ljk3My00Ljc3OWMwLTMuMi0yLjM0Ny00LjgyMS02LjAxNi00LjgyMW02Mi4xMjMtOS43MjhoMTEuMDkzdjM5Ljk3OWgtMTEuMDkzem0xNS4xODkgMGgxMC40MWwxNC4zOCAyMS4zMzNWODcuNjhoMTAuOTY1djM5Ljk3OWgtOS42ODZsLTE1LjA2MS0yMS45MzF2MjEuOTNoLTExLjAwOHptMzcuNTkgMzQuMDQ4bDYuMTQzLTcuMzgxYTIwLjc0IDIwLjc0IDAgMCAwIDEyLjggNC44MjFjMy4wMyAwIDQuNjA4LTEuMDY3IDQuNjA4LTIuNzczYzAtMS4yOS0uNjk1LTIuMDkyLTMuMjYyLTIuOTM3bC0xLjIxOS0uMzY2YTQyIDQyIDAgMCAwLS43MDItLjE4OGwtMS42LS4zOTJsLS44NzYtLjIwNGwtMS43MDQtLjQyMmwtMS42MzItLjQ0OGMtNi4zNzktMS44Ni0xMC44NS00LjYxMi0xMC44NS0xMS40MjdjMC03LjQyNCA1Ljg4OC0xMi44IDE1LjQ4OC0xMi44YTI1LjEgMjUuMSAwIDAgMSAxNi40MjcgNS4zMzNsLTUuMzM0IDcuNTk1YTE5LjQ2IDE5LjQ2IDAgMCAwLTExLjE3OC0zLjkyNmMtMi42ODggMC00LjAxMSAxLjA2Ny00LjAxMSAyLjU2YzAgMS4zNTIuNzQxIDIuMTQ4IDMuMzY4IDIuOTY4bDEuMjQ0LjM1NXEuMzQxLjA5LjcxNS4xODJsMS42MjguMzc4YzkuMTczIDIuMDA1IDE0Ljg0OCA0Ljk5MiAxNC44NDggMTIuNDU5YzAgNy44NzctNi4wMiAxMi40ODYtMTUuMTcgMTIuNzg0bC0uOTU4LjAxNmEyOCAyOCAwIDAgMS0xNy43NjUtNS40MXoiLz48L3N2Zz4=");
+}
+
+.dark .vp-doc a[target="_blank"]::before,
+.dark .vp-doc a[href^="./"]::before,
+.dark .vp-doc a[href^="../"]::before {
+  filter: brightness(0.8);
+}
+
+.dark .vp-doc a[href^='https://github.com']::before
+{
+  background-image: url(https://api.iconify.design/mdi/github.svg?color=%23fff);
+}
