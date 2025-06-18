@@ -592,3 +592,7 @@ html,
 body {
   overflow-x: hidden;
 }
+
+:lang(zh-CN) {
+  --vp-code-copy-copied-text-content: "已复制";
+}

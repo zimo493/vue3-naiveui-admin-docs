@@ -17,10 +17,8 @@ import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 import "@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css";
 // 导入代码块图标
 import "virtual:group-icons.css";
-// 导入主题样式
-import "./styles/style.css";
-// 导入链接样式
-import "./styles/links.css";
+// 导入自定义样式
+import "./styles/index.css";
 
 const { Layout } = DefaultTheme;
 

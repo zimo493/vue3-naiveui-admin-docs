@@ -70,7 +70,14 @@ export const shared = defineConfig({
     ],
   },
   markdown: {
-    lineNumbers: true, // 显示行号
+    // 代码块行号显示
+    lineNumbers: true,
+    // 图片懒加载
+    image: {
+      lazyLoading: true,
+    },
+    // 代码框内复制按钮的 title 提示
+    codeCopyButtonTitle: "复制代码",
     config(md) {
       md.use(groupIconMdPlugin);
     },
