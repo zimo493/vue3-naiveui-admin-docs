@@ -15,6 +15,9 @@ importers:
         specifier: ^3.5.16
         version: 3.5.16
     devDependencies:
+      '@nolebase/vitepress-plugin-enhanced-readabilities':
+        specifier: ^2.17.2
+        version: 2.17.2(vitepress@1.5.0(@algolia/client-search@5.27.0)(async-validator@4.2.5)(less@4.3.0)(postcss@8.5.4)(search-insights@2.17.3))
       '@nolebase/vitepress-plugin-git-changelog':
         specifier: ^2.17.2
         version: 2.17.2(vitepress@1.5.0(@algolia/client-search@5.27.0)(async-validator@4.2.5)(less@4.3.0)(postcss@8.5.4)(search-insights@2.17.3))
@@ -299,6 +302,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@iconify-json/carbon@1.2.9':
+    resolution: {integrity: sha512-RyeSAuFTzhs1GX4yrzVEKEbNQGt95p9zMR4S2F63vbThtNoUr5OKwaWbhO/GbHQCSgdbKuZv2ApAOsY2fLxLbQ==}
+
+  '@iconify-json/icon-park-outline@1.2.2':
+    resolution: {integrity: sha512-7VkMWOZTIMNkC9+oAL4I5kVlVC5Pq3nQpruZ4E3cLyKaeV95gaUrEilUkvGW71fgsFYCBWAmOZ3KpM4ux0j0zA==}
+
   '@iconify-json/logos@1.2.4':
     resolution: {integrity: sha512-XC4If5D/hbaZvUkTV8iaZuGlQCyG6CNOlaAaJaGa13V5QMYwYjgtKk3vPP8wz3wtTVNVEVk3LRx1fOJz+YnSMw==}
 
@@ -337,6 +346,11 @@ packages:
 
   '@nolebase/ui@2.17.2':
     resolution: {integrity: sha512-Skr0S1DkU3ud3WOR5j9fTk+s1WMzYxY4nCegbTY6oFA3o1xo4FFwJYinV6U0lkX0AhFeWHRlk0KjQirC19ZlXg==}
+    peerDependencies:
+      vitepress: ^1.5.0 || ^2.0.0-alpha.1
+
+  '@nolebase/vitepress-plugin-enhanced-readabilities@2.17.2':
+    resolution: {integrity: sha512-787vkM1a1Z66tSSXZILJoQHvSgL9KRZXobaCQxfU1/bK7zavFAoIoCg3gvyOSWFtAKnkkqOu28/KJJkir+qQHA==}
     peerDependencies:
       vitepress: ^1.5.0 || ^2.0.0-alpha.1
 
@@ -1534,6 +1548,14 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
+  '@iconify-json/carbon@1.2.9':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/icon-park-outline@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/logos@1.2.4':
     dependencies:
       '@iconify/types': 2.0.0
@@ -1587,6 +1609,16 @@ snapshots:
       less: 4.3.0
       vitepress: 1.5.0(@algolia/client-search@5.27.0)(async-validator@4.2.5)(less@4.3.0)(postcss@8.5.4)(search-insights@2.17.3)
       vue: 3.5.16
+    transitivePeerDependencies:
+      - typescript
+
+  '@nolebase/vitepress-plugin-enhanced-readabilities@2.17.2(vitepress@1.5.0(@algolia/client-search@5.27.0)(async-validator@4.2.5)(less@4.3.0)(postcss@8.5.4)(search-insights@2.17.3))':
+    dependencies:
+      '@iconify-json/carbon': 1.2.9
+      '@iconify-json/icon-park-outline': 1.2.2
+      '@nolebase/ui': 2.17.2(vitepress@1.5.0(@algolia/client-search@5.27.0)(async-validator@4.2.5)(less@4.3.0)(postcss@8.5.4)(search-insights@2.17.3))
+      less: 4.3.0
+      vitepress: 1.5.0(@algolia/client-search@5.27.0)(async-validator@4.2.5)(less@4.3.0)(postcss@8.5.4)(search-insights@2.17.3)
     transitivePeerDependencies:
       - typescript
 
