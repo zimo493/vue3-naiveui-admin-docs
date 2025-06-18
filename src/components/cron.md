@@ -40,7 +40,7 @@ const cronExpression = ref("0 0 0 * * ?");
 ## Props
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
-| --- | --- | --- | --- | --- |
+| --- | --- | :--: | --- | --- |
 | v-model | `String` | 否 | `""` | Cron表达式 |
 
 ## Expose

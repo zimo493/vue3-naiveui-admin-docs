@@ -78,7 +78,7 @@ const { gender } = useDict("gender");
 ## Props
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
-| --- | --- | --- | --- | --- |
+| --- | --- | :--: | --- | --- |
 | options | `DictData.Option[]` | 是 | | 字典数据列表 |
 | value | `String \| Number \| String[] \| Number[]` | 是 | | 绑定值 |
 | round | `Boolean` | 否 | `false` | 是否圆角 |

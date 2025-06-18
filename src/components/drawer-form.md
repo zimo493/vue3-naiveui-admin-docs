@@ -86,7 +86,7 @@ const submitForm = (val: User.Form) =>
 ## Props
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
-| --- | --- | --- | --- | --- |
+| --- | --- | :--: | --- | --- |
 | v-model 或 model-value | `Object` | 是 | | 表单参数 |
 | form-config | [`FormOption<T>`](/components/form-pro#formoption) | 是 | | 表单配置项 |
 | placement | `'top' \| 'right' \| 'bottom' \| 'left'` | 否 | `right` | 抽屉展示的位置 |

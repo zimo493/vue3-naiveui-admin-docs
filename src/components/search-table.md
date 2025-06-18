@@ -60,7 +60,7 @@ const columns = ref<DataTableColumns<User.VO>>([
 ## Props
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
-| --- | --- | --- | --- | --- |
+| --- | --- | :--: | --- | --- |
 | table-data | `Array<object>` | 是 | | 需要展示的数据 |
 | row-key | `(rowData: object) => (number \| string)` | 是 | | 表格行数据的 key |
 | v-model 或 model-value | `Object` | 否 | `{}` | 搜索参数，与 `form-config` 一起使用。如果不传递则不显示搜索表单 |

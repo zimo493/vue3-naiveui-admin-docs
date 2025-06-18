@@ -91,7 +91,7 @@ const imgUrls = ref<string[]>([]); // 图片地址，数组类型
 ## Props
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
-| --- | --- | --- | --- | --- |
+| --- | --- | :--: | --- | --- |
 | value | `string[] \| string \| FileInfo[] \| FileInfo` | 否 | `[]` | 文件列表 |
 | data | `Object` | 否 | `{}` | 提交表单需要附加的数据 |
 | name | `String` | 否 | `file` | 上传文件的参数名 |

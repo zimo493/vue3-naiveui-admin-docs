@@ -57,7 +57,7 @@ const modelValue = ref<FormFields>({
 ## Props
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
-| --- | --- | --- | --- | --- |
+| --- | --- | :--: | --- | --- |
 | v-model 或 model-value | `Object` | 是 | `/` | 表单绑定数据 |
 | fields | [`Array<FormItem<T>>`](/components/form-pro#表单项配置-formitem-v) | 是 | `""` | 表单字段配置项 |
 | rules | [`FormRules`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | `{}` | c |
@@ -85,7 +85,7 @@ const modelValue = ref<FormFields>({
 ### 表单项配置 `FormItem<V>`
 
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
-| --- | --- | --- | --- | --- |
+| --- | --- | :--: | --- | --- |
 | field | `keyof V` | 是 | `/` | 表单字段名称 |
 | label-message | `String` | 否 | `""` | 表单字段标签提示信息 |
 | type | [`FormItemType`](/components/form-pro#表单项类型-formitemtype) | 否 | `input` | 表单字段标签 |
