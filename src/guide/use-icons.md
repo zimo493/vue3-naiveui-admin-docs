@@ -1,6 +1,6 @@
 # 项目图标使用
 
-## vue 文件
+## VUE 文件
 
 ### 模板中本地图标（离线有效）
 
@@ -28,7 +28,7 @@
 
 ### 模板中网络图标（离线无效）
 
-自动加载网络图标，可以使用 [🔗icones](https://icones.js.org) 中的所有图标，，此功能是基于 [🔗@iconify/vue](https://iconify.design/docs/icon-components/vue/) 和 [🔗NIcon](https://www.naiveui.com/zh-CN/light/components/icon) 实现的。**该方式图标会被不会自动打包到项目中。离线无效**
+自动加载网络图标，可以使用 [🔗icones](https://icones.js.org) 中的所有图标，此功能是基于 [🔗@iconify/vue](https://iconify.design/docs/icon-components/vue/) 和 [🔗NIcon](https://www.naiveui.com/zh-CN/light/components/icon) 实现的。**该方式图标不会打包到项目中。离线无效**
 
 ::: info 💡 提示
 如果你想使用 `icon-park-outline:edit`
@@ -59,9 +59,9 @@ interface iconPorps {
 
 :::
 
-## ts 文件
+## TS 文件
 
-### ts 中本地图标（离线有效）
+### TS 中本地图标（离线有效）
 
 有些场景可能无法直接使用组件的方式来使用图标，比如在 **ts 文件** 或者 **vue 文件** 的 `script` 中配合 **Naive 组件** 添加一些图标渲染，这时需要通过手动引入的方式来使用图标。
 
@@ -101,7 +101,7 @@ const options = [
 `renderIcon` 返回一个用 [🔗h 函数](https://cn.vuejs.org/api/render-function.html#h) 包裹的 `@iconify/vue`，并不是直接返回 `VNode` 节点，根据需要，它的用法可能是 `renderIcon('{collection}:{icon}')` 或者 `renderIcon('{collection}:{icon}')()`，后一种方法是直接返回 `VNode` 节点。
 :::
 
-## svg 图标
+## SVG 图标
 
 本项目使用 [🔗unplugin-icons](https://github.com/unplugin/unplugin-icons#auto-importing) 来自动引入 svg 图标，首先你需要在 `src/assets/svg-icons` 中加入 svg 图标
 
