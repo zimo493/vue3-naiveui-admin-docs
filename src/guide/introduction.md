@@ -2,11 +2,11 @@
 
 ## 项目介绍 📖
 
-[🔗vue3-naiveui-admin](https://gitee.com/zimo493/vue3-naiveui-admin) 基于 [`🔗Vue3`](https://github.com/vuejs/core)、[`🔗Vite`](https://github.com/vitejs/vite)、[`🔗TypeScript`](https://www.typescriptlang.org/) 和 [`🔗Naive UI`](https://www.naiveui.com/zh-CN/os-theme) 搭建的极简开箱即用企业级后台管理前端模板。 配套 Java 后端 [🔗youlai-boot](https://gitee.com/youlaiorg/youlai-boot) 和 Node 后端 [🔗youlai-nest](https://gitee.com/youlaiorg/youlai-nest) 。 提供 [`🔗Element Plus`](https://element-plus.org/zh-CN/) 三版本供开发者快速开发。
+[vue3-naiveui-admin](https://gitee.com/zimo493/vue3-naiveui-admin) 基于 [`Vue3`](https://github.com/vuejs/core)、[`Vite`](https://github.com/vitejs/vite)、[`TypeScript`](https://www.typescriptlang.org/) 和 [`Naive UI`](https://www.naiveui.com/zh-CN/os-theme) 搭建的极简开箱即用企业级后台管理前端模板。 配套 Java 后端 [youlai-boot](https://gitee.com/youlaiorg/youlai-boot) 和 Node 后端 [youlai-nest](https://gitee.com/youlaiorg/youlai-nest) 。 提供 [`Element Plus`](https://element-plus.org/zh-CN/) 三版本供开发者快速开发。
 
-- **标准版:** [🔗vue3-element-admin](https://gitee.com/youlaiorg/vue3-element-admin)
-- **精简版:** [🔗vue3-element-template](https://gitee.com/youlaiorg/vue3-element-template)
-- **JS 版本:** [🔗vue3-element-admin-js](https://gitee.com/youlaiorg/vue3-element-admin)
+- **标准版:** [vue3-element-admin](https://gitee.com/youlaiorg/vue3-element-admin)
+- **精简版:** [vue3-element-template](https://gitee.com/youlaiorg/vue3-element-template)
+- **JS 版本:** [vue3-element-admin-js](https://gitee.com/youlaiorg/vue3-element-admin)
 
 ## 在线体验 👀
 
@@ -37,5 +37,5 @@
 
 |IE | Edge | Firefox | Chrome | Safari |
 | :---: | :---: | :---: | :---: | :---: |
-| [<img src="./browser-logos/internet-explorer_48x48.png" alt="IE" style="display: block; margin: 0 auto;" />](http://godban.github.io/browsers-support-badges/) | [<img src="./browser-logos/edge_48x48.png" alt=" Edge" />](http://godban.github.io/browsers-support-badges/) | [<img src="./browser-logos/firefox_48x48.png" alt="Firefox" />](http://godban.github.io/browsers-support-badges/) | [<img src="./browser-logos/chrome_48x48.png" alt="Chrome" />](http://godban.github.io/browsers-support-badges/) | [<img src="./browser-logos/safari_48x48.png" alt="Safari" />](http://godban.github.io/browsers-support-badges/) |
+| <img src="./browser-logos/internet-explorer_48x48.png" alt="IE" style="display: block; margin: 0 auto;" /> | <img src="./browser-logos/edge_48x48.png" alt=" Edge" /> | <img src="./browser-logos/firefox_48x48.png" alt="Firefox" /> | <img src="./browser-logos/chrome_48x48.png" alt="Chrome" /> | <img src="./browser-logos/safari_48x48.png" alt="Safari" /> |
 | ❌ 不支持 | ✅ 支持 | ✅ 支持 | ✅ 支持 | ✅ 支持 |

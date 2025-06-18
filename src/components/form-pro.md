@@ -4,7 +4,7 @@
 
 采用简单的配置就可实现一个表单
 
-- 基于 [🔗NForm](https://www.naiveui.com/zh-CN/os-theme/components/form) 封装，
+- 基于 [NForm](https://www.naiveui.com/zh-CN/os-theme/components/form) 封装，
 
 ## 基本使用
 
@@ -12,9 +12,9 @@
 `FormPro` 组件单独使用情况较少，一般配合 `SearchTable` `Drawer` `Dialog` 使用，可从以下内容查看
 :::
 
-- [🔗SearchTable](/components/search-table)
-- [🔗DrawerForm](/components/drawer-form)
-- [🔗DialogForm](/components/dialog-form)
+- [SearchTable](/components/search-table)
+- [DrawerForm](/components/drawer-form)
+- [DialogForm](/components/dialog-form)
 
 ```vue [vue]
 <template>
@@ -59,8 +59,8 @@ const modelValue = ref<FormFields>({
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
 | --- | --- | --- | --- | --- |
 | v-model 或 model-value | `Object` | 是 | `/` | 表单绑定数据 |
-| fields | [`🔗Array<FormItem<T>>`](/components/form-pro#表单项配置-formitem-v) | 是 | `""` | 表单字段配置项 |
-| rules | [`🔗FormRules`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | `{}` | c |
+| fields | [`Array<FormItem<T>>`](/components/form-pro#表单项配置-formitem-v) | 是 | `""` | 表单字段配置项 |
+| rules | [`FormRules`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | `{}` | c |
 | show-label | `Boolean` | 否 | `true` | 是否显示标签 |
 | label-width | `Number` | 否 | `auto` | 表单字段标签宽度，在 `show-label` 为 `true` 时有效 |
 | label-placement | `left \| top` | 否 | `left` | 表单字段标签的位置 |
@@ -69,7 +69,7 @@ const modelValue = ref<FormFields>({
 | use-type | `search \| submit` | 否 | `search` | 表单使用方式，在 `submit` 模式下不会显示 `搜索` 和 `重置` 按钮 |` |
 | show-feedback | `Boolean` | 否 | `false` | 是否显示表单字段的错误信息，`is-look` 为 `true` 时默认为 `false`， 提交表单时默认为 `true` |
 | gutter | `Number` | 否 | `16` | 表单字段的间隔。在 `is-look` 为 `true` 时默认为 `12`，在 `use-type` 为 `submit` 时 `y-gap` 默认为 `0`|
-| 其他参数 | [`🔗Form-Props`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | | `NForm` 组件参数 |
+| 其他参数 | [`Form-Props`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | | `NForm` 组件参数 |
 
 ### FormOption
 
@@ -88,7 +88,7 @@ const modelValue = ref<FormFields>({
 | --- | --- | --- | --- | --- |
 | field | `keyof V` | 是 | `/` | 表单字段名称 |
 | label-message | `String` | 否 | `""` | 表单字段标签提示信息 |
-| type | [`🔗FormItemType`](/components/form-pro#表单项类型-formitemtype) | 否 | `input` | 表单字段标签 |
+| type | [`FormItemType`](/components/form-pro#表单项类型-formitemtype) | 否 | `input` | 表单字段标签 |
 | label | `String` | 否 | `""` | 输入框标题 |
 | show-label | `Boolean` | 否 | `true` | 是否显示标签 |
 | col-span | `Number` | 否 | 在 `use-type` 为 `submit` 默认 `24`，否则 `4` | 表单字段宽度，最大值：24 |
@@ -96,7 +96,7 @@ const modelValue = ref<FormFields>({
 | readonly | `Boolean` | 否 | `false` | 是否只读 |
 | clearable | `Boolean` | 否 | `true` | 是否可清空 |
 | placeholder | `String` | 否 | `请输入{label}` 或 `请选择{label}` | 输入框提示信息 |
-| options | [`🔗Array<ItemOption>`](/components/form-pro#选择器选项-itemoption) | 否 | `[]` | 选择器的选项 |
+| options | [`Array<ItemOption>`](/components/form-pro#选择器选项-itemoption) | 否 | `[]` | 选择器的选项 |
 | dict | `String` | 否 | `""` | 字典选项，传递后会从字典中获取选项，`options` 将无效 |
 | is-hidden | `Boolean` | 否 | `false` | 是否隐藏 |
 | slot-name | `String` | 否 | `""` | 自定义插槽名称 `优先展示` |

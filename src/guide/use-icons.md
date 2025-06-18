@@ -4,7 +4,7 @@
 
 ### 模板中本地图标（离线有效）
 
-本项目使用 [🔗unplugin-icons](https://github.com/unplugin/unplugin-icons#auto-importing) 来自动引入 `@iconify-json/icon-park-outline` 图标，可前往 [🔗icones](https://icones.js.org/collection/icon-park-outline) 来寻找你需要的图标。
+本项目使用 [unplugin-icons](https://github.com/unplugin/unplugin-icons#auto-importing) 来自动引入 `@iconify-json/icon-park-outline` 图标，可前往 [icones](https://icones.js.org/collection/icon-park-outline) 来寻找你需要的图标。
 
 ::: info 💡 提示
 你找到一个图标 `user`，必须使用 `<{collection}-{icon} />` 格式来引入它，否则无效
@@ -23,12 +23,12 @@
 ```
 
 ::: tip 💡 提示
-在 VS Code 中推荐使用 [🔗Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify) 插件实时展示图标，提高开发体验
+在 VS Code 中推荐使用 [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify) 插件实时展示图标，提高开发体验
 :::
 
 ### 模板中网络图标（离线无效）
 
-自动加载网络图标，可以使用 [🔗icones](https://icones.js.org) 中的所有图标，此功能是基于 [🔗@iconify/vue](https://iconify.design/docs/icon-components/vue/) 和 [🔗NIcon](https://www.naiveui.com/zh-CN/light/components/icon) 实现的。**该方式图标不会打包到项目中。离线无效**
+自动加载网络图标，可以使用 [icones](https://icones.js.org) 中的所有图标，此功能是基于 [@iconify/vue](https://iconify.design/docs/icon-components/vue/) 和 [NIcon](https://www.naiveui.com/zh-CN/light/components/icon) 实现的。**该方式图标不会打包到项目中。离线无效**
 
 ::: info 💡 提示
 如果你想使用 `icon-park-outline:edit`
@@ -98,12 +98,12 @@ const options = [
 ```
 
 ::: info 💡 提示
-`renderIcon` 返回一个用 [🔗h 函数](https://cn.vuejs.org/api/render-function.html#h) 包裹的 `@iconify/vue`，并不是直接返回 `VNode` 节点，根据需要，它的用法可能是 `renderIcon('{collection}:{icon}')` 或者 `renderIcon('{collection}:{icon}')()`，后一种方法是直接返回 `VNode` 节点。
+`renderIcon` 返回一个用 [h 函数](https://cn.vuejs.org/api/render-function.html#h) 包裹的 `@iconify/vue`，并不是直接返回 `VNode` 节点，根据需要，它的用法可能是 `renderIcon('{collection}:{icon}')` 或者 `renderIcon('{collection}:{icon}')()`，后一种方法是直接返回 `VNode` 节点。
 :::
 
 ## SVG 图标
 
-本项目使用 [🔗unplugin-icons](https://github.com/unplugin/unplugin-icons#auto-importing) 来自动引入 svg 图标，首先你需要在 `src/assets/svg-icons` 中加入 svg 图标
+本项目使用 [unplugin-icons](https://github.com/unplugin/unplugin-icons#auto-importing) 来自动引入 svg 图标，首先你需要在 `src/assets/svg-icons` 中加入 svg 图标
 
 ::: info 💡 提示
 你添加了一个 `logo.svg`，这样在项目中使用，自定引入的名字需符合格式 `svg-icons-{name}`

@@ -8,7 +8,7 @@ import { NTag, NFlex, NText, NDivider } from 'naive-ui'
 
 以 `Tag` 组件形式显示字典数据
 
-- 基于 [🔗NTag](https://www.naiveui.com/zh-CN/os-theme/components/tag) 封装
+- 基于 [NTag](https://www.naiveui.com/zh-CN/os-theme/components/tag) 封装
 
 ## 基本使用
 

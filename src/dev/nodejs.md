@@ -31,7 +31,7 @@ Node.js 是一个基于 **Chrome V8 引擎** 的 JavaScript 运行时环境，�
 
 ### Windows/macOS
 
-1. 访问官网下载：[🔗 下载 NodeJS](https://nodejs.org)
+1. 访问官网下载：[ 下载 NodeJS](https://nodejs.org)
 2. 选择 **LTS（长期支持版）** 进行下载
 3. 运行安装包，按向导完成安装
 

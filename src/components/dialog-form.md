@@ -2,10 +2,10 @@
 
 ## 介绍
 
-我感觉和 [`🔗DrawerForm`](/components/drawer-form) 功能差不太多，位置有点差别。
+我感觉和 [`DrawerForm`](/components/drawer-form) 功能差不太多，位置有点差别。
 
-- 表单组件基于 [🔗FormPro](/components/form-pro) 封装
-- 对话框组件采用 [🔗NModal](https://www.naiveui.com/zh-CN/os-theme/components/modal) 组件
+- 表单组件基于 [FormPro](/components/form-pro) 封装
+- 对话框组件采用 [NModal](https://www.naiveui.com/zh-CN/os-theme/components/modal) 组件
 
 ## 基本使用
 
@@ -88,7 +88,7 @@ const submitForm = (val: User.Form) =>
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
 | --- | --- | --- | --- | --- |
 | v-model 或 model-value | `Object` | 是 | | 表单参数 |
-| form-config | [`🔗FormOption<T>`](/components/form-pro#formoption) | 是 | | 表单配置项 |
+| form-config | [`FormOption<T>`](/components/form-pro#formoption) | 是 | | 表单配置项 |
 | width | `Number` | 否 | `700` | 对话框的宽度 |
 | is-look | `Boolean` | 否 | `false` | 是否是查看模式 |
 | loading | `Boolean` | 否 | `false` | 表单加载状态 |
