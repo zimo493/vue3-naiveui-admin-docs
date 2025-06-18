@@ -4,7 +4,7 @@
 
 搜索表格组件包含 **搜索表单**、**表格**、**分页** 组件
 
-- 搜索表单基于 [🔗FormPro](/guide/form-pro) 封装
+- 搜索表单基于 [🔗FormPro](/components/form-pro) 封装
 - 表格采用 [🔗NDataTable](https://www.naiveui.com/zh-CN/os-theme/components/data-table) 组件
 - 分页基于 [🔗NPagination](https://www.naiveui.com/zh-CN/os-theme/components/pagination) 封装
 
@@ -64,7 +64,7 @@ const columns = ref<DataTableColumns<User.VO>>([
 | table-data | `Array<object>` | 是 | | 需要展示的数据 |
 | row-key | `(rowData: object) => (number \| string)` | 是 | | 表格行数据的 key |
 | v-model 或 model-value | `Object` | 否 | `{}` | 搜索参数，与 `form-config` 一起使用。如果不传递则不显示搜索表单 |
-| form-config | [`🔗FormOption<T>`](/guide/form-pro#formoption) | 否 | `{}` | 表单配置项 |
+| form-config | [`🔗FormOption<T>`](/components/form-pro#formoption) | 否 | `{}` | 表单配置项 |
 | columns | [`🔗DataTableColumn`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#DataTable-Props) | 否 | `[]` | 需要展示的列 |
 | total | `Number` | 否 | `0` | 总条数，为零0则不显示分页组件 |
 | loading | `Boolean` | 否 | `false` | 表格是否加载中 |

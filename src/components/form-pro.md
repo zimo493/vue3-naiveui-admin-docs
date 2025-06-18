@@ -12,9 +12,9 @@
 `FormPro` 组件单独使用情况较少，一般配合 `SearchTable` `Drawer` `Dialog` 使用，可从以下内容查看
 :::
 
-- [🔗SearchTable](/guide/search-table)
-- [🔗DrawerForm](/guide/drawer-form)
-- [🔗DialogForm](/guide/dialog-form)
+- [🔗SearchTable](/components/search-table)
+- [🔗DrawerForm](/components/drawer-form)
+- [🔗DialogForm](/components/dialog-form)
 
 ```vue [vue]
 <template>
@@ -59,7 +59,7 @@ const modelValue = ref<FormFields>({
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
 | --- | --- | --- | --- | --- |
 | v-model 或 model-value | `Object` | 是 | `/` | 表单绑定数据 |
-| fields | [`🔗Array<FormItem<T>>`](/guide/form-pro#表单项配置-formitem-v) | 是 | `""` | 表单字段配置项 |
+| fields | [`🔗Array<FormItem<T>>`](/components/form-pro#表单项配置-formitem-v) | 是 | `""` | 表单字段配置项 |
 | rules | [`🔗FormRules`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | `{}` | c |
 | show-label | `Boolean` | 否 | `true` | 是否显示标签 |
 | label-width | `Number` | 否 | `auto` | 表单字段标签宽度，在 `show-label` 为 `true` 时有效 |
@@ -88,7 +88,7 @@ const modelValue = ref<FormFields>({
 | --- | --- | --- | --- | --- |
 | field | `keyof V` | 是 | `/` | 表单字段名称 |
 | label-message | `String` | 否 | `""` | 表单字段标签提示信息 |
-| type | [`🔗FormItemType`](/guide/form-pro#表单项类型-formitemtype) | 否 | `input` | 表单字段标签 |
+| type | [`🔗FormItemType`](/components/form-pro#表单项类型-formitemtype) | 否 | `input` | 表单字段标签 |
 | label | `String` | 否 | `""` | 输入框标题 |
 | show-label | `Boolean` | 否 | `true` | 是否显示标签 |
 | col-span | `Number` | 否 | 在 `use-type` 为 `submit` 默认 `24`，否则 `4` | 表单字段宽度，最大值：24 |
@@ -96,7 +96,7 @@ const modelValue = ref<FormFields>({
 | readonly | `Boolean` | 否 | `false` | 是否只读 |
 | clearable | `Boolean` | 否 | `true` | 是否可清空 |
 | placeholder | `String` | 否 | `请输入{label}` 或 `请选择{label}` | 输入框提示信息 |
-| options | [`🔗Array<ItemOption>`](/guide/form-pro#选择器选项-itemoption) | 否 | `[]` | 选择器的选项 |
+| options | [`🔗Array<ItemOption>`](/components/form-pro#选择器选项-itemoption) | 否 | `[]` | 选择器的选项 |
 | dict | `String` | 否 | `""` | 字典选项，传递后会从字典中获取选项，`options` 将无效 |
 | is-hidden | `Boolean` | 否 | `false` | 是否隐藏 |
 | slot-name | `String` | 否 | `""` | 自定义插槽名称 `优先展示` |

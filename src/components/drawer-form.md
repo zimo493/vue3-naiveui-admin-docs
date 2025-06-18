@@ -4,7 +4,7 @@
 
 以抽屉形式展示表单，收集数据。
 
-- 表单组件基于 [🔗FormPro](/guide/form-pro) 封装
+- 表单组件基于 [🔗FormPro](/components/form-pro) 封装
 - 抽屉组件采用 [🔗NDrawer](https://www.naiveui.com/zh-CN/os-theme/components/drawer) 组件
 
 ## 基本使用
@@ -88,7 +88,7 @@ const submitForm = (val: User.Form) =>
 | 名称 | 类型 | 必传 | 默认值 | 说明 |
 | --- | --- | --- | --- | --- |
 | v-model 或 model-value | `Object` | 是 | | 表单参数 |
-| form-config | [`🔗FormOption<T>`](/guide/form-pro#formoption) | 是 | | 表单配置项 |
+| form-config | [`🔗FormOption<T>`](/components/form-pro#formoption) | 是 | | 表单配置项 |
 | placement | `'top' \| 'right' \| 'bottom' \| 'left'` | 否 | `right` | 抽屉展示的位置 |
 | width | `Number` | 否 | `502` | 抽屉的宽度 |
 | is-look | `Boolean` | 否 | `false` | 是否是查看模式 |

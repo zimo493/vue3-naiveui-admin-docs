@@ -98,10 +98,10 @@ const imgUrls = ref<string[]>([]); // 图片地址，数组类型
 | limit | `Number` | 否 | `10` | 文件上传数量限制 |
 | max-file-size | `Number` | 否 | `10` | 单个文件的最大允许大小 |
 | accept | `String` | 否 | `image/*` | 允许上传的文件类型，参考 [🔗accept](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/file#accept) |
-| type | [`🔗NUpload[list-type]`](/guide/form-pro#上传类型-uploadtype) | 否 | `image-card` | 文件列表的内建样式 |
+| type | [`🔗NUpload[list-type]`](/components/form-pro#上传类型-uploadtype) | 否 | `image-card` | 文件列表的内建样式 |
 | multiple | `Boolean` | 否 | `true` | 是否支持多选，在 `limit` 为 `1` 时无效 |
 | drag | `Boolean` | 否 | `false` | 是否支持拖拽上传 |
-| drag-options | [`DragOptions`](/guide/upload-file#dragoptions) | 否 | [`DragOptions`](/guide/upload-file#dragoptions) | 拖拽上传配置，仅在 `drag` 为 `true` 时有效 |
+| drag-options | [`DragOptions`](/components/upload-file#dragoptions) | 否 | [`DragOptions`](/components/upload-file#dragoptions) | 拖拽上传配置，仅在 `drag` 为 `true` 时有效 |
 | 其他参数 | [`🔗Upload-Props`](https://www.naiveui.com/zh-CN/os-theme/components/upload#Upload-Props) | 否 | | `NUpload` 组件参数 |
 
 ### DragOptions
