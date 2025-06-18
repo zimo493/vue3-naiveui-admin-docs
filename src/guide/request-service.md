@@ -5,7 +5,7 @@
 请在根目录下的 `.env.development` 中设置好 `VITE_APP_BASE_API` 代理前缀 和 `VITE_APP_API_URL` 转发的真实接口地址
 ::: code-group
 
-```txt [.env.development]
+```ini [.env.development]
 VITE_APP_BASE_API=/dev-api
 VITE_APP_API_URL=http://localhost:8989
 ```
