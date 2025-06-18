@@ -18,8 +18,21 @@ export default defineConfig({
     en: { label: "English", ...en },
   },
   vite: {
+    optimizeDeps: {
+      exclude: [
+        "@nolebase/vitepress-plugin-enhanced-readabilities/client",
+        "vitepress",
+        "@nolebase/ui",
+      ],
+    },
     ssr: {
-      noExternal: ["naive-ui", "date-fns", "vueuc"],
+      noExternal: [
+        "naive-ui",
+        "date-fns",
+        "vueuc",
+        "@nolebase/vitepress-plugin-enhanced-readabilities",
+        "@nolebase/ui",
+      ],
     },
     plugins: [
       groupIconVitePlugin(),
