@@ -4,7 +4,22 @@ import { type DefaultTheme, defineConfig } from "vitepress";
  * 导航栏
  */
 const nav = (): DefaultTheme.NavItem[] => [
-  { text: "💡指南", link: "/guide/introduction", activeMatch: "/guide/" },
+  {
+    text: "💡指南",
+    activeMatch: "^/(guide|components)/",
+    items: [
+      {
+        text: "基本使用",
+        link: "/guide/introduction",
+        activeMatch: "^/guide/",
+      },
+      {
+        text: "组件封装",
+        link: "/components/form-pro",
+        activeMatch: "^/components/",
+      },
+    ],
+  },
   { text: "⚙️开发设置", link: "/dev/editor", activeMatch: "/dev/" },
   { text: "❓常见问题", link: "/faq/white-screen", activeMatch: "/faq/" },
   {
@@ -44,6 +59,20 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
     ],
   },
   {
+    text: "扩展使用",
+    collapsed: false,
+    items: [
+      { text: "使用图标", link: "use-icons" },
+      { text: "国际化", link: "i18n" },
+    ],
+  },
+];
+
+/**
+ * 组件封装侧边栏
+ */
+const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
+  {
     text: "组件封装",
     collapsed: false,
     items: [
@@ -54,14 +83,6 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
       { text: "UploadFile (文件上传)", link: "upload-file" },
       { text: "DictTag (字典标签)", link: "dict-tag" },
       { text: "Crontab (Cron表达式)", link: "cron" },
-    ],
-  },
-  {
-    text: "扩展使用",
-    collapsed: false,
-    items: [
-      { text: "使用图标", link: "use-icons" },
-      { text: "国际化", link: "i18n" },
     ],
   },
 ];
@@ -105,6 +126,7 @@ export const zh = defineConfig({
 
     sidebar: {
       "/guide/": { base: "/guide/", items: sidebarGuide() },
+      "/components/": { base: "/components/", items: sidebarComponent() },
       "/dev/": { base: "/dev/", items: sidebarDev() },
       "/faq/": { base: "/faq/", items: sidebarFAQ() },
     },
