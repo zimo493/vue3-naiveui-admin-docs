@@ -45,3 +45,9 @@
 .fancybox__caption {
   color: var(--vp-c-text-1);
 }
+
+.f-thumbs__slide__img {
+  width: auto;
+  height: auto;
+  margin: auto;
+}
