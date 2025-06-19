@@ -1,3 +1,7 @@
+img[data-fancybox="gallery"] {
+  cursor: pointer;
+}
+
 .fancybox__container {
   --fancybox-bg: none;
 }
