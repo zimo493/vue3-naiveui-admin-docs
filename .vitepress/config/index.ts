@@ -9,6 +9,10 @@ import { shared } from "./shared";
 import { zh } from "./zh";
 import { en } from "./en";
 
+import { gitLogConfig } from "../../config";
+
+const { repoURL, mapAuthors } = gitLogConfig;
+
 const fileAndStyles: Record<string, string> = {};
 
 export default defineConfig({
@@ -38,7 +42,9 @@ export default defineConfig({
       groupIconVitePlugin(),
       GitChangelog({
         // 设置您的仓库URL
-        repoURL: () => "https://github.com/zimo493/vue3-naiveui-admin-docs",
+        repoURL,
+        // 设置作者信息
+        mapAuthors,
       }),
       GitChangelogMarkdownSection({
         exclude: (id) => id.endsWith("index.md"), // 排除 index.md

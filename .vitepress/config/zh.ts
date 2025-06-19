@@ -1,4 +1,5 @@
 import { type DefaultTheme, defineConfig } from "vitepress";
+import { gitLogConfig } from "../../config";
 
 /**
  * 导航栏
@@ -63,7 +64,7 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
     collapsed: false,
     items: [
       { text: "使用图标", link: "use-icons" },
-      { text: "国际化", link: "i18n" },
+      { text: "多语言(i18n)", link: "i18n" },
     ],
   },
 ];
@@ -160,8 +161,7 @@ export const zh = defineConfig({
     },
 
     editLink: {
-      pattern:
-        "https://github.com/zimo493/vue3-naiveui-admin-docs/edit/main/src/:path",
+      pattern: `${gitLogConfig.repoURL}/edit/main/src/:path`,
       text: "帮助改进此页",
     },
 

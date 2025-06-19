@@ -49,28 +49,7 @@ features:
 
 <script setup>
 import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme'
-
-const coreMembers = [
-  {
-    avatar: 'https://gitee.com/zimo493.png',
-    name: 'zimo493',
-    title: 'Do everything with love.',
-    links: [
-      { icon: 'github', link: 'https://github.com/zimo493' },
-      // { icon: 'linkedin', link: 'https://linkedin.com/in/user1' }
-      { icon: 'gitee', link: 'https://gitee.com/zimo493' }
-    ]
-  },
-  {
-    avatar: '/logo.svg',
-    name: '李四',
-    title: '团队成员' ,
-    links: [
-      { icon: 'github', link: 'https://github.com/user2' },
-      { icon: 'twitter', link: 'https://twitter.com/user2' }
-    ]
-  }
-]
+import { coreMembers } from '../config'
 </script>
 
 <VPTeamPage>
