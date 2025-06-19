@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "lib": ["ESNext", "DOM"],
     "resolveJsonModule": true,
     "strict": true,
     "esModuleInterop": true,
@@ -12,7 +13,5 @@
     "**/.vitepress/**/*.mts",
     "**/.vitepress/**/*.vue"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
