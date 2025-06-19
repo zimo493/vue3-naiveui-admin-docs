@@ -1,0 +1,47 @@
+.fancybox__container {
+  --fancybox-bg: none;
+}
+
+.fancybox__container .fancybox__toolbar {
+  --f-button-bg: none;
+}
+
+.fancybox__container {
+  --fancybox-color: rgba(0, 0, 0, 0.6);
+  --fancybox-hover-color: none;
+}
+
+.fancybox__toolbar {
+  --f-button-hover-bg: rgba(0, 0, 0, 0.1);
+  --f-button-active-bg: rgba(0, 0, 0, 0.2);
+}
+
+.dark .fancybox__container {
+  --fancybox-color: rgba(255, 255, 255, 1);
+  --fancybox-hover-color: none;
+}
+
+.dark .fancybox__toolbar {
+  --f-button-hover-bg: rgba(255, 255, 255, 0.1);
+  --f-button-active-bg: rgba(255, 255, 255, 0.2);
+}
+
+.f-button[disabled] {
+  cursor: not-allowed;
+}
+
+.fancybox__container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(var(--vp-c-bg-rgb), 0.5);
+  opacity: 0.96;
+  backdrop-filter: blur(10px);
+}
+
+.fancybox__caption {
+  color: var(--vp-c-text-1);
+}
