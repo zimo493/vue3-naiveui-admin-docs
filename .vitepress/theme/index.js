@@ -2,7 +2,7 @@ import DefaultTheme from "vitepress/theme";
 import { defineComponent, h, inject, computed } from "vue";
 import { NConfigProvider, darkTheme } from "naive-ui";
 import { setup } from "@css-render/vue3-ssr";
-import { useRoute, useData } from "vitepress";
+import { useRoute, useData, inBrowser } from "vitepress";
 // 导入git-changelog插件的客户端组件
 import { NolebaseGitChangelogPlugin } from "@nolebase/vitepress-plugin-git-changelog/client";
 // 导入增强阅读abilities插件
@@ -10,6 +10,8 @@ import {
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
 } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
+
+import { bindFancybox, destroyFancybox } from "./components/ImgPreview"; // 图片查看器
 
 // 导入git-changelog插件的样式
 import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
@@ -79,7 +81,15 @@ const NaiveUIProvider = defineComponent({
 export default {
   extends: DefaultTheme,
   Layout: NaiveUIProvider,
-  enhanceApp: ({ app }) => {
+  enhanceApp: ({ app, router }) => {
+    if (inBrowser) {
+      router.onBeforeRouteChange = () => {
+        destroyFancybox(); // 销毁图片查看器
+      };
+      router.onAfterRouteChanged = () => {
+        bindFancybox(); // 绑定图片查看器
+      };
+    }
     if (import.meta.env.SSR) {
       const { collect } = setup(app);
       app.provide("css-render-collect", collect);
