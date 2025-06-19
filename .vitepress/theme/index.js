@@ -85,6 +85,8 @@ export default {
       app.provide("css-render-collect", collect);
     }
     // 注册git-changelog插件
-    app.use(NolebaseGitChangelogPlugin);
+    app.use(NolebaseGitChangelogPlugin, {
+      displayAuthorsInsideCommitLine: true,
+    });
   },
 };
