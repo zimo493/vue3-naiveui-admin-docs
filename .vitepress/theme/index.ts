@@ -1,8 +1,8 @@
+import { type Theme, useRoute, useData, inBrowser } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { defineComponent, h, inject, computed } from "vue";
 import { NConfigProvider, darkTheme } from "naive-ui";
 import { setup } from "@css-render/vue3-ssr";
-import { useRoute, useData, inBrowser } from "vitepress";
 // 导入git-changelog插件的客户端组件
 import { NolebaseGitChangelogPlugin } from "@nolebase/vitepress-plugin-git-changelog/client";
 // 导入增强阅读abilities插件
@@ -26,7 +26,7 @@ const { Layout } = DefaultTheme;
 
 const CssRenderStyle = defineComponent({
   setup() {
-    const collect = inject("css-render-collect");
+    const collect = inject("css-render-collect") as () => string;
     return {
       style: collect(),
     };
@@ -71,14 +71,16 @@ const NaiveUIProvider = defineComponent({
             "nav-screen-content-after": () =>
               h(NolebaseEnhancedReadabilitiesScreenMenu),
           }),
-          import.meta.env.SSR ? [h(CssRenderStyle), h(VitepressPath)] : null,
+          (import.meta as any).env.SSR
+            ? [h(CssRenderStyle), h(VitepressPath)]
+            : null,
         ],
       }
     );
   },
 });
 
-export default {
+export default <Theme>{
   extends: DefaultTheme,
   Layout: NaiveUIProvider,
   enhanceApp: ({ app, router }) => {
@@ -90,7 +92,7 @@ export default {
         bindFancybox(); // 绑定图片查看器
       };
     }
-    if (import.meta.env.SSR) {
+    if ((import.meta as any).env.SSR) {
       const { collect } = setup(app);
       app.provide("css-render-collect", collect);
     }
