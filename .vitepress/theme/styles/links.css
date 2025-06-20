@@ -95,6 +95,14 @@
   background-image: url(https://api.iconify.design/logos/vue.svg);
 }
 
+.vp-doc a:not(.no-icon)[href^='https://vueuse.org.cn']::before,
+.vp-doc a:not(.no-icon)[href^='https://vueuse.org']::before
+{
+  width: 18px;
+  margin: 2px 3px 0 1px;
+  background-image: url(https://api.iconify.design/logos:vueuse.svg);
+}
+
 .vp-doc a:not(.no-icon)[href^='https://twikoo.js.org']::before
 {
   width: 16px;
