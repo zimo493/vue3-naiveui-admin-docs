@@ -97,7 +97,10 @@ const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
   {
     text: "公用方法",
     collapsed: false,
-    items: [{ text: "spin.ts", link: "spin" }],
+    items: [
+      { text: "spin.ts", link: "spin" },
+      { text: "storage.ts", link: "storage" },
+    ],
   },
 ];
 
