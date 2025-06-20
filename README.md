@@ -11,6 +11,7 @@
 - [🔗VitePress](https://vitepress.dev/) 基于 Vite 和 Vue 的静态站点生成器
 - [🔗Vue3](https://vuejs.org/) 渐进式 JavaScript 框架
 - [🔗Naive UI](https://www.naiveui.com/) 一个 Vue3 组件库，使用 TypeScript
+- [🔗Nólëbase](https://nolebase-integrations.ayaka.io/pages/zh-CN/) 多元化的文档工程工具合集
 
 ## 本地开发
 
@@ -46,14 +47,18 @@ pnpm preview
 │   ├── config/          # 配置文件目录
 │   └── theme/           # 主题配置
 ├── src/                # 文档内容
+|   ├── components/      # 组件封装
 |   ├── dev/             # 开发配置
 |   ├── en/              # 英文文档
+|   ├── faq/             # 常见问题
 |   ├── guide/           # 指南
 |   ├── index.md         # 首页
 |   └── logo.svg         # 项目 Logo
 ├── .gitignore          # Git 忽略文件
+├── config.ts           # 配置文件
 ├── package.json        # 项目配置文件
 ├── pnpm-lock.yaml      # 依赖锁定文件
+├── tsconfig.json       # TypeScript 配置文件
 └── README.md           # 项目文档
 ```
 
