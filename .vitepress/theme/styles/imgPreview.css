@@ -2,6 +2,10 @@ img[data-fancybox="gallery"] {
   cursor: pointer;
 }
 
+.is-compact .fancybox__footer .fancybox__caption {
+  text-align: center;
+}
+
 .fancybox__container {
   --fancybox-bg: none;
 }
