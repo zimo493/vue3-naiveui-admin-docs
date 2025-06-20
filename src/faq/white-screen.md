@@ -31,12 +31,12 @@ const routes = [
 
 ```vue [vue]
 <!-- 错误示范 -->
-<template>
-  <!-- 注释也算一个节点 -->
-  <div>hello vue</div>
-  <div>hello vite</div>
-  <div>hello preview</div>
-</template>
+<template> <!-- [!code error] -->
+  <!-- 注释也算一个节点 [!code error] -->
+  <div>hello vue</div> <!-- [!code error] -->
+  <div>hello vite</div> <!-- [!code error] -->
+  <div>hello preview</div> <!-- [!code error] -->
+</template> <!-- [!code error] -->
 
 <!-- 正确示范 -->
 <template>
