@@ -86,6 +86,13 @@ const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
       { text: "Crontab (Cron表达式)", link: "cron" },
     ],
   },
+  {
+    text: "全局指令",
+    collapsed: false,
+    items: [
+      { text: "Copy (复制)", link: "copy" },
+    ]
+  }
 ];
 
 /**
