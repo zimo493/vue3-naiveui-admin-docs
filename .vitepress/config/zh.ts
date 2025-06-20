@@ -55,7 +55,7 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
     items: [
       { text: "基本设置", link: "basic-settings" },
       { text: "请求服务配置", link: "request-service" },
-      { text: "路由与菜单", link: "ruotes" },
+      { text: "路由与菜单", link: "routes" },
       { text: "自定义主题", link: "theme" },
     ],
   },
