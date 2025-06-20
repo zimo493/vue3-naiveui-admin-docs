@@ -22,60 +22,59 @@ const findNearestHeading = (imgElement: HTMLElement | null) => {
   return "";
 };
 
-export const bindFancybox = () => {
-  nextTick(async () => {
-    const { Fancybox } = await import("@fancyapps/ui");
-    // 获取所有不在 a链接 中的图片元素
-    const imgs = Array.from(document.querySelectorAll(".vp-doc img")).filter(
+export const bindFancybox = async () => {
+  await nextTick();
+  const { Fancybox } = await import("@fancyapps/ui");
+  // 获取所有不在 a链接 中的图片元素
+  const images = Array.from(document.querySelectorAll(".vp-doc img")).filter(
       (img) => !img.closest("a") // 检查 img 是否在任何层级的 <a> 内
-    );
+  );
 
-    imgs.forEach((img) => {
-      const image = img as HTMLImageElement;
-      if (!image.hasAttribute("data-fancybox")) {
-        image.setAttribute("data-fancybox", "gallery");
-      }
-      // 赋予 alt 属性
-      if (!image.hasAttribute("alt") || image.getAttribute("alt") === "") {
-        const heading = findNearestHeading(image);
-        image.setAttribute("alt", heading ?? "");
-      }
-      // 赋予 data-caption 属性以便显示图片标题
-      const altString = image.getAttribute("alt") || "";
-      image.setAttribute("data-caption", altString);
-    });
+  images.forEach((img) => {
+    const image = img as HTMLImageElement;
+    if (!image.hasAttribute("data-fancybox")) {
+      image.setAttribute("data-fancybox", "gallery");
+    }
+    // 赋予 alt 属性
+    if (!image.hasAttribute("alt") || image.getAttribute("alt") === "") {
+      const heading = findNearestHeading(image);
+      image.setAttribute("alt", heading ?? "");
+    }
+    // 赋予 data-caption 属性以便显示图片标题
+    const altString = image.getAttribute("alt") || "";
+    image.setAttribute("data-caption", altString);
+  });
 
-    Fancybox.bind('[data-fancybox="gallery"]', {
-      Hash: false, // 禁用hash导航
-      caption: false, // 更换标题
-      Thumbs: {
-        type: "classic", // 经典缩略图，"modern" 现代缩略图
-        showOnStart: false, // 开始不显示缩略图列表
+  Fancybox.bind('[data-fancybox="gallery"]', {
+    Hash: false, // 禁用hash导航
+    caption: false, // 更换标题
+    Thumbs: {
+      type: "classic", // 经典缩略图，"modern" 现代缩略图
+      showOnStart: false, // 开始不显示缩略图列表
+    },
+    Images: {
+      Panzoom: {
+        maxScale: 4, // 最大缩放比例
       },
-      Images: {
-        Panzoom: {
-          maxScale: 4, // 最大缩放比例
-        },
+    },
+    Carousel: {
+      transition: "slide",
+    },
+    Toolbar: {
+      display: {
+        left: ["infobar"],
+        middle: [
+          "zoomIn",
+          "zoomOut",
+          "toggle1to1",
+          "rotateCCW",
+          "rotateCW",
+          "flipX",
+          "flipY",
+        ],
+        right: ["slideshow", "thumbs", "close"], // 'slideshow' 自动播放
       },
-      Carousel: {
-        transition: "slide",
-      },
-      Toolbar: {
-        display: {
-          left: ["infobar"],
-          middle: [
-            "zoomIn",
-            "zoomOut",
-            "toggle1to1",
-            "rotateCCW",
-            "rotateCW",
-            "flipX",
-            "flipY",
-          ],
-          right: ["slideshow", "thumbs", "close"], // 'slideshow' 自动播放
-        },
-      },
-    });
+    },
   });
 };
 

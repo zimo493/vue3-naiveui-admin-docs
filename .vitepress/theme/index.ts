@@ -47,17 +47,17 @@ const NaiveUIProvider = defineComponent({
   },
   render() {
     return h(
-      NConfigProvider,
-      { abstract: true, inlineThemeDisabled: true, theme: this.theme },
-      {
-        default: () => [
-          this.$slots.default?.(),
-          h(Layout),
-          (import.meta as any).env.SSR
-            ? [h(CssRenderStyle), h(VitepressPath)]
-            : null,
-        ],
-      }
+        NConfigProvider,
+        { abstract: true, inlineThemeDisabled: true, theme: this.theme },
+        {
+          default: () => [
+            this.$slots.default?.(),
+            h(Layout),
+            (import.meta as any).env.SSR
+                ? [h(CssRenderStyle), h(VitepressPath)]
+                : null,
+          ],
+        }
     );
   },
 });
@@ -67,12 +67,8 @@ export default <Theme>{
   Layout: NaiveUIProvider,
   enhanceApp: ({ app, router }) => {
     if (inBrowser) {
-      router.onBeforeRouteChange = () => {
-        destroyFancybox(); // 销毁图片查看器
-      };
-      router.onAfterRouteChanged = () => {
-        bindFancybox(); // 绑定图片查看器
-      };
+      router.onBeforeRouteChange = async () => await destroyFancybox(); // 销毁图片查看器
+      router.onAfterRouteChanged = async () => await bindFancybox(); // 绑定图片查看器
     }
     if ((import.meta as any).env.SSR) {
       const { collect } = setup(app);
