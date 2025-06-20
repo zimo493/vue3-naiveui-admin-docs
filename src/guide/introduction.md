@@ -37,5 +37,5 @@
 
 |IE | Edge | Firefox | Chrome | Safari |
 | :---: | :---: | :---: | :---: | :---: |
-| <img src="./browser-logos/internet-explorer_48x48.png" alt="IE" style="display: block; margin: 0 auto;" /> | <img src="./browser-logos/edge_48x48.png" alt=" Edge" /> | <img src="./browser-logos/firefox_48x48.png" alt="Firefox" /> | <img src="./browser-logos/chrome_48x48.png" alt="Chrome" /> | <img src="./browser-logos/safari_48x48.png" alt="Safari" /> |
+| <img src="https://api.iconify.design/logos:internetexplorer.svg" alt="IE" style="display: block; margin: 0 auto;" width="48" /> | <img src="https://api.iconify.design/logos:microsoft-edge.svg" alt=" Edge"  width="48" /> | <img src="https://api.iconify.design/logos:firefox.svg" alt="Firefox" width="48" /> | <img src="https://api.iconify.design/logos:chrome.svg" alt="Chrome" width="48" /> | <img src="https://api.iconify.design/logos:safari.svg" alt="Safari" width="48" /> |
 | ❌ 不支持 | ✅ 支持 | ✅ 支持 | ✅ 支持 | ✅ 支持 |
