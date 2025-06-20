@@ -12,6 +12,7 @@
 - [🔗Vue3](https://vuejs.org/) 渐进式 JavaScript 框架
 - [🔗Naive UI](https://www.naiveui.com/) 一个 Vue3 组件库，使用 TypeScript
 - [🔗Nólëbase](https://nolebase-integrations.ayaka.io/pages/zh-CN/) 多元化的文档工程工具合集
+- [🔗Fancyapps UI](https://fancyapps.com/) 现代和功能丰富的JavaScript工具包，帮助创建引人入胜和功能丰富的用户体验
 
 ## 本地开发
 
