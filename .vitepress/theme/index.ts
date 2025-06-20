@@ -47,17 +47,17 @@ const NaiveUIProvider = defineComponent({
   },
   render() {
     return h(
-        NConfigProvider,
-        { abstract: true, inlineThemeDisabled: true, theme: this.theme },
-        {
-          default: () => [
-            this.$slots.default?.(),
-            h(Layout),
-            (import.meta as any).env.SSR
-                ? [h(CssRenderStyle), h(VitepressPath)]
-                : null,
-          ],
-        }
+      NConfigProvider,
+      { abstract: true, inlineThemeDisabled: true, theme: this.theme },
+      {
+        default: () => [
+          this.$slots.default?.(),
+          h(Layout),
+          (import.meta as any).env.SSR
+            ? [h(CssRenderStyle), h(VitepressPath)]
+            : null,
+        ],
+      }
     );
   },
 });
