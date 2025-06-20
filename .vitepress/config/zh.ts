@@ -92,8 +92,13 @@ const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
     items: [
       { text: "Copy (复制)", link: "copy" },
       { text: "Permission (权限)", link: "permission" },
-    ]
-  }
+    ],
+  },
+  {
+    text: "公用方法",
+    collapsed: false,
+    items: [{ text: "spin.ts", link: "spin" }],
+  },
 ];
 
 /**
