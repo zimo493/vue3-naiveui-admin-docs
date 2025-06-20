@@ -91,6 +91,7 @@ const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
     collapsed: false,
     items: [
       { text: "Copy (复制)", link: "copy" },
+      { text: "Permission (权限)", link: "permission" },
     ]
   }
 ];
