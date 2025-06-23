@@ -27,7 +27,7 @@ export const bindFancybox = async () => {
   const { Fancybox } = await import("@fancyapps/ui");
   // 获取所有不在 a链接 中的图片元素
   const images = Array.from(document.querySelectorAll(".vp-doc img")).filter(
-      (img) => !img.closest("a") // 检查 img 是否在任何层级的 <a> 内
+    (img) => !img.closest("a") // 检查 img 是否在任何层级的 <a> 内
   );
 
   images.forEach((img) => {
