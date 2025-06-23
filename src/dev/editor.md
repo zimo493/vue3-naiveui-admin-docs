@@ -1,10 +1,12 @@
+---
+title: 代码编辑器
+---
+
 <script setup>
 import { NButton, NTag, NFlex } from 'naive-ui'
 
 const open = (url) => window.open(url)
 </script>
-
-# 代码编辑器
 
 ## WebStorm
 

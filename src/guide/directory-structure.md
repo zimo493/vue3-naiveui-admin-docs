@@ -1,5 +1,9 @@
-# 目录结构
+---
+title: 目录结构
+---
+
 ::: code-group
+
 ```text [vue3-naiveui-admin]
 ├─ .husky                   # Git 提交钩子
 ├─ .vscode                  # VSCode 推荐配置
@@ -98,4 +102,5 @@
 ├─ unocss.config.js        # unocss 配置
 └─ vite.config.ts          # vite 全局配置文件
 ```
+
 :::

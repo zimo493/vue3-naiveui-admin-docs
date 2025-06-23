@@ -1,4 +1,6 @@
-# 搜索表格 SearchTable
+---
+title: 搜索表格 SearchTable
+---
 
 ## 介绍
 

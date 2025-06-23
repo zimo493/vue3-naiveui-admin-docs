@@ -1,4 +1,6 @@
-# Permission 指令
+---
+title: Permission 指令
+---
 
 Permission 指令用于控制当前用户是否具有某种权限。
 

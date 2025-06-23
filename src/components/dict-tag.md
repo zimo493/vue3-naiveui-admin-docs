@@ -1,8 +1,10 @@
+---
+title: DictTag 组件
+---
+
 <script setup lang="ts">
 import { NTag, NFlex, NText, NDivider } from 'naive-ui'
 </script>
-
-# DictTag 组件
 
 ## 介绍
 

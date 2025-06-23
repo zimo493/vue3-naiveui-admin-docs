@@ -1,10 +1,12 @@
+---
+title: Node.js 入门指南
+---
+
 <script setup>
 import { NButton } from 'naive-ui'
 
 const open = (url) => window.open(url)
 </script>
-
-# Node.js 入门指南
 
 ## Node.js 简介
 

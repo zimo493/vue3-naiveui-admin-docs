@@ -1,8 +1,10 @@
+---
+title: Markdown Extension Examples
+---
+
 <script setup>
 import { NSpace, NButton, NTag } from 'naive-ui'
 </script>
-
-# Markdown Extension Examples
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
 

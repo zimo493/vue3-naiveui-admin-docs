@@ -1,4 +1,6 @@
-# 模态框表单 DialogForm
+---
+title: 模态框表单 DialogForm
+---
 
 ## 介绍
 
