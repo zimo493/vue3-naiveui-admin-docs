@@ -7,6 +7,8 @@ import {
   NolebaseEnhancedReadabilitiesScreenMenu,
 } from "@nolebase/vitepress-plugin-enhanced-readabilities/client";
 
+import PostMate from "./PostMate";
+
 // 导入git-changelog插件的样式
 import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 // 导入增强阅读abilities样式
@@ -25,6 +27,7 @@ export default {
       // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
       "nav-screen-content-after": () =>
         h(NolebaseEnhancedReadabilitiesScreenMenu),
+      "doc-before": () => h(PostMate),
     });
   },
 };
