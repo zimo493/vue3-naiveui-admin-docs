@@ -7,10 +7,11 @@ export interface Post {
   url: string; // url
   date: [number, number]; // 日期：创建日期，更新日期
   dateText: [string, string]; // 日期文本
-  description: string; // 摘要
+  abstract: string; // 摘要
   category?: string | undefined; // 分类
   tags?: string[] | undefined; // 标签
-  readingTime: number; // 添加阅读时间字段（分钟）
+  readingTime: number; // 阅读时间（分钟）
+  wordCount: number; // 添加字数统计字段
 }
 
 declare const data: Post[];
@@ -25,7 +26,7 @@ export default createContentLoader(
     "en/**/!(index).md", // 匹配英文文档
   ],
   {
-    includeSrc: true, // 需要原始内容来计算阅读时间
+    includeSrc: true, // 需要原始内容来计算阅读时间和字数
     excerpt: false,
     async transform(data) {
       const promises: Promise<Post>[] = [];
@@ -37,7 +38,7 @@ export default createContentLoader(
           title,
           tags: _tags,
           category,
-          description,
+          description: abstract,
           firstCommit,
           lastUpdated,
         } = frontmatter;
@@ -53,8 +54,8 @@ export default createContentLoader(
           .replace(/^\//, "") // 移除开头的斜杠
           .replace(/\.html$/, ""); // 移除 .html 后缀
 
-        // 计算阅读时间（单位：分钟）
-        const readingTime = calculateReadingTime(src);
+        // 计算字数和阅读时间
+        const { wordCount, readingTime } = calculateWordStats(src);
 
         if (createdDate && updatedDate) {
           posts.push({
@@ -65,10 +66,11 @@ export default createContentLoader(
               dateOption.format(createdDate),
               dateOption.format(updatedDate),
             ],
-            description,
+            abstract,
             category,
             tags: _tags,
-            readingTime, // 添加阅读时间
+            readingTime,
+            wordCount, // 添加字数统计
           });
         } else {
           // 构建文件系统路径 (基于 src 目录)
@@ -83,10 +85,11 @@ export default createContentLoader(
             url: link,
             date: [date[0], date[1]] as [number, number],
             dateText: [dateOption.format(date[0]), dateOption.format(date[1])],
-            description,
+            abstract,
             category,
             tags: _tags,
-            readingTime, // 添加阅读时间
+            readingTime,
+            wordCount, // 添加字数统计
           }));
           promises.push(task);
         }
@@ -101,21 +104,29 @@ export default createContentLoader(
   }
 );
 
-// 计算阅读时间（单位：分钟）
-function calculateReadingTime(content?: string): number {
-  if (!content) return 0;
-  // 移除Markdown语法和HTML标签
+// 计算字数和阅读时间
+function calculateWordStats(content?: string): {
+  wordCount: number;
+  readingTime: number;
+} {
+  if (!content) return { wordCount: 0, readingTime: 0 };
+  // 清理内容
   const text = content
     .replace(/<[^>]+>/g, "") // 移除HTML标签
     .replace(/[#*\-_=`~|\[\](){}<>!\\]/g, "") // 移除Markdown特殊字符
-    .replace(/\n\s*\n/g, "\n") // 压缩多个空行
-    .replace(/^---\s*[\s\S]*?---\s*/, ""); // 移除Frontmatter
+    .replace(/\n\s*\n/g, "\n") // 压缩空行
+    .replace(/^---\s*[\s\S]*?---\s*/, "") // 移除Frontmatter
+    .replace(/\s+/g, " ") // 合并多个空格
+    .trim();
 
-  // 计算中文字数和英文单词数
+  // 统计中文字数和英文单词数
   const chineseCharCount = (text.match(/[\u4e00-\u9fa5]/g) || []).length;
-  const englishWordCount = (
-    text.replace(/[\u4e00-\u9fa5]/g, "").match(/\b\w+\b/g) || []
-  ).length;
+  const englishWords =
+    text
+      .replace(/[\u4e00-\u9fa5]/g, "") // 移除中文字符
+      .match(/\b\w+\b/g) || []; // 获取英文单词
+
+  const englishWordCount = englishWords.length;
 
   // 计算总字数（中文按字计数，英文按单词计数）
   const totalWords = chineseCharCount + englishWordCount;
@@ -124,8 +135,10 @@ function calculateReadingTime(content?: string): number {
   const chineseTime = chineseCharCount / 400;
   const englishTime = englishWordCount / 200;
 
-  // 总阅读时间（向上取整，至少1分钟）
-  return Math.max(1, Math.ceil(chineseTime + englishTime));
+  return {
+    wordCount: totalWords,
+    readingTime: Math.max(1, Math.ceil(chineseTime + englishTime)),
+  };
 }
 
 export const formatDate = (hasTime?: boolean) => {
