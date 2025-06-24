@@ -74,16 +74,7 @@ export default {
 
       return h(NFlex, { class: "post-tags", align: "center" }, () =>
         post.tags?.map((tag) =>
-          h(
-            NTag,
-            {
-              type: "info",
-              bordered: false,
-              size: "small",
-              class: "post-tag",
-            },
-            () => tag
-          )
+          h(NTag, { type: "info", bordered: false, size: "small" }, () => tag)
         )
       );
     };
@@ -130,7 +121,7 @@ export default {
     };
 
     return h(NFlex, { vertical: true }, () => [
-      h(NH1, { class: "post-title" }, post.title),
+      h(NH1, { class: "post-title" }, () => post.title),
       renderMeta(),
       renderTags(),
       renderAbstract(),
