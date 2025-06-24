@@ -58,7 +58,7 @@ const NaiveUIProvider = defineComponent({
   render() {
     return h(
       NConfigProvider,
-      { abstract: true, inlineThemeDisabled: true, theme: this.theme },
+      { abstract: false, theme: this.theme },
       {
         default: () => [
           h(Layout, null, { default: this.$slots.default?.() }),
@@ -81,7 +81,7 @@ export default <Theme>{
     }
     if (inBrowser) {
       router.onBeforeRouteChange = async () => await destroyFancybox(); // 销毁图片查看器
-      router.onAfterRouteChanged = async () => await bindFancybox(); // 绑定图片查看器
+      router.onAfterRouteChange = async () => await bindFancybox(); // 绑定图片查看器
     }
     // 注册git-changelog插件
     app.use(NolebaseGitChangelogPlugin, {
