@@ -62,7 +62,7 @@ const modelValue = ref<FormFields>({
 | --- | --- | :--: | --- | --- |
 | v-model 或 model-value | `Object` | 是 | `/` | 表单绑定数据 |
 | fields | [`Array<FormItem<T>>`](/components/form-pro#表单项配置-formitem-v) | 是 | `""` | 表单字段配置项 |
-| rules | [`FormRules`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | `{}` | c |
+| rules | [`FormRules`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | `{}` | 验证表项的规则 |
 | show-label | `Boolean` | 否 | `true` | 是否显示标签 |
 | label-width | `Number` | 否 | `auto` | 表单字段标签宽度，在 `show-label` 为 `true` 时有效 |
 | label-placement | `left \| top` | 否 | `left` | 表单字段标签的位置 |

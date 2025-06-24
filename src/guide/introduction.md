@@ -1,5 +1,5 @@
 ---
-title: 介绍
+title: Vue3 NaiveUI Admin
 # description: 这里是文章的摘要
 # category: 项目介绍
 # tags: [Vue3, TypeScript, Naive UI]
