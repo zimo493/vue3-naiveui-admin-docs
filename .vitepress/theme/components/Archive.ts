@@ -49,11 +49,15 @@ export default {
 
     const PostMate = ({ post }: { post: Post }) => {
       return h(NEl, {}, () => [
-        h(
-          NText,
-          { depth: 3, style: { fontSize: "14px" } },
-          () => post.dateText[0]
-        ),
+        h(NFlex, { justify: "space-between" }, () => [
+          h(
+            NText,
+            { depth: 3, style: { fontSize: "14px" } },
+            () => post.dateText[0]
+          ),
+          post.category &&
+            h(NTag, { size: "small" }, () => "🏷️" + post.category),
+        ]),
         h(NEl, { class: "archive-title" }, () => post.title),
         h(
           NText,
@@ -73,11 +77,7 @@ export default {
       ]);
     };
 
-    const handleClick = (post: Post) => {
-      // location.href = post.url;
-      console.log(post);
-      router.go(post.url);
-    };
+    const handleClick = (post: Post) => router.go(post.url);
 
     return () =>
       h(NEl, {}, () => [
