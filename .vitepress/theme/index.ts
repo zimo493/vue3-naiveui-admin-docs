@@ -19,6 +19,9 @@ import { bindFancybox, destroyFancybox } from "./components/ImgPreview";
 /** 创建自定义的布局组件 */
 import Layout from "./components/Layout";
 
+/** 文章归档页面 */
+import Archive from "./components/Archive";
+
 const CssRenderStyle = defineComponent({
   setup() {
     const collect = inject("css-render-collect") as () => string;
@@ -43,7 +46,7 @@ const VitepressPath = defineComponent({
 });
 
 const NaiveUIProvider = defineComponent({
-  setup: () => {
+  setup() {
     // 获取VitePress的主题状态
     const { isDark } = useData();
 
@@ -58,8 +61,7 @@ const NaiveUIProvider = defineComponent({
       { abstract: true, inlineThemeDisabled: true, theme: this.theme },
       {
         default: () => [
-          this.$slots.default?.(),
-          h(Layout),
+          h(Layout, null, { default: this.$slots.default?.() }),
           (import.meta as any).env.SSR
             ? [h(CssRenderStyle), h(VitepressPath)]
             : null,
@@ -73,18 +75,19 @@ export default <Theme>{
   extends: DefaultTheme,
   Layout: NaiveUIProvider,
   enhanceApp: ({ app, router }) => {
-    if (inBrowser) {
-      router.onBeforeRouteChange = async () => await destroyFancybox(); // 销毁图片查看器
-      router.onAfterRouteChanged = async () => await bindFancybox(); // 绑定图片查看器
-    }
     if ((import.meta as any).env.SSR) {
       const { collect } = setup(app);
       app.provide("css-render-collect", collect);
+    }
+    if (inBrowser) {
+      router.onBeforeRouteChange = async () => await destroyFancybox(); // 销毁图片查看器
+      router.onAfterRouteChanged = async () => await bindFancybox(); // 绑定图片查看器
     }
     // 注册git-changelog插件
     app.use(NolebaseGitChangelogPlugin, {
       displayAuthorsInsideCommitLine: true,
     });
+    app.component("Archive", Archive);
   },
   setup() {
     /** 挂载和卸载图片查看器 */

@@ -23,6 +23,7 @@ const nav = (): DefaultTheme.NavItem[] => [
   },
   { text: "⚙️开发设置", link: "/dev/editor", activeMatch: "/dev/" },
   { text: "❓常见问题", link: "/faq/white-screen", activeMatch: "/faq/" },
+  { text: "🗄️归档", link: "/post/archive", activeMatch: "/post/" },
   {
     text: "🔗相关连接",
     items: [
