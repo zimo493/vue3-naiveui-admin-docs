@@ -1,0 +1,46 @@
+.post-title {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 40px;
+  color: var(--vp-c-text-1);
+  margin-bottom: 14px;
+}
+
+.post-meta .n-text {
+  font-size: 15px;
+}
+
+.post-tags {
+  margin-top: 16px;
+}
+
+.post-description {
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.archive-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: stretch;
+  grid-gap: 20px;
+}
+
+.archive {
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-1);
+  background-color: var(--body-color);
+}
+.archive:hover{
+  color: var(--vp-c-brand);
+}
+
+.archive-title {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
