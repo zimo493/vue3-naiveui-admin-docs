@@ -22,6 +22,15 @@ import Layout from "./components/Layout";
 /** 文章归档页面 */
 import Archive from "./components/Archive";
 
+// 全局扩展ImportMeta类型
+declare global {
+  interface ImportMeta {
+    env: {
+      SSR: boolean;
+    };
+  }
+}
+
 const CssRenderStyle = defineComponent({
   setup() {
     const collect = inject("css-render-collect") as () => string;
@@ -58,13 +67,11 @@ const NaiveUIProvider = defineComponent({
   render() {
     return h(
       NConfigProvider,
-      { abstract: false, theme: this.theme },
+      { abstract: true, inlineThemeDisabled: true, theme: this.theme },
       {
         default: () => [
           h(Layout, null, { default: this.$slots.default?.() }),
-          (import.meta as any).env.SSR
-            ? [h(CssRenderStyle), h(VitepressPath)]
-            : null,
+          import.meta.env.SSR ? [h(CssRenderStyle), h(VitepressPath)] : null,
         ],
       }
     );
@@ -75,7 +82,7 @@ export default <Theme>{
   extends: DefaultTheme,
   Layout: NaiveUIProvider,
   enhanceApp: ({ app, router }) => {
-    if ((import.meta as any).env.SSR) {
+    if (import.meta.env.SSR) {
       const { collect } = setup(app);
       app.provide("css-render-collect", collect);
     }
