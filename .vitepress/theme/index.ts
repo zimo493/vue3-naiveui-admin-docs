@@ -1,14 +1,6 @@
 import { type Theme, useRoute, useData, inBrowser } from "vitepress";
 import DefaultTheme from "vitepress/theme";
-import {
-  defineComponent,
-  h,
-  inject,
-  computed,
-  onMounted,
-  onUnmounted,
-  ref,
-} from "vue";
+import { defineComponent, h, inject, onMounted, onUnmounted, ref } from "vue";
 import { NConfigProvider, darkTheme, lightTheme } from "naive-ui";
 import { setup } from "@css-render/vue3-ssr";
 
