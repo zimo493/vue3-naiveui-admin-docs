@@ -1,10 +1,7 @@
 ---
 title: 抽屉表单 DrawerForm
+description: 以抽屉形式展示表单，收集数据。
 ---
-
-## 介绍
-
-以抽屉形式展示表单，收集数据。
 
 - 表单组件基于 [FormPro](/components/form-pro) 封装
 - 抽屉组件采用 [NDrawer](https://www.naiveui.com/zh-CN/os-theme/components/drawer) 组件

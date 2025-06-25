@@ -1,10 +1,7 @@
 ---
 title: 搜索表格 SearchTable
+description: 搜索表格组件包含表单、表格、分页组件
 ---
-
-## 介绍
-
-搜索表格组件包含 **搜索表单**、**表格**、**分页** 组件
 
 - 搜索表单基于 [FormPro](/components/form-pro) 封装
 - 表格采用 [NDataTable](https://www.naiveui.com/zh-CN/os-theme/components/data-table) 组件

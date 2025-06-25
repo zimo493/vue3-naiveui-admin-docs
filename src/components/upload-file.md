@@ -1,10 +1,7 @@
 ---
 title: 上传 UploadFile
+description: 文件上传，总归是会用到的。
 ---
-
-## 介绍
-
-文件上传，总归是会用到的。
 
 - 基于 [NUpload](https://www.naiveui.com/zh-CN/os-theme/components/upload) 封装
 

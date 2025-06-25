@@ -1,10 +1,7 @@
 ---
 title: 模态框表单 DialogForm
+description: 我感觉和 DrawerForm 功能差不太多，位置有点差别。
 ---
-
-## 介绍
-
-我感觉和 [`DrawerForm`](/components/drawer-form) 功能差不太多，位置有点差别。
 
 - 表单组件基于 [FormPro](/components/form-pro) 封装
 - 对话框组件采用 [NModal](https://www.naiveui.com/zh-CN/os-theme/components/modal) 组件
