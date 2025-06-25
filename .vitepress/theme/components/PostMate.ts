@@ -3,7 +3,7 @@ import { useData } from "vitepress";
 import { NEl, NFlex, NH1, NTag, NText } from "naive-ui";
 import { h, computed } from "vue";
 
-type SupportedLang = "zh-CN" | "en-US" | "ja-JP";
+type SupportedLang = "zh-CN" | "en-US";
 
 const language: Record<
   SupportedLang,
@@ -28,13 +28,6 @@ const language: Record<
     words: "Words",
     read: "Read",
     minute: "min",
-  },
-  "ja-JP": {
-    published: "投稿日",
-    updated: "更新日",
-    words: "文字数",
-    read: "読了",
-    minute: "分",
   },
 };
 

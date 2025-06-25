@@ -2,12 +2,19 @@ import { h, onMounted, computed, ref } from "vue";
 import { type Post, data } from "./utils/posts.data";
 import { type Year, postsYearData } from "./utils/archive";
 import { NDivider, NEl, NFlex, NH1, NTag, NText } from "naive-ui";
-import { useRouter } from "vitepress";
+import { useData, useRouter } from "vitepress";
 
 interface PostList {
   title: string;
   posts: Post[];
 }
+
+type SupportedLang = "zh-CN" | "en-US";
+
+const language: Record<SupportedLang, { article: string; piece: string }> = {
+  "zh-CN": { article: "全部文章", piece: "篇" },
+  "en-US": { article: "All articles", piece: "pieces" },
+};
 
 const PostMate = ({ post }: { post: Post }) => {
   const router = useRouter();
@@ -43,6 +50,8 @@ const PostMate = ({ post }: { post: Post }) => {
 export default {
   name: "Archive",
   setup() {
+    const { lang } = useData();
+
     const posts = ref<Year>({});
 
     // 计算处理后的文章列表
@@ -65,14 +74,21 @@ export default {
       posts.value = postsYearData(data);
     });
 
+    // 获取语言文本
+    const langText = computed(
+      () => language[lang.value as SupportedLang] || language["zh-CN"]
+    );
+
+    const { article, piece } = langText.value;
+
     return () =>
       h(NEl, {}, () => [
         h(NH1, { style: { fontSize: "24px", marginTop: "20px" } }, () => [
-          h(NText, {}, () => "全部文章"),
+          h(NText, {}, () => article),
           h(
             NText,
             { depth: 3, style: { fontSize: "16px" } },
-            () => ` - ${postLength.value}篇`
+            () => ` - ${postLength.value}${piece}`
           ),
         ]),
 
@@ -83,7 +99,7 @@ export default {
               h(
                 NText,
                 { depth: 3, style: { fontSize: "14px" } },
-                () => ` - ${item.posts.length}篇`
+                () => ` - ${item.posts.length}${piece}`
               ),
             ]),
 
