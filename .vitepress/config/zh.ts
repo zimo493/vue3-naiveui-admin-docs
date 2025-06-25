@@ -23,16 +23,20 @@ const nav = (): DefaultTheme.NavItem[] => [
   },
   { text: "⚙️开发设置", link: "/dev/editor", activeMatch: "/dev/" },
   { text: "❓常见问题", link: "/faq/white-screen", activeMatch: "/faq/" },
-  { text: "🗄️归档", link: "/post/archive", activeMatch: "/post/" },
   {
     text: "🔗相关连接",
     items: [
-      { text: "Vue3", link: "https://cn.vuejs.org/" },
-      { text: "NaiveUI", link: "https://www.naiveui.com/zh-CN/os-theme" },
-      { text: "Pinia", link: "https://pinia.vuejs.org/zh/" },
-      { text: "Vite", link: "https://cn.vitejs.dev/" },
-      { text: "TypeScript", link: "https://www.typescriptlang.org/" },
-      { text: "UnoCSS", link: "https://unocss.dev/" },
+      { items: [{ text: "归档页", link: "/post/archive" }] },
+      {
+        items: [
+          { text: "Vue3", link: "https://cn.vuejs.org/" },
+          { text: "NaiveUI", link: "https://www.naiveui.com/zh-CN/os-theme" },
+          { text: "Pinia", link: "https://pinia.vuejs.org/zh/" },
+          { text: "Vite", link: "https://cn.vitejs.dev/" },
+          { text: "TypeScript", link: "https://www.typescriptlang.org/" },
+          { text: "UnoCSS", link: "https://unocss.dev/" },
+        ],
+      },
     ],
   },
 ];
