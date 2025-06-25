@@ -45,8 +45,8 @@ title: 项目基本配置
 
 ```ts [src/router/modules/guard.ts]
 router.afterEach((to) => {
-  // 注释以下设置
-  // document.title = to.meta?.title ? to.meta?.title : pkg.name; [!code --]
+  // 移除以下设置
+  document.title = to.meta?.title ? to.meta?.title : pkg.name; // [!code --]
 });
 ```
 
