@@ -7,8 +7,9 @@ import {
   computed,
   onMounted,
   onUnmounted,
+  ref,
 } from "vue";
-import { NConfigProvider, darkTheme } from "naive-ui";
+import { NConfigProvider, darkTheme, lightTheme } from "naive-ui";
 import { setup } from "@css-render/vue3-ssr";
 
 // 导入git-changelog插件的客户端组件
@@ -56,18 +57,31 @@ const VitepressPath = defineComponent({
 
 const NaiveUIProvider = defineComponent({
   setup() {
-    // 获取VitePress的主题状态
     const { isDark } = useData();
+    const isClient = ref(false);
 
-    // 根据VitePress的主题状态计算NaiveUI的主题
-    const theme = computed(() => (isDark.value ? darkTheme : null));
+    onMounted(() => {
+      isClient.value = true;
+    });
 
-    return { theme };
+    return {
+      isDark,
+      isClient,
+    };
   },
   render() {
+    // 在SSR期间使用默认的light主题，避免hydration不匹配
+    const theme = import.meta.env.SSR
+      ? lightTheme
+      : this.isClient
+      ? this.isDark
+        ? darkTheme
+        : lightTheme
+      : lightTheme;
+
     return h(
       NConfigProvider,
-      { abstract: true, inlineThemeDisabled: true, theme: this.theme },
+      { abstract: true, inlineThemeDisabled: true, theme },
       {
         default: () => [
           h(Layout, null, { default: this.$slots.default?.() }),
