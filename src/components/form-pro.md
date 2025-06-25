@@ -7,13 +7,13 @@ description: 采用简单的配置就可实现一个表单
 
 ## 基本使用
 
-::: warning
+::: warning ⚠️ 提示
 `FormPro` 组件单独使用情况较少，一般配合 `SearchTable` `Drawer` `Dialog` 使用，可从以下内容查看
-:::
 
 - [SearchTable](/components/search-table)
 - [DrawerForm](/components/drawer-form)
 - [DialogForm](/components/dialog-form)
+  :::
 
 ```vue [vue]
 <template>
