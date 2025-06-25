@@ -1,5 +1,6 @@
 import { type DefaultTheme, defineConfig } from "vitepress";
 import { gitLogConfig } from "../../config";
+import { text } from "stream/consumers";
 
 /**
  * 导航栏
@@ -114,16 +115,18 @@ const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
  */
 const sidebarDev = (): DefaultTheme.SidebarItem[] => [
   {
-    text: "开发设置",
-    collapsed: false, // 默认展开
-    items: [{ text: "代码编辑器", link: "editor" }],
-  },
-  {
-    text: "开发环境",
-    collapsed: false, // 默认展开
     items: [
-      { text: "Git", link: "git" },
-      { text: "NodeJS", link: "nodejs" },
+      {
+        text: "开发设置",
+        items: [{ text: "代码编辑器", link: "editor" }],
+      },
+      {
+        text: "开发环境",
+        items: [
+          { text: "Git", link: "git" },
+          { text: "NodeJS", link: "nodejs" },
+        ],
+      },
     ],
   },
 ];
@@ -133,9 +136,12 @@ const sidebarDev = (): DefaultTheme.SidebarItem[] => [
  */
 const sidebarFAQ = (): DefaultTheme.SidebarItem[] => [
   {
-    text: "常见问题",
-    collapsed: false, // 默认展开
-    items: [{ text: "页面白屏", link: "white-screen" }],
+    items: [
+      {
+        text: "常见问题汇总",
+        items: [{ text: "页面白屏", link: "white-screen" }],
+      },
+    ],
   },
 ];
 
