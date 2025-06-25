@@ -1,4 +1,5 @@
-import { Post } from "./posts.data";
+import { type Post } from "./posts.data";
+import { useData } from "vitepress";
 
 // 定义年份和标签的类型
 export type Year = Record<string, Post[]>;
@@ -6,14 +7,20 @@ export type Tag = Record<string, Post[]>;
 
 // 按年份显示文章
 export const postsYearData = (posts: Post[]) => {
+  const { lang } = useData();
   const years: Year = {};
-  posts.forEach((item) => {
-    const year = new Date(item.date[0]).getFullYear();
-    if (!years[year]) {
-      years[year] = [];
-    }
-    years[year].push(item);
-  });
+  posts
+    .filter((item) => {
+      const isZh = !item.url.includes("en\\");
+      return lang.value === "zh-CN" ? isZh : !isZh; // 筛选语言
+    })
+    .forEach((item) => {
+      const year = new Date(item.date[0]).getFullYear();
+      if (!years[year]) {
+        years[year] = [];
+      }
+      years[year].push(item);
+    });
 
   return years;
 };
