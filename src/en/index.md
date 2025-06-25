@@ -54,6 +54,7 @@ import { coreMembers } from '../../config'
 <VPTeamPage> 
   <VPTeamPageTitle> 
     <template #title>Our Team</template> 
+    <template #lead>🚀 Committed to building efficient development & application solutions</template>
   </VPTeamPageTitle> 
   <VPTeamMembers :members="coreMembers" /> 
 </VPTeamPage>

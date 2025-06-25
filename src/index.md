@@ -55,6 +55,7 @@ import { coreMembers } from '../config'
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>我们的团队</template>
+    <template #lead>🚀致力于构建高效开发应用解决方案</template>
   </VPTeamPageTitle>
   <VPTeamMembers :members="coreMembers" />
 </VPTeamPage>
