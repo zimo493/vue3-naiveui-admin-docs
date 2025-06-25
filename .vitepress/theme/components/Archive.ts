@@ -29,7 +29,7 @@ const PostMate = ({ post }: { post: Post }) => {
         post.category && h(NTag, { size: "small" }, () => `🏷️${post.category}`),
       ]),
       h(NEl, { class: "archive-title" }, () => post.title),
-      h(NText, { depth: 2, style: { fontSize: "14px" } }, () => post.abstract),
+      h(NText, { depth: 3, style: { fontSize: "14px" } }, () => post.abstract),
       post.tags &&
         h(NFlex, { style: { marginTop: "10px" } }, () =>
           post.tags?.map((tag) =>
