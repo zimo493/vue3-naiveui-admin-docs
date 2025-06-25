@@ -40,7 +40,7 @@ tags: [Vue3, TypeScript, Vite, Naive UI]
 
 - **生产环境** 支持现代浏览器，不支持 IE。
 
-|                                                              IE                                                               |                                          Edge                                          |                                      Firefox                                      |                                     Chrome                                      |                                     Safari                                      |
-| :---------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
+|IE | Edge | Firefox | Chrome | Safari |
+| :---: | :---: | :---: | :---: | :---: |
 | <img src="https://api.iconify.design/logos:internetexplorer.svg?width=48" alt="IE" style="display: block; margin: 0 auto;" /> | <img src="https://api.iconify.design/logos:microsoft-edge.svg?width=48" alt=" Edge" /> | <img src="https://api.iconify.design/logos:firefox.svg?width=48" alt="Firefox" /> | <img src="https://api.iconify.design/logos:chrome.svg?width=48" alt="Chrome" /> | <img src="https://api.iconify.design/logos:safari.svg?width=48" alt="Safari" /> |
-|                                                           ❌ 不支持                                                           |                                        ✅ 支持                                         |                                      ✅ 支持                                      |                                     ✅ 支持                                     |                                     ✅ 支持                                     |
+| ❌ 不支持 | ✅ 支持 | ✅ 支持 | ✅ 支持 | ✅ 支持 |
