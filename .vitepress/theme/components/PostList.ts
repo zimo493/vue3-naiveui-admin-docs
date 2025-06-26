@@ -1,6 +1,6 @@
 import { useData, useRouter } from "vitepress";
 import { Post, PostListVO } from "./utils/posts.data";
-import { defineComponent, h } from "vue";
+import { defineComponent, h, toRefs } from "vue";
 import { NBadge, NDivider, NEl, NFlex, NTag, NText } from "naive-ui";
 import langText from "./utils/language";
 
@@ -17,9 +17,11 @@ export default defineComponent({
     },
   },
 
-  setup({ post, selected }) {
+  setup(props) {
     const router = useRouter();
     const { lang } = useData();
+
+    const { post, selected } = toRefs(props);
 
     const PostMate = ({ post }: { post: Post }) =>
       h(NEl, { class: "archive", onClick: () => router.go(post.url) }, () => [
@@ -57,7 +59,7 @@ export default defineComponent({
                     {
                       class: [
                         "archive-tag-item",
-                        { "archive-tag-selected": selected === tag },
+                        { "archive-tag-selected": selected.value === tag },
                       ],
                     },
                     () => tag
@@ -74,15 +76,15 @@ export default defineComponent({
       h(NFlex, {}, () => [
         h(NDivider, {}, () =>
           h(NFlex, { wrap: false, align: "center", justify: "center" }, () => [
-            h(NText, { style: { fontSize: "20px" } }, () => post.title),
+            h(NText, { style: { fontSize: "20px" } }, () => post.value.title),
             h(NBadge, {
-              value: `${post.posts.length} ${piece}`,
+              value: `${post.value.posts.length} ${piece}`,
               color: "var(--vp-c-brand-3)",
             }),
           ])
         ),
         h(NEl, { class: "archive-list" }, () =>
-          post.posts.map((post) => h(PostMate, { post }))
+          post.value.posts.map((post) => h(PostMate, { post }))
         ),
       ]);
   },
