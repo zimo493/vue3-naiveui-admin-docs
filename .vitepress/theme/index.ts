@@ -15,6 +15,9 @@ import Layout from "./components/Layout";
 /** 文章归档页面 */
 import Archive from "./components/Archive";
 
+/** 文章标签页面 */
+import Tags from "./components/Tags";
+
 // 全局扩展ImportMeta类型
 declare global {
   interface ImportMeta {
@@ -101,6 +104,7 @@ export default <Theme>{
       displayAuthorsInsideCommitLine: true,
     });
     app.component("Archive", Archive);
+    app.component("Tags", Tags);
   },
   setup() {
     /** 挂载和卸载图片查看器 */
