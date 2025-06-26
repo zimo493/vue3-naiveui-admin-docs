@@ -14,6 +14,11 @@ export interface Post {
   wordCount: number; // 添加字数统计字段
 }
 
+export interface PostListVO {
+  title: string;
+  posts: Post[];
+}
+
 declare const data: Post[];
 export { data };
 
@@ -23,7 +28,7 @@ export default createContentLoader(
     "guide/**/*.md", // 匹配指南文档
     "faq/**/*.md", // 匹配常见问题
     "dev/**/*.md", // 匹配开发配置
-    "en/**/!(index).md", // 匹配英文文档
+    "en/**/!(index|archive|tags).md", // 匹配英文文档
   ],
   {
     includeSrc: true, // 需要原始内容来计算阅读时间和字数
