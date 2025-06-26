@@ -5,22 +5,25 @@ import { useData } from "vitepress";
 export type Year = Record<string, Post[]>;
 export type Tag = Record<string, Post[]>;
 
+// 根据语言分类
+const postsLanguageData = (posts: Post[]) => {
+  const { lang } = useData();
+  return posts.filter((item) => {
+    const isZh = !item.url.includes("en\\");
+    return lang.value === "zh-CN" ? isZh : !isZh; // 筛选语言
+  });
+};
+
 // 按年份显示文章
 export const postsYearData = (posts: Post[]) => {
-  const { lang } = useData();
   const years: Year = {};
-  posts
-    .filter((item) => {
-      const isZh = !item.url.includes("en\\");
-      return lang.value === "zh-CN" ? isZh : !isZh; // 筛选语言
-    })
-    .forEach((item) => {
-      const year = new Date(item.date[0]).getFullYear();
-      if (!years[year]) {
-        years[year] = [];
-      }
-      years[year].push(item);
-    });
+  postsLanguageData(posts).forEach((item) => {
+    const year = new Date(item.date[0]).getFullYear();
+    if (!years[year]) {
+      years[year] = [];
+    }
+    years[year].push(item);
+  });
 
   return years;
 };
@@ -29,7 +32,9 @@ export const postsYearData = (posts: Post[]) => {
 export const postsTagData = (posts: Post[]) => {
   let tags: Tag = {};
   // 固定文章从最早发布日期开始，以便标签数组能稳定显示（不会因为新发布文章而导致顺序变化）
-  const fixPosts = [...posts].sort((a, b) => a.date[0] - b.date[0]);
+  const fixPosts = [...postsLanguageData(posts)].sort(
+    (a, b) => a.date[0] - b.date[0]
+  );
   let tagNames: string[] = [];
   fixPosts.forEach((item) => {
     item.tags?.forEach((tag) => {
