@@ -51,7 +51,7 @@ export default defineComponent({
           () => post.abstract
         ),
         post.tags &&
-          h(NFlex, {}, () =>
+          h(NFlex, { size: [12, 0] }, () =>
             post.tags?.map((tag) =>
               h(
                 NEl,
