@@ -31,8 +31,8 @@ const language: Record<
     words: "Words",
     read: "Read",
     article: "All articles",
-    minute: "min",
-    piece: "pieces",
+    minute: "Min",
+    piece: "Pieces",
     tags: "Label list",
   },
 };
