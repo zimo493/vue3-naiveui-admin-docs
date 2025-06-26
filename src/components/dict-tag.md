@@ -1,7 +1,7 @@
 ---
 title: DictTag 组件
 description: 以标签组件形式显示字典数据
-tags: [组件, 自字典]
+tags: [组件, 字典]
 ---
 
 <script setup lang="ts">
