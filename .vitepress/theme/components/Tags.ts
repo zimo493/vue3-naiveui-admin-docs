@@ -77,9 +77,9 @@ export default {
       );
 
     return () =>
-      h(NEl, { class: "tags-container" }, () => [
-        h(NH1, { class: "title" }, () => tags),
-        h(NFlex, { size: [20, 20], class: "tags-wrapper" }, renderTagButtons),
+      h(NEl, {}, () => [
+        h(NH1, { style: { fontSize: "24px", marginTop: "20px" } }, () => tags),
+        h(NFlex, { size: [20, 20] }, renderTagButtons),
         ...currentPosts.value.map((post) =>
           h(PostList, {
             key: post.title,
