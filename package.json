@@ -7,7 +7,7 @@
     "@css-render/vue3-ssr": "0.15.14"
   },
   "scripts": {
-    "dev": "vitepress dev --open",
+    "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
