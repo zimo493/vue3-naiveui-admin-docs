@@ -23,17 +23,7 @@ export default defineComponent({
     const { lang } = useData();
 
     const { post, modelValue } = toRefs(props);
-
-    const val = computed({
-      get() {
-        return modelValue.value;
-      },
-      set(val) {
-        emit("update:modelValue", val);
-      },
-    });
-
-    const PostMate = ({ post }: { post: Post }) =>
+    const PostItem = ({ post }: { post: Post }) =>
       h(NEl, { class: "archive", onClick: () => router.go(post.url) }, () => [
         h(NFlex, { justify: "space-between" }, () => [
           h(
@@ -59,11 +49,9 @@ export default defineComponent({
                   class: "archive-tag",
                   onClick: (event: Event) => {
                     event.stopPropagation();
-                    if (val.value) {
-                      emit("update:modelValue", tag);
-                    } else {
-                      router.go(`/post/tags?tag=${tag}`);
-                    }
+                    modelValue.value
+                      ? emit("update:modelValue", tag)
+                      : router.go(`/post/tags?tag=${tag}`);
                   },
                 },
                 () => [
@@ -73,7 +61,7 @@ export default defineComponent({
                     {
                       class: [
                         "archive-tag-item",
-                        { "archive-tag-selected": val.value === tag },
+                        { "archive-tag-selected": modelValue.value === tag },
                       ],
                     },
                     () => tag
@@ -98,7 +86,7 @@ export default defineComponent({
           ])
         ),
         h(NEl, { class: "archive-list" }, () =>
-          post.value.posts.map((post) => h(PostMate, { post }))
+          post.value.posts.map((post) => h(PostItem, { key: post.url, post }))
         ),
       ]);
   },

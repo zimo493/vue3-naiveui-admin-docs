@@ -37,7 +37,11 @@ export default {
 
       return h(NFlex, { class: "post-tags", align: "center" }, () =>
         post.tags?.map((tag) =>
-          h(NTag, { type: "info", bordered: false, size: "small" }, () => tag)
+          h(
+            NTag,
+            { type: "info", bordered: false, size: "small", key: tag },
+            () => tag
+          )
         )
       );
     };
