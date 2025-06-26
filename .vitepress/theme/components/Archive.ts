@@ -47,7 +47,7 @@ export default {
           ),
           h(NBadge, { value: `${postLength.value} ${piece}`, type: "success" }),
         ]),
-        ...postList.value.map((post) => h(PostList, { post })),
+        postList.value.map((post) => h(PostList, { post })),
       ]);
   },
 };
