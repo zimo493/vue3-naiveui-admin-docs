@@ -1,6 +1,6 @@
 import { useData, useRouter } from "vitepress";
 import { Post, PostListVO } from "./utils/posts.data";
-import { defineComponent, h, toRefs } from "vue";
+import { computed, defineComponent, h, toRefs } from "vue";
 import { NBadge, NDivider, NEl, NFlex, NTag, NText } from "naive-ui";
 import langText from "./utils/language";
 
@@ -12,16 +12,26 @@ export default defineComponent({
       required: true,
     },
     // 选中的标签
-    selected: {
+    modelValue: {
       type: String,
     },
   },
+  emits: ["update:modelValue"],
 
-  setup(props) {
+  setup(props, { emit }) {
     const router = useRouter();
     const { lang } = useData();
 
-    const { post, selected } = toRefs(props);
+    const { post, modelValue } = toRefs(props);
+
+    const val = computed({
+      get() {
+        return modelValue.value;
+      },
+      set(val) {
+        emit("update:modelValue", val);
+      },
+    });
 
     const PostMate = ({ post }: { post: Post }) =>
       h(NEl, { class: "archive", onClick: () => router.go(post.url) }, () => [
@@ -49,7 +59,11 @@ export default defineComponent({
                   class: "archive-tag",
                   onClick: (event: Event) => {
                     event.stopPropagation();
-                    router.go(`/post/tags?tag=${tag}`);
+                    if (val.value) {
+                      emit("update:modelValue", tag);
+                    } else {
+                      router.go(`/post/tags?tag=${tag}`);
+                    }
                   },
                 },
                 () => [
@@ -59,7 +73,7 @@ export default defineComponent({
                     {
                       class: [
                         "archive-tag-item",
-                        { "archive-tag-selected": selected.value === tag },
+                        { "archive-tag-selected": val.value === tag },
                       ],
                     },
                     () => tag

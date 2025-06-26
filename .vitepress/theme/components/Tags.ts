@@ -64,7 +64,11 @@ export default {
                   size: "small",
                   round: true,
                   type: selectedTag.value === tag ? "primary" : "default",
-                  onClick: () => router.go(`/post/tags?tag=${tag}`),
+                  onClick: () => {
+                    selectedTag.value = tag;
+                    // 同步当前页面的url参数(可选)
+                    window.history.replaceState(null, "", `?tag=${tag}`);
+                  },
                 },
                 () => tag
               )
@@ -72,7 +76,13 @@ export default {
           })
         ),
         currentPosts.value.map((post) =>
-          h(PostList, { post, selected: selectedTag.value })
+          h(PostList, {
+            post,
+            modelValue: selectedTag.value,
+            "onUpdate:modelValue": (val: string) => {
+              selectedTag.value = val;
+            },
+          })
         ),
       ]);
   },
