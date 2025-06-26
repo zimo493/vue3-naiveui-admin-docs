@@ -1,35 +1,10 @@
-import { data } from "./utils/posts.data";
-import { useData } from "vitepress";
-import { NEl, NFlex, NH1, NTag, NText } from "naive-ui";
 import { h, computed } from "vue";
+import { useData } from "vitepress";
 
-type SupportedLang = "zh-CN" | "en-US";
+import { data } from "./utils/posts.data";
+import langText from "./utils/language";
 
-const language: Record<
-  SupportedLang,
-  {
-    published: string;
-    updated: string;
-    words: string;
-    read: string;
-    minute: string;
-  }
-> = {
-  "zh-CN": {
-    published: "发布于",
-    updated: "更新于",
-    words: "字数",
-    read: "阅读",
-    minute: "分钟",
-  },
-  "en-US": {
-    published: "Published",
-    updated: "Updated",
-    words: "Words",
-    read: "Read",
-    minute: "min",
-  },
-};
+import { NEl, NFlex, NH1, NTag, NText } from "naive-ui";
 
 export default {
   name: "Layout",
@@ -50,16 +25,11 @@ export default {
       });
     });
 
-    // 获取语言文本
-    const langText = computed(
-      () => language[lang.value as SupportedLang] || language["zh-CN"]
-    );
-
     // 如果没有匹配的文章，返回空内容
     if (!currentPost.value) return null;
 
     const post = currentPost.value;
-    const { published, updated, words, read, minute } = langText.value;
+    const { published, updated, words, read, minute } = langText(lang.value);
 
     // 创建标签组件
     const renderTags = () => {

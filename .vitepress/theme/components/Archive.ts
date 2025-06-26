@@ -1,51 +1,12 @@
 import { h, onMounted, computed, ref } from "vue";
-import { type Post, data } from "./utils/posts.data";
+import { NBadge, NEl, NFlex, NH1 } from "naive-ui";
+
+import { type Post, PostListVO, data } from "./utils/posts.data";
 import { type Year, postsYearData } from "./utils/archive";
-import { NDivider, NEl, NFlex, NH1, NTag, NText } from "naive-ui";
-import { useData, useRouter } from "vitepress";
+import langText from "./utils/language";
 
-interface PostList {
-  title: string;
-  posts: Post[];
-}
-
-type SupportedLang = "zh-CN" | "en-US";
-
-const language: Record<SupportedLang, { article: string; piece: string }> = {
-  "zh-CN": { article: "全部文章", piece: "篇" },
-  "en-US": { article: "All articles", piece: "pieces" },
-};
-
-const PostMate = ({ post }: { post: Post }) => {
-  const router = useRouter();
-
-  return h(
-    NEl,
-    {
-      class: "archive",
-      onClick: () => router.go(post.url),
-      style: { cursor: "pointer" },
-    },
-    () => [
-      h(NFlex, { justify: "space-between" }, () => [
-        h(
-          NText,
-          { depth: 3, style: { fontSize: "14px" } },
-          () => post.dateText[0]
-        ),
-        post.category && h(NTag, { size: "small" }, () => `🏷️${post.category}`),
-      ]),
-      h(NEl, { class: "archive-title" }, () => post.title),
-      h(NText, { depth: 3, style: { fontSize: "14px" } }, () => post.abstract),
-      post.tags &&
-        h(NFlex, { style: { marginTop: "10px" } }, () =>
-          post.tags?.map((tag) =>
-            h(NTag, { type: "info", bordered: false, size: "small" }, () => tag)
-          )
-        ),
-    ]
-  );
-};
+import PostList from "./PostList";
+import { useData } from "vitepress";
 
 export default {
   name: "Archive",
@@ -55,7 +16,7 @@ export default {
     const posts = ref<Year>({});
 
     // 计算处理后的文章列表
-    const postList = computed<PostList[]>(() => {
+    const postList = computed<PostListVO[]>(() => {
       return Object.entries(posts.value)
         .map(([year, posts]) => ({
           title: year,
@@ -74,40 +35,19 @@ export default {
       posts.value = postsYearData(data);
     });
 
-    // 获取语言文本
-    const langText = computed(
-      () => language[lang.value as SupportedLang] || language["zh-CN"]
-    );
-
-    const { article, piece } = langText.value;
+    const { article, piece } = langText(lang.value);
 
     return () =>
       h(NEl, {}, () => [
-        h(NH1, { style: { fontSize: "24px", marginTop: "20px" } }, () => [
-          h(NText, {}, () => article),
+        h(NFlex, { wrap: false, align: "center" }, () => [
           h(
-            NText,
-            { depth: 3, style: { fontSize: "16px" } },
-            () => ` - ${postLength.value}${piece}`
+            NH1,
+            { style: { fontSize: "24px", marginTop: "20px" } },
+            () => article
           ),
+          h(NBadge, { value: `${postLength.value} ${piece}`, type: "success" }),
         ]),
-
-        ...postList.value.map((item) =>
-          h(NFlex, {}, () => [
-            h(NDivider, {}, () => [
-              h(NText, { style: { fontSize: "20px" } }, () => item.title),
-              h(
-                NText,
-                { depth: 3, style: { fontSize: "14px" } },
-                () => ` - ${item.posts.length}${piece}`
-              ),
-            ]),
-
-            h(NEl, { class: "archive-list" }, () =>
-              item.posts.map((post) => h(PostMate, { post }))
-            ),
-          ])
-        ),
+        ...postList.value.map((post) => h(PostList, { post })),
       ]);
   },
 };
