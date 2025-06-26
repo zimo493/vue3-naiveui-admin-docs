@@ -1,5 +1,6 @@
 ---
 title: 代码编辑器
+tags: [编辑器]
 ---
 
 <script setup>

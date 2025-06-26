@@ -1,5 +1,6 @@
 ---
 title: Markdown Extension Examples
+tags: [Examples]
 ---
 
 <script setup>

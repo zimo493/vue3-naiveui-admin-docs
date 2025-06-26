@@ -1,7 +1,7 @@
 ---
 title: 上传 UploadFile
 description: 文件上传，总归是会用到的。
-tags: [Component, Upload]
+tags: [组件, 工具类]
 ---
 
 - 基于 [NUpload](https://www.naiveui.com/zh-CN/os-theme/components/upload) 封装

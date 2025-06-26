@@ -1,5 +1,6 @@
 ---
 title: Git 版本控制系统指南
+tags: [Git, 教程]
 ---
 
 ## Git 简介

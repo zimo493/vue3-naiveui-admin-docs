@@ -1,5 +1,6 @@
 ---
 title: Node.js 入门指南
+tags: [Node.js, 教程]
 ---
 
 <script setup>

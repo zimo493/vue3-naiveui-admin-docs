@@ -2,7 +2,7 @@
 title: Vue3 NaiveUI Admin 介绍
 # description: 项目介绍
 category: 项目介绍
-tags: [Vue3, TypeScript, Vite, Naive UI]
+tags: [介绍, 项目]
 ---
 
 ## 项目介绍 📖

@@ -1,7 +1,7 @@
 ---
 title: 模态框表单 DialogForm
 description: 我感觉和 DrawerForm 功能差不太多，位置有点差别。
-tags: [Component, Form]
+tags: [组件, 表单]
 ---
 
 - 表单组件基于 [FormPro](/components/form-pro) 封装

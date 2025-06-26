@@ -1,6 +1,6 @@
 ---
 title: Storage 统一本地存储
-tags: [Utils]
+tags: [工具类]
 ---
 
 ## 介绍

@@ -1,7 +1,7 @@
 ---
 title: Crontab 组件
 description: 创建和编辑 Cron 表达式，我猜你可能用不到
-tags: [Crontab, Component]
+tags: [组件]
 ---
 
 - 采用 [NModal](https://www.naiveui.com/zh-CN/os-theme/components/modal) 模态框组件

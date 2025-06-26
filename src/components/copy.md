@@ -1,6 +1,6 @@
 ---
 title: Copy 指令
-tags: [Directive]
+tags: [指令]
 ---
 
 ## 介绍
