@@ -62,6 +62,7 @@ export default {
                 NButton,
                 {
                   size: "small",
+                  round: true,
                   type: selectedTag.value === tag ? "primary" : "default",
                   onClick: () => router.go(`/post/tags?tag=${tag}`),
                 },
