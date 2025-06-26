@@ -28,6 +28,8 @@
 }
 
 .archive {
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
   padding: 1em;
   border-radius: 10px;
@@ -35,12 +37,26 @@
   background-color: var(--body-color);
 }
 .archive:hover {
-  color: var(--vp-c-brand);
   box-shadow: var(--box-shadow-1), inset 0 0 6px 0 var(--vp-c-brand);
 }
 
+.archive:hover > .archive-title {
+  color: var(--vp-c-brand);
+}
+
 .archive-title {
-  margin: 8px 0;
+  margin: 16px 0 10px 0;
   font-size: 16px;
   font-weight: bold;
+}
+
+.archive-tag {
+  cursor: pointer;
+  font-size: 12px;
+}
+.archive-tag-selected {
+  color: var(--vp-c-brand);
+}
+.archive-tag .archive-tag-item:hover {
+  color: var(--vp-c-brand);
 }
