@@ -1,6 +1,7 @@
 ---
 title: 表单 FormPro
 description: 采用简单的配置就可实现一个表单
+tags: [Component, Form]
 ---
 
 - 基于 [NForm](https://www.naiveui.com/zh-CN/os-theme/components/form) 封装，

@@ -1,6 +1,7 @@
 ---
 title: 搜索表格 SearchTable
 description: 搜索表格组件包含表单、表格、分页组件
+tags: [Component, Form, Table]
 ---
 
 - 搜索表单基于 [FormPro](/components/form-pro) 封装

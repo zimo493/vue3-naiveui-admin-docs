@@ -1,6 +1,7 @@
 ---
 title: Permission 指令
 description: 用于控制当前用户是否具有某种权限。
+tags: [Directive]
 ---
 
 ## 按钮权限
