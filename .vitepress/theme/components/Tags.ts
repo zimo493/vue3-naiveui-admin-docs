@@ -61,7 +61,7 @@ export default {
               h(
                 NButton,
                 {
-                  secondary: true,
+                  size: "small",
                   type: selectedTag.value === tag ? "primary" : "default",
                   onClick: () => router.go(`/post/tags?tag=${tag}`),
                 },
