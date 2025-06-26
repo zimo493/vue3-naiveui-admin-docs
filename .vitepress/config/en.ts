@@ -8,12 +8,23 @@ const nav = (): DefaultTheme.NavItem[] => [
   {
     text: "Related links",
     items: [
-      { text: "Vue3", link: "https://cn.vuejs.org/" },
-      { text: "NaiveUI", link: "https://www.naiveui.com/zh-CN/os-theme" },
-      { text: "Pinia", link: "https://pinia.vuejs.org/zh/" },
-      { text: "Vite", link: "https://cn.vitejs.dev/" },
-      { text: "TypeScript", link: "https://www.typescriptlang.org/" },
-      { text: "UnoCSS", link: "https://unocss.dev/" },
+      {
+        text: "Post",
+        items: [
+          { text: "Archived page", link: "/en/post/archive" },
+          { text: "Tag page", link: "/en/post/tags" },
+        ],
+      },
+      {
+        items: [
+          { text: "Vue3", link: "https://cn.vuejs.org/" },
+          { text: "NaiveUI", link: "https://www.naiveui.com/zh-CN/os-theme" },
+          { text: "Pinia", link: "https://pinia.vuejs.org/zh/" },
+          { text: "Vite", link: "https://cn.vitejs.dev/" },
+          { text: "TypeScript", link: "https://www.typescriptlang.org/" },
+          { text: "UnoCSS", link: "https://unocss.dev/" },
+        ],
+      },
     ],
   },
 ];

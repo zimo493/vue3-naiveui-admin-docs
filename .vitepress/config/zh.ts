@@ -1,6 +1,5 @@
 import { type DefaultTheme, defineConfig } from "vitepress";
 import { gitLogConfig } from "../../config";
-import { text } from "stream/consumers";
 
 /**
  * 导航栏
@@ -27,7 +26,12 @@ const nav = (): DefaultTheme.NavItem[] => [
   {
     text: "🔗相关连接",
     items: [
-      { items: [{ text: "归档页", link: "/post/archive" }] },
+      {
+        items: [
+          { text: "归档页", link: "/post/archive" },
+          { text: "标签页", link: "/post/tags" },
+        ],
+      },
       {
         items: [
           { text: "Vue3", link: "https://cn.vuejs.org/" },
