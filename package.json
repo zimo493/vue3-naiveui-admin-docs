@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "resolution": {
-    "@css-render/vue3-ssr": "0.15.14"
-  },
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
