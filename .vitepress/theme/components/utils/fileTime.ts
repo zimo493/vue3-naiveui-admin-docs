@@ -26,6 +26,8 @@ export const getGitTimestampSync = (command: string[], cwd: string) => {
  * 获取文章时间，异步
  * 没有git提交时间的话获取源文件创建和修改时间
  * @param filePath
+ * @param createdDate
+ * @param updatedDate
  * @returns Promise对象 resolve返回数组 [创建时间，最后一次修改时间]
  */
 export const getGitTimestamp = (

@@ -1,6 +1,6 @@
 import { useData, useRouter } from "vitepress";
 import { Post, PostListVO } from "./utils/posts.data";
-import { computed, defineComponent, h, toRefs } from "vue";
+import { defineComponent, h, toRefs } from "vue";
 import { NBadge, NDivider, NEl, NFlex, NTag, NText } from "naive-ui";
 import langText from "./utils/language";
 

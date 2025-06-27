@@ -1,4 +1,4 @@
-import { type Post, type PostListVO, data } from "./utils/posts.data";
+import { type PostListVO, data } from "./utils/posts.data";
 import { type Tag, postsTagData } from "./utils/archive";
 import { h, onMounted, computed, ref, nextTick } from "vue";
 import { useData } from "vitepress";
@@ -48,9 +48,9 @@ export default {
         Object.fromEntries(urlParams.entries()).tag ?? allTags.value[0].tag;
     };
 
-    onMounted(() => {
+    onMounted(async () => {
       posts.value = postsTagData(data);
-      nextTick(() => getUrlParams());
+      await nextTick(() => getUrlParams())
     });
 
     const { tags } = langText(lang.value);
