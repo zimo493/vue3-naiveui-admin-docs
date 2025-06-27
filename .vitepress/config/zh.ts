@@ -75,6 +75,7 @@ const sidebarGuide = (): DefaultTheme.SidebarItem[] => [
     items: [
       { text: "使用图标", link: "use-icons" },
       { text: "多语言(i18n)", link: "i18n" },
+      { text: "项目部署", link: "deploy" },
     ],
   },
 ];
