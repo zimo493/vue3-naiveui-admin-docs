@@ -50,7 +50,7 @@ export default {
 
     onMounted(async () => {
       posts.value = postsTagData(data);
-      await nextTick(() => getUrlParams())
+      await nextTick(() => getUrlParams());
     });
 
     const { tags } = langText(lang.value);
