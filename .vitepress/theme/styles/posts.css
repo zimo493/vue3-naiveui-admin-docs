@@ -2,8 +2,11 @@
   font-size: 32px;
   font-weight: bold;
   line-height: 40px;
-  color: var(--vp-c-text-1);
   margin-bottom: 14px;
+  background: var(--vp-home-hero-name-background);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--vp-home-hero-name-color);
 }
 
 .post-meta .n-text {
