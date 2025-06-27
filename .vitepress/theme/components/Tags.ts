@@ -44,12 +44,20 @@ export default {
 
     const getUrlParams = () => {
       const urlParams = new URLSearchParams(window.location.search);
-      selectedTag.value =
-        Object.fromEntries(urlParams.entries()).tag ?? allTags.value[0].tag;
+      const urlTag = Object.fromEntries(urlParams.entries()).tag;
+
+      // 判断所有标签中是否存在该标签
+      if (allTags.value.find((item) => item.tag === urlTag)) {
+        selectedTag.value = urlTag;
+      } else {
+        const [first] = allTags.value;
+        syncUrlParams(first.tag);
+      }
     };
 
     // 同步当前页面的url参数
     const syncUrlParams = (tag: string) => {
+      selectedTag.value = tag; // 改变当前选中的标签
       window.history.replaceState(null, "", `?tag=${tag}`);
     };
 
@@ -70,11 +78,7 @@ export default {
               size: "small",
               round: true,
               type: selectedTag.value === tag ? "primary" : "default",
-              onClick: () => {
-                selectedTag.value = tag;
-                // 同步当前页面的url参数(可选)
-                syncUrlParams(tag);
-              },
+              onClick: () => syncUrlParams(tag),
             },
             () => tag
           )
@@ -90,10 +94,7 @@ export default {
             key: post.title,
             post,
             modelValue: selectedTag.value,
-            "onUpdate:modelValue": (val: string) => {
-              selectedTag.value = val;
-              syncUrlParams(val);
-            },
+            "onUpdate:modelValue": (val: string) => syncUrlParams(val),
           })
         ),
       ]);
