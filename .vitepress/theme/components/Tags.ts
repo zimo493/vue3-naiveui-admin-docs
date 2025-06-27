@@ -48,6 +48,11 @@ export default {
         Object.fromEntries(urlParams.entries()).tag ?? allTags.value[0].tag;
     };
 
+    // 同步当前页面的url参数
+    const syncUrlParams = (tag: string) => {
+      window.history.replaceState(null, "", `?tag=${tag}`);
+    };
+
     onMounted(async () => {
       posts.value = postsTagData(data);
       await nextTick(() => getUrlParams());
@@ -68,7 +73,7 @@ export default {
               onClick: () => {
                 selectedTag.value = tag;
                 // 同步当前页面的url参数(可选)
-                window.history.replaceState(null, "", `?tag=${tag}`);
+                syncUrlParams(tag);
               },
             },
             () => tag
@@ -85,7 +90,10 @@ export default {
             key: post.title,
             post,
             modelValue: selectedTag.value,
-            "onUpdate:modelValue": (val: string) => (selectedTag.value = val),
+            "onUpdate:modelValue": (val: string) => {
+              selectedTag.value = val;
+              syncUrlParams(val);
+            },
           })
         ),
       ]);
