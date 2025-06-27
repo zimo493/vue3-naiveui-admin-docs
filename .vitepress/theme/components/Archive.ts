@@ -1,5 +1,5 @@
 import { h, onMounted, computed, ref } from "vue";
-import { NBadge, NEl, NFlex, NH1 } from "naive-ui";
+import { NBadge, NEl, NFlex, NH1, NTag } from "naive-ui";
 
 import { type Post, PostListVO, data } from "./utils/posts.data";
 import { type Year, postsYearData } from "./utils/archive";
@@ -45,7 +45,11 @@ export default {
             { style: { fontSize: "24px", marginTop: "20px" } },
             () => article
           ),
-          h(NBadge, { value: `${postLength.value} ${piece}`, type: "success" }),
+          h(
+            NTag,
+            { type: "success", bordered: false },
+            () => `${postLength.value} ${piece}`
+          ),
         ]),
         ...postList.value.map((post) => h(PostList, { post, key: post.title })),
       ]);
