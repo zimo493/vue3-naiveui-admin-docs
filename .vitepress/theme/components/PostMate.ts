@@ -64,11 +64,7 @@ export default {
 
       return h(
         NFlex,
-        {
-          class: "post-meta",
-          align: "center",
-          wrap: true,
-        },
+        { class: "post-meta", align: "center", size: [12, 4] },
         () => metaItems
       );
     };
@@ -79,10 +75,7 @@ export default {
 
       return h(
         NEl,
-        {
-          class: "post-description",
-          tag: "blockquote",
-        },
+        { class: "post-description", tag: "blockquote" },
         () => post.abstract
       );
     };
