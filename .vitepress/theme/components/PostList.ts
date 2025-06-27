@@ -1,7 +1,16 @@
 import { useData, useRouter } from "vitepress";
 import { Post, PostListVO } from "./utils/posts.data";
 import { defineComponent, h, toRefs } from "vue";
-import { NBadge, NDivider, NEl, NFlex, NTag, NText } from "naive-ui";
+import {
+  NBadge,
+  NDivider,
+  NEl,
+  NFlex,
+  NTag,
+  NText,
+  NGrid,
+  NGridItem,
+} from "naive-ui";
 import langText from "./utils/language";
 
 export default defineComponent({
@@ -85,8 +94,18 @@ export default defineComponent({
             }),
           ])
         ),
-        h(NEl, { class: "archive-list" }, () =>
-          post.value.posts.map((post) => h(PostItem, { key: post.url, post }))
+        // 文章列表
+        h(
+          NGrid,
+          {
+            xGap: 20,
+            yGap: 20,
+            cols: "1920:3 1536:3 1280:3 1024:3 768:2 640:2 480:1 320:1",
+          },
+          () =>
+            post.value.posts.map((post) =>
+              h(NGridItem, { key: post.url }, () => h(PostItem, { post }))
+            )
         ),
       ]);
   },
