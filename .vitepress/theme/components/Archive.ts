@@ -1,7 +1,7 @@
 import { h, onMounted, computed, ref } from "vue";
 import { NBadge, NEl, NFlex, NH1 } from "naive-ui";
 
-import { type Post, PostListVO, data } from "./utils/posts.data";
+import { PostListVO, data } from "./utils/posts.data";
 import { type Year, postsYearData } from "./utils/archive";
 import langText from "./utils/language";
 
