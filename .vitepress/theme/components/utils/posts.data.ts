@@ -1,6 +1,7 @@
 import { createContentLoader } from "vitepress";
 import { sep, normalize } from "path";
 import { getGitTimestamp } from "./fileTime";
+import { postsUrl } from "../../../../config";
 
 export interface Post {
   title: string; // 标题
@@ -19,141 +20,168 @@ export interface PostListVO {
   posts: Post[];
 }
 
+// 创建文章对象参数
+interface PostOption {
+  title: string;
+  url: string;
+  createdDate: number;
+  updatedDate: number;
+  abstract: string;
+  wordCount: number;
+  readingTime: number;
+  category?: string;
+  tags?: string[];
+}
+
 declare const data: Post[];
 export { data };
 
-export default createContentLoader(
-  [
-    "components/**/*.md", // 匹配组件文档
-    "guide/**/*.md", // 匹配指南文档
-    "faq/**/*.md", // 匹配常见问题
-    "dev/**/*.md", // 匹配开发配置
-    "en/**/!(index|archive|tags).md", // 匹配英文文档
+// 预编译正则表达式
+const MARKDOWN_CLEAN_REGEX = /<[^>]+>|[#*\-_=`~|\[\](){}<>!\\]/g;
+const CHINESE_CHAR_REGEX = /[\u4e00-\u9fa5]/g;
+const ENGLISH_WORD_REGEX = /\b\w+\b/g;
+
+// 缓存日期格式化器
+const DATE_FORMATTER = new Intl.DateTimeFormat("zh", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+/**
+ * 规范化URL路径
+ * - 移除开头斜杠和.html后缀
+ * - 统一路径分隔符
+ */
+const normalizeUrl = (url: string): string => {
+  return normalize(url)
+    .split(sep)
+    .filter(Boolean)
+    .join(sep)
+    .replace(/^\//, "")
+    .replace(/\.html$/, "");
+};
+
+/**
+ * 创建文章对象工厂函数
+ */
+const createPost = (options: PostOption): Post => ({
+  ...options,
+  date: [options.createdDate, options.updatedDate],
+  dateText: [
+    DATE_FORMATTER.format(options.createdDate).replaceAll("/", "-"),
+    DATE_FORMATTER.format(options.updatedDate).replaceAll("/", "-"),
   ],
-  {
-    includeSrc: true, // 需要原始内容来计算阅读时间和字数
-    excerpt: false,
-    async transform(data) {
-      const promises: Promise<Post>[] = [];
-      const posts: Post[] = [];
-      const dateOption = formatDate();
+});
 
-      data.forEach(({ frontmatter, url, src }) => {
-        const {
-          title,
-          tags: _tags,
-          category,
-          description: abstract,
-          firstCommit,
-          lastUpdated,
-        } = frontmatter;
-
-        const createdDate = firstCommit ? +new Date(firstCommit) : undefined;
-        const updatedDate = lastUpdated ? +new Date(lastUpdated) : undefined;
-
-        // 处理 URL：去掉开头的斜杠和 .html 后缀
-        const link = normalize(url)
-          .split(sep)
-          .filter((item) => item)
-          .join(sep)
-          .replace(/^\//, "") // 移除开头的斜杠
-          .replace(/\.html$/, ""); // 移除 .html 后缀
-
-        // 计算字数和阅读时间
-        const { wordCount, readingTime } = calculateWordStats(src);
-
-        if (createdDate && updatedDate) {
-          posts.push({
-            title,
-            url: link,
-            date: [createdDate, updatedDate],
-            dateText: [
-              dateOption.format(createdDate),
-              dateOption.format(updatedDate),
-            ],
-            abstract,
-            category,
-            tags: _tags,
-            readingTime,
-            wordCount, // 添加字数统计
-          });
-        } else {
-          // 构建文件系统路径 (基于 src 目录)
-          const filePath = `src/${link}.md`;
-
-          const task: Promise<Post> = getGitTimestamp(
-            filePath,
-            createdDate,
-            updatedDate
-          ).then((date) => ({
-            title,
-            url: link,
-            date: [date[0], date[1]] as [number, number],
-            dateText: [dateOption.format(date[0]), dateOption.format(date[1])],
-            abstract,
-            category,
-            tags: _tags,
-            readingTime,
-            wordCount, // 添加字数统计
-          }));
-          promises.push(task);
-        }
-      });
-
-      const resolvedPosts = await Promise.all(promises);
-      const formattedPosts = posts.concat(resolvedPosts);
-
-      // 按发布时间降序排列
-      return formattedPosts.sort((a, b) => b.date[0] - a.date[0]);
-    },
-  }
-);
-
-// 计算字数和阅读时间
-function calculateWordStats(content?: string): {
+/**
+ * 计算字数和阅读时间
+ */
+const calculateWordStats = (
+  content = ""
+): {
   wordCount: number;
   readingTime: number;
-} {
-  if (!content) return { wordCount: 0, readingTime: 0 };
-  // 清理内容
-  const text = content
-    .replace(/<[^>]+>/g, "") // 移除HTML标签
-    .replace(/[#*\-_=`~|\[\](){}<>!\\]/g, "") // 移除Markdown特殊字符
-    .replace(/\n\s*\n/g, "\n") // 压缩空行
-    .replace(/^---\s*[\s\S]*?---\s*/, "") // 移除Frontmatter
-    .replace(/\s+/g, " ") // 合并多个空格
+} => {
+  // 清理内容：移除Frontmatter、HTML标签、Markdown符号
+  const cleaned = content
+    .replace(/^---\s*[\s\S]*?---\s*/, "")
+    .replace(MARKDOWN_CLEAN_REGEX, "")
+    .replace(/\n\s*\n/g, "\n")
+    .replace(/\s+/g, " ")
     .trim();
 
-  // 统计中文字数和英文单词数
-  const chineseCharCount = (text.match(/[\u4e00-\u9fa5]/g) || []).length;
-  const englishWords =
-    text
-      .replace(/[\u4e00-\u9fa5]/g, "") // 移除中文字符
-      .match(/\b\w+\b/g) || []; // 获取英文单词
+  if (!cleaned) return { wordCount: 0, readingTime: 0 };
 
-  const englishWordCount = englishWords.length;
+  // 统计中文字数
+  const chineseChars = (cleaned.match(CHINESE_CHAR_REGEX) || []).length;
 
-  // 计算总字数（中文按字计数，英文按单词计数）
-  const totalWords = chineseCharCount + englishWordCount;
+  // 统计英文单词数（排除中文字符后）
+  const englishText = cleaned.replace(CHINESE_CHAR_REGEX, "");
+  const englishWords = englishText.match(ENGLISH_WORD_REGEX) || [];
 
-  // 计算阅读时间（中文按400字/分钟，英文按200词/分钟）
-  const chineseTime = chineseCharCount / 400;
-  const englishTime = englishWordCount / 200;
+  // 计算总字数（中文按字计数，英文按词计数）
+  const totalWords = chineseChars + englishWords.length;
+
+  // 计算阅读时间（中文400字/分钟 + 英文200词/分钟）
+  const readingMinutes = Math.ceil(
+    chineseChars / 400 + englishWords.length / 200
+  );
 
   return {
     wordCount: totalWords,
-    readingTime: Math.max(1, Math.ceil(chineseTime + englishTime)),
+    readingTime: Math.max(1, readingMinutes),
   };
-}
-
-export const formatDate = (hasTime?: boolean) => {
-  let formatOption = {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  };
-  return new Intl.DateTimeFormat(
-    "zh",
-    formatOption as Intl.DateTimeFormatOptions
-  );
 };
+
+export default createContentLoader(postsUrl, {
+  includeSrc: true, // 需要原始内容来计算阅读时间和字数
+  excerpt: false,
+  async transform(rawData) {
+    // 并行处理所有文章
+    const postPromises = rawData.map(async ({ frontmatter, url, src }) => {
+      const {
+        title,
+        tags,
+        category,
+        description: abstract = "",
+        firstCommit,
+        lastUpdated,
+      } = frontmatter;
+
+      // 公共参数
+      const baseParams = {
+        title,
+        url: normalizeUrl(url),
+        abstract,
+        ...calculateWordStats(src), // 计算字数和阅读时间
+        category,
+        tags,
+      };
+
+      // 预处理基础数据
+      const normalizedUrl = normalizeUrl(url);
+
+      try {
+        // 尝试使用Frontmatter中的日期
+        if (firstCommit && lastUpdated) {
+          return createPost({
+            ...baseParams,
+            createdDate: +new Date(firstCommit),
+            updatedDate: +new Date(lastUpdated),
+          });
+        }
+
+        // 异步获取Git时间戳
+        const filePath = `src/${normalizedUrl}.md`;
+        const [created, updated] = await getGitTimestamp(
+          filePath,
+          firstCommit ? +new Date(firstCommit) : undefined,
+          lastUpdated ? +new Date(lastUpdated) : undefined
+        );
+
+        return createPost({
+          ...baseParams,
+          createdDate: created,
+          updatedDate: updated,
+        });
+      } catch (error) {
+        // 错误处理：使用当前日期作为默认值
+        console.error(`Error processing ${url}:`, error);
+        const now = Date.now();
+        // 错误时使用当前时间
+        return createPost({
+          ...baseParams,
+          createdDate: now,
+          updatedDate: now,
+        });
+      }
+    });
+
+    // 等待所有文章处理完成
+    const posts = await Promise.all(postPromises);
+
+    // 按创建日期降序排序
+    return posts.sort((a, b) => b.date[0] - a.date[0]);
+  },
+});

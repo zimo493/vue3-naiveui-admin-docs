@@ -43,4 +43,13 @@ const gitLogConfig = {
   ],
 };
 
-export { coreMembers, gitLogConfig };
+// 配置文章 post 路径
+const postsUrl = [
+  "components/**/*.md", // 匹配组件文档
+  "guide/**/*.md", // 匹配指南文档
+  "faq/**/*.md", // 匹配常见问题
+  "dev/**/*.md", // 匹配开发配置
+  "en/**/!(index|archive|tags).md", // 匹配英文文档
+];
+
+export { coreMembers, gitLogConfig, postsUrl };
