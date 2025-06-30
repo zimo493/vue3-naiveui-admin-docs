@@ -170,7 +170,7 @@ export const zh = defineConfig({
       options: {
         translations: {
           button: {
-            buttonText: "搜索文档",
+            buttonText: "搜索",
             buttonAriaLabel: "全站内容搜索",
           },
           modal: {
