@@ -5,13 +5,18 @@
 @import "./imgPreview.css";
 @import "./posts.css";
 
-.VPNav .VPNavBar .wrapper .container .content .content-body {
-  background-color: transparent;
-  background-image: radial-gradient(
-    transparent 1px,
-    var(--vp-nav-bg-color) 1px
-  );
-  background-size: 4px 4px;
-  backdrop-filter: saturate(50%) blur(4px);
-  -webkit-backdrop-filter: saturate(50%) blur(4px);
+/* 导航栏样式优化 */
+@media (min-width: 960px) {
+  .VPNav .VPNavBar {
+    background-image: radial-gradient(
+      transparent 1px,
+      var(--vp-nav-bg-color) 1px
+    );
+    background-size: 4px 4px;
+    backdrop-filter: saturate(50%) blur(4px);
+    -webkit-backdrop-filter: saturate(50%) blur(4px);
+  }
+  .VPNav .VPNavBar .wrapper .container .content .content-body {
+    background-color: transparent;
+  }
 }
