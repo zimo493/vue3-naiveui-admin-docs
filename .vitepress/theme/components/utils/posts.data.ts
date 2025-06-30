@@ -103,9 +103,9 @@ const calculateWordStats = (
   // 计算总字数（中文按字计数，英文按词计数）
   const totalWords = chineseChars + englishWords.length;
 
-  // 计算阅读时间（中文400字/分钟 + 英文200词/分钟）
+  // 计算阅读时间（中文300字/分钟 + 英文120词/分钟）
   const readingMinutes = Math.ceil(
-    chineseChars / 400 + englishWords.length / 200
+    chineseChars / 300 + englishWords.length / 120
   );
 
   return {
