@@ -162,4 +162,4 @@ In the template, use the `Icones` component to import
 
 <!-- Change style -->
 <Icones icon="local:logo" :color="red" :size="22" />
-``` 
+```

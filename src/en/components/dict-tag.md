@@ -84,5 +84,3 @@ const { gender } = useDict("gender");
 | round | `Boolean` | No | `false` | Whether rounded |
 | bordered | `Boolean` | No | `false` | Whether to show border |
 | separator | `String` | No | `,` | Separator |
-
-</rewritten_file> 

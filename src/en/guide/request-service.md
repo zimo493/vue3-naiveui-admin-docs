@@ -200,5 +200,3 @@ export default {
       method: "post",
       data: formData,
 ```
-
-</rewritten_file> 

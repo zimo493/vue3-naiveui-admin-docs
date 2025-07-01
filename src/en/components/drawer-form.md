@@ -115,5 +115,3 @@ const submitForm = (val: User.Form) =>
 | --- | --- | --- |
 | submit | `(val) => void` | Trigger submit |
 | cancel | `() => void` | Trigger cancel |
-
-</rewritten_file> 

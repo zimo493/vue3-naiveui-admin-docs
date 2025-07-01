@@ -92,4 +92,4 @@ git --version
 
 - Official documentation: https://git-scm.com/doc
 - Visual Git Guide: https://marklodato.github.io/visual-git-guide
-- GitHub Learning Resources: https://guides.github.com 
+- GitHub Learning Resources: https://guides.github.com

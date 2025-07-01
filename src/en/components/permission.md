@@ -32,4 +32,4 @@ tags: [Directive, Permission]
   <!-- String -->
   <n-button v-has-role="'ADMIN'" type="info"> Edit </n-button>
 </template>
-``` 
+```

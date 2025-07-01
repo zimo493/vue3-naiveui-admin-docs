@@ -87,4 +87,4 @@ VITE_API_BASE = 'https://prod.api.com' # Correct prefix
 ```ts
 // Use variable
 const apiUrl = import.meta.env.VITE_API_BASE;
-``` 
+```

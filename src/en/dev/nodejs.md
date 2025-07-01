@@ -144,4 +144,4 @@ nvm run 14 app.js    # Run script with specified version
 nvm uninstall 12     # Uninstall specified version
 ```
 
-::: 
+:::

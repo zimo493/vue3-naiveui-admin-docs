@@ -61,4 +61,4 @@ On October 24, 2024, during the official Programmer's Day, JetBrains officially 
 - [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory): View file Git history
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens): Conveniently view git commit info in editor
 - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally): i18n translation plugin
-- [Image preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview): Quick image asset preview 
+- [Image preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview): Quick image asset preview

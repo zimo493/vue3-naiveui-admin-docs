@@ -137,4 +137,4 @@ The type of `val` returned by the triggered method is the type bound to the pass
 | Name | Type | Description |
 | --- | --- | --- |
 | submit | `(val) => void` | Trigger search |
-| reset | `(val) => void` | Reset form | 
+| reset | `(val) => void` | Reset form |

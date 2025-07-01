@@ -86,4 +86,4 @@ declare namespace AppRoute {
     affix?: boolean;
   }
 }
-``` 
+```

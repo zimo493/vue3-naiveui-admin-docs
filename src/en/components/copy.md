@@ -36,4 +36,4 @@ The Copy directive uses [`useClipboard`](https://vueuse.org/core/useclipboard/#u
 <script lang="ts" setup>
 const msg = `Too many of us are not living our dreams because we are living our fears.`;
 </script>
-``` 
+```

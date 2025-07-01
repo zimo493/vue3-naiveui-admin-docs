@@ -123,4 +123,4 @@ This is just a common usage. For more, see [example](https://gitee.com/zimo493/v
 | Name | Type | Description |
 | --- | --- | --- |
 | upload | `(val: FileInfo) => val` | Callback for successful file upload |
-| remove | `(val: RemoveFile) => val` | Callback for file removal | 
+| remove | `(val: RemoveFile) => val` | Callback for file removal |

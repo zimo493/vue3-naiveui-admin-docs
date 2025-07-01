@@ -48,4 +48,3 @@ const cronExpression = ref("0 0 0 * * ?");
 | Function Name | Params | Description |
 | --- | --- | --- |
 | open | `() => void` | Method to open the expression generator modal |
-``` 

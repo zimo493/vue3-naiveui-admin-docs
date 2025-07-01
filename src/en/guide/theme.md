@@ -78,4 +78,3 @@ const themeConfig: GlobalThemeOverrides = {
 
 export default themeConfig;
 ``` 
- 
