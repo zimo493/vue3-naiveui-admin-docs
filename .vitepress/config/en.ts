@@ -183,40 +183,16 @@ export const en = defineConfig({
       copyright: `Copyright © 2025-${new Date().getFullYear()}`,
     },
 
-    docFooter: {
-      prev: "Previous",
-      next: "Next",
-    },
-
     outline: {
       level: [2, 6], // Display h2 to h6
       label: "Page Navigation",
     },
 
-    lastUpdated: {
-      text: "Last updated on",
-      formatOptions: {
-        weekday: "long",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-      },
-    },
     notFound: {
       title: "Resource not found",
       quote:
         "Sorry! Some links are like missed buses, the next one will be better.",
       linkText: "Return to homepage",
     },
-
-    langMenuLabel: "Language",
-    returnToTopLabel: "Back to top",
-    sidebarMenuLabel: "Menu",
-    darkModeSwitchLabel: "Theme",
-    lightModeSwitchTitle: "Switch to light mode",
-    darkModeSwitchTitle: "Switch to dark mode",
   },
 });
