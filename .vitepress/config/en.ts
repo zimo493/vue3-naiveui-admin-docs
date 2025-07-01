@@ -98,7 +98,7 @@ const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
       { text: "DialogForm", link: "dialog-form" },
       { text: "UploadFile", link: "upload-file" },
       { text: "DictTag", link: "dict-tag" },
-      { text: "CronExpression", link: "cron" },
+      { text: "CronExpression", link: "cron-expression" },
     ],
   },
   {
