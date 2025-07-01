@@ -15,7 +15,7 @@ const nav = (): DefaultTheme.NavItem[] => [
         activeMatch: "^/en/guide/",
       },
       {
-        text: "Component Encapsulation",
+        text: "Components",
         link: "/en/components/form-pro",
         activeMatch: "^/en/components/",
       },
