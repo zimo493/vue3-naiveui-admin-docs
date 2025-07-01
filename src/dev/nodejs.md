@@ -61,15 +61,15 @@ npm -v
 
 <!-- 表格 -->
 
-| 命令                       | 描述                       |
-| -------------------------- | -------------------------- |
-| `npm init`                 | 初始化项目                 |
-| `npm install <package>`    | 安装包                     |
-| `npm install -g <package>` | 全局安装包                 |
-| `npm uninstall <package>`  | 卸载包                     |
-| `npm update <package>`     | 更新包                     |
-| `npm list`                 | 列出所有包                 |
-| `npm run <script>`         | 运行 package.json 中的脚本 |
+| 命令 | 描述 |
+| --- | --- |
+| `npm init` | 初始化项目 |
+| `npm install <package>` | 安装包 |
+| `npm install -g <package>` | 全局安装包 |
+| `npm uninstall <package>` | 卸载包 |
+| `npm update <package>` | 更新包 |
+| `npm list` | 列出所有包 |
+| `npm run <script>` | 运行 package.json 中的脚本 |
 
 ## 全局安装 pnpm
 
