@@ -32,6 +32,18 @@ export default defineComponent({
     const { lang } = useData();
 
     const { post, modelValue } = toRefs(props);
+
+    /** tag 点击 */
+    const tagClick = (tag: string) => {
+      modelValue.value
+        ? emit("update:modelValue", tag)
+        : router.go(
+            `${
+              lang.value === "zh-CN" ? "/post/tags" : "/en/post/tags"
+            }?tag=${tag}`
+          );
+    };
+
     const PostItem = ({ post }: { post: Post }) =>
       h(NEl, { class: "archive", onClick: () => router.go(post.url) }, () => [
         h(NFlex, { justify: "space-between" }, () => [
@@ -58,9 +70,7 @@ export default defineComponent({
                   class: "archive-tag",
                   onClick: (event: Event) => {
                     event.stopPropagation();
-                    modelValue.value
-                      ? emit("update:modelValue", tag)
-                      : router.go(`/post/tags?tag=${tag}`);
+                    tagClick(tag);
                   },
                 },
                 () => [

@@ -1,5 +1,5 @@
 import { h, onMounted, computed, ref } from "vue";
-import { NBadge, NEl, NFlex, NH1, NTag } from "naive-ui";
+import { NEl, NFlex, NH1, NTag } from "naive-ui";
 
 import { PostListVO, data } from "./utils/posts.data";
 import { type Year, postsYearData } from "./utils/archive";
