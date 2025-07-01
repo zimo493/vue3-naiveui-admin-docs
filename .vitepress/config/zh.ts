@@ -94,7 +94,7 @@ const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
       { text: "DialogForm (模态框表单)", link: "dialog-form" },
       { text: "UploadFile (文件上传)", link: "upload-file" },
       { text: "DictTag (字典标签)", link: "dict-tag" },
-      { text: "Crontab (Cron表达式)", link: "cron" },
+      { text: "Cron (Cron表达式)", link: "cron-expression" },
     ],
   },
   {
