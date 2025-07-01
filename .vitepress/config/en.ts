@@ -174,7 +174,7 @@ export const en = defineConfig({
     },
 
     editLink: {
-      pattern: `${gitLogConfig.repoURL}/edit/main/src/en/:path`,
+      pattern: `${gitLogConfig.repoURL}/edit/main/src/:path`,
       text: "Help improve this page",
     },
 
