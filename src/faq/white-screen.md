@@ -44,7 +44,7 @@ const routes = [
 <!-- 正确示范 -->
 <template>
   <div> <!-- [!code ++] -->
-    <!-- 注释也算一个节点 [!code --] -->
+    <!-- 注释也算一个节点 -->
     <div>hello vue</div>
     <div>hello vite</div>
     <div>hello preview</div>
