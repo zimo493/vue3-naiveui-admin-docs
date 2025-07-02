@@ -17,7 +17,4 @@
     backdrop-filter: saturate(50%) blur(4px);
     -webkit-backdrop-filter: saturate(50%) blur(4px);
   }
-  .VPNav .VPNavBar .wrapper .container .title {
-    background: var(--vp-nav-bg-color);
-  }
 }
