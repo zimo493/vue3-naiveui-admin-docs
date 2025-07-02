@@ -44,7 +44,7 @@ In Vue.js, the `<Transition>` component is designed to handle transitions for a 
 <!-- Correct Example -->
 <template>
   <div> <!-- [!code ++] -->
-    <!-- Comments also count as a node [!code --] -->
+    <!-- Comments also count as a node -->
     <div>hello vue</div>
     <div>hello vite</div>
     <div>hello preview</div>
