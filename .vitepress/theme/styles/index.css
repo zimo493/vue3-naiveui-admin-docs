@@ -7,7 +7,8 @@
 
 /* 导航栏样式优化 */
 @media (min-width: 960px) {
-  .VPNav .VPNavBar {
+  .VPNav .VPNavBar .wrapper .container .content .content-body {
+    background-color: transparent;
     background-image: radial-gradient(
       transparent 1px,
       var(--vp-nav-bg-color) 1px
@@ -16,7 +17,7 @@
     backdrop-filter: saturate(50%) blur(4px);
     -webkit-backdrop-filter: saturate(50%) blur(4px);
   }
-  .VPNav .VPNavBar .wrapper .container .content .content-body {
-    background-color: transparent;
+  .VPNav .VPNavBar .wrapper .container .title {
+    background: var(--vp-nav-bg-color);
   }
 }
