@@ -8,13 +8,13 @@ tags: [Tutorial]
 Vue3 NaiveUI Admin is developed based on the latest Vite version, so it requires [Node.js](https://nodejs.org/en/) 20+ version for support.
 Package manager recommends using [pnpm](https://pnpm.io/) 9+ version
 
-- [Node.js Installation and Usage Tutorial](/dev/nodejs)
+- [Node.js Installation and Usage Tutorial](/en/dev/nodejs)
 
 ## Get the Code
 
 Install Git and use Git command line tools to pull the code.
 
-- [Git Installation and Usage Tutorial](/dev/git)
+- [Git Installation and Usage Tutorial](/en/dev/git)
 
 ### Repository Clone
 
