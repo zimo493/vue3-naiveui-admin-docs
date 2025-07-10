@@ -17,14 +17,6 @@
   margin-right: 2px;
 }
 
-.vp-doc a:not(.no-icon)[href^='./']::before,
-.vp-doc a:not(.no-icon)[href^='../']::before,
-.vp-doc a:not(.no-icon)[href^='https://note.weizwz.com']::before,
-.vp-doc a:not(.no-icon)[href^='https://www.note.weizwz.com']::before
-{
-  background-image: url("https://p.weizwz.com/logo_a4353391cbf0889b.webp");
-}
-
 .vp-doc a:not(.no-icon)[href^='https://vitepress.dev']::before
 {
   background-image: url("https://vitepress.dev/vitepress-logo-mini.svg");
