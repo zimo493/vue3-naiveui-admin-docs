@@ -8,133 +8,345 @@ tags: [组件, 表单]
 
 ## 基本使用
 
-::: warning ⚠️ 提示
-`FormPro` 组件单独使用情况较少，一般配合 `SearchTable` `Drawer` `Dialog` 使用，可从以下内容查看
-
-- [SearchTable](/components/search-table)
-- [DrawerForm](/components/drawer-form)
-- [DialogForm](/components/dialog-form)
-  :::
-
 ```vue [vue]
 <template>
-  <FormPro v-model="modelValue" v-bind="formConfig" use-type="submit" />
+  <FormPro ref="formPro" v-model="modelValue" :form-config="formConfig">
+    <template #operation>
+      <n-flex>
+        <n-button type="primary" @click="submit">提交</n-button>
+        <n-button @click="reset">重置</n-button>
+      </n-flex>
+    </template>
+  </FormPro>
 </template>
-<script lang="ts" setup>
-import { useDict } from "@/hooks";
 
-// 表单字段类型
+<script lang="ts" setup>
+/** 表单字段类型 */
 interface FormFields {
   name?: string;
   age?: number;
-  sex: number;
 }
 
-// 表单配置
-const formConfig = ref<TablePro.FormOption<FormFields>>({
-  fields: [
-    { field: "name", label: "姓名" },
-    { field: "age", label: "年龄", type: "number" },
-    {
-      field: "sex",
-      label: "性别",
-      type: "select",
-      dict: "gender",
-      placeholder: "请选择性别",
+/** 表单配置 */
+const formConfig: FormPro.FormItemConfig[] = [
+  { name: "name", label: "姓名" },
+  { name: "age", label: "年龄", component: "number" },
+];
+
+/** 表单数据 */
+const modelValue = ref<FormFields>({});
+
+/** 表单实例 */
+const formProRef = useTemplateRef("formPro");
+
+/** 提交 */
+const submit = async () => {
+  await formProRef.value?.validate(); // 校验
+  console.log("表单提交：", modelValue.value);
+};
+
+const reset = () => formProRef.value?.reset();
+</script>
+```
+
+## 表单校验
+
+- 传递 `form-props` 中 `rules` 为参数，即可实现表单校验。
+- 支持所有的 [`Form Props`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) 参数
+
+```vue [vue]{6}
+<template>
+  <FormPro
+    ref="formPro"
+    v-model="modelValue"
+    :form-config="formConfig"
+    :form-props="formProps"
+  >
+    ...
+  </FormPro>
+</template>
+
+<script lang="ts" setup>
+import { type FormProps } from "naive-ui";
+
+/** 表单校验 */
+const formProps: FormProps = {
+  rules: {
+    name: [{ required: true, message: "请输入姓名" }],
+    age: [{ required: true, message: "请输入年龄" }],
+  },
+};
+</script>
+```
+
+## 表单项配置
+
+你可以在每个表单项中单独配置 `props` `slots` `formItemProps`
+
+::: warning ⚠️ 提示
+
+**props** 和 **slots** 是根据你使用的 `component` 决定的
+
+> 如果未配置 `component`，默认使用的是 `NInput` 的 [Input-Props](https://www.naiveui.com/zh-CN/os-theme/components/input#Input-Props) 和 [Input-Slots](https://www.naiveui.com/zh-CN/os-theme/components/input#Input-Slots)<br />
+> 如果配置 `component` 为 `select`， 则只能使用 `NSelect` 的 [Select-Props](https://www.naiveui.com/zh-CN/os-theme/components/select#Select-Props) 和 [Select-Slots](https://www.naiveui.com/zh-CN/os-theme/components/select#Select-Slots)
+
+**formItemProps** 接受 [FormItem](https://www.naiveui.com/zh-CN/os-theme/components/form#FormItem-Props) 和 [GridItem](https://www.naiveui.com/zh-CN/os-theme/components/grid#GridItem-Props) 所有除 `path`、`span`、`label` 以外的 Props
+
+:::
+
+```ts
+/** 表单配置 */
+const formConfig: FormPro.FormItemConfig[] = [
+  {
+    name: "name",
+    label: "姓名",
+    props: {
+      // 自定义属性
+      placeholder: "请输入您的姓名",
     },
-  ],
-  labelWidth: 60, // 表单字段标签宽度
-  // showLabel: false, // 是否显示标签
+    // 渲染插槽
+    slots: {
+      // prefix: () => <NEl>😁</NEl>, // 使用 tsx
+      prefix: () => [h(NEl, {}, () => "😁")],
+      suffix: () => [h("span", null, "😎")],
+    },
+    // 表单项配置
+    formItemProps: {
+      showFeedback: false,
+    },
+  },
+  { name: "age", label: "年龄", component: "number" },
+];
+```
+
+## 动态数据
+
+在有些情况下，例如选项的数据是通过接口动态获取的，那么你可以使用 `computed` 返回配置项。
+
+```ts
+import { type SelectOption } from "naive-ui";
+
+onMounted(async () => {
+  loading.value = true;
+  options.value = await asyncOptions();
+  loading.value = false;
 });
 
-// 表单数据
+/** 默认选项 */
+const options = ref<SelectOption[]>([{ label: "吃饭", value: 1 }]);
+
+/** 选项加载状态 */
+const loading = ref(false);
+
+/** 模拟获取动态选项 */
+const asyncOptions = () => {
+  return new Promise<SelectOption[]>((resolve) =>
+    setTimeout(
+      () =>
+        resolve([
+          { label: "吃饭", value: 1 },
+          { label: "睡觉", value: 2 },
+          { label: "打游戏", value: 3, disabled: true },
+        ]),
+      2000
+    )
+  );
+};
+
+/** 表单配置 */
+const formConfig = computed((): FormPro.FormItemConfig[] => [
+  {
+    name: "hobby",
+    label: "爱好",
+    component: "select",
+    props: {
+      multiple: true, // 开启多选
+      loading: loading.value, // 加载状态
+      options: options.value, // 动态选项
+    },
+  },
+]);
+```
+
+## 动态显隐
+
+当有时候某个表单项需要根据某些条件显示或者隐藏时，可以使用 `hidden` 属性。
+
+```ts{13}
+/** 表单数据 */
 const modelValue = ref<FormFields>({
-  sex: 1,
+  age: 18,
 });
+
+/** 表单配置 */
+const formConfig = computed((): FormPro.FormItemConfig[] => [
+  { name: "age", label: "年龄", component: "number" },
+  {
+    name: "hobby",
+    label: "爱好",
+    component: "select",
+    hidden: modelValue.value.age <= 18,
+    props: {
+      multiple: true, // 开启多选
+      loading: loading.value, // 加载状态
+      options: options.value, // 动态选项
+    },
+  },
+]);
+```
+
+## 使用字典
+
+有时候我们需要使用字典数据做为数据源，那么你可以在表单项配置中添加 `dict` 属性，指定字典的 key，这样会自动从字典中获取数据源。
+
+> [!CAUTION] ⚠️ 注意
+> 目前仅支持 `component` 为 `select`、`radio`、`checkbox` 这三种组件使用字典。<br />
+> 如果在 `props` 中配置了 `options` 属性，那么 `dict` 属性将无效。
+
+```ts
+/** 表单配置 */
+const formConfig: FormPro.FormItemConfig[] = [
+  {
+    name: "sex",
+    label: "性别",
+    component: "select",
+    dict: "gender", // 使用字典 [!code focus]
+  },
+];
+```
+
+## 使用插槽
+
+有时候我们需要使用自定义插槽在页面中渲染，那么可以这样做
+
+::: tip 💡 提示
+
+- 使用插槽时的名称需要和绑定 `form-config` 配置的 `name` 属性一致。
+- 插槽内容优先展示，会覆盖 `component` 属性。
+
+:::
+
+```vue [vue]{3-4}
+<template>
+  <FormPro v-model="modelValue" :form-config="formConfig">
+    <!-- 自定义插槽 -->
+    <template #name>自定义内容</template>
+  </FormPro>
+</template>
+
+<script lang="ts" setup>
+const formConfig: FormPro.FormItemConfig[] = [
+  {
+    name: "name",
+    label: "姓名",
+    // 使用插槽后，component 属性无效
+    component: "input", // [!code --]
+  },
+];
 </script>
+```
+
+## 自定义组件
+
+有的兄弟可能会说："如果是我自己定义的组件想要渲染怎么办？" <br />可以的兄弟，当然可以！
+
+```ts
+/** 简单创建一个组件渲染 msg 信息 */
+const MyComponent = defineComponent({
+  props: {
+    msg: { type: String, default: "默认消息" },
+  },
+  setup(props) {
+    return () => h("div", props.msg);
+  },
+});
+
+/** 表单配置 */
+const formConfig: FormPro.FormItemConfig[] = [
+  {
+    name: "msg",
+    label: "消息",
+    // component: () => <MyComponent msg="hello" />, // 使用tsx
+    component: () => h(MyComponent, { msg: "hello" }), // 使用h函数
+  },
+];
 ```
 
 ## Props
 
-| 名称 | 类型 | 必传 | 默认值 | 说明 |
-| --- | --- | :--: | --- | --- |
-| v-model 或 model-value | `Object` | 是 | | 表单绑定数据 |
-| fields | [`Array<FormItem<T>>`](/components/form-pro#表单项配置-formitem-v) | 是 | | 表单字段配置项 |
-| rules | [`FormRules`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | `{}` | 验证表项的规则 |
-| show-label | `Boolean` | 否 | `true` | 是否显示标签 |
-| label-width | `Number` | 否 | `auto` | 表单字段标签宽度，在 `show-label` 为 `true` 时有效 |
-| label-placement | `left \| top` | 否 | `left` | 表单字段标签的位置 |
-| label-align | `left \| right` | 否 | `right` | 表单字段标签的对齐方式 |
-| is-look | `Boolean` | 否 | `false` | 是否为查看模式 |
-| use-type | `search \| submit` | 否 | `search` | 表单使用方式，在 `submit` 模式下不会显示 `搜索` 和 `重置` 按钮 |` |
-| show-feedback | `Boolean` | 否 | `false` | 是否显示表单字段的错误信息，`is-look` 为 `true` 时默认为 `false`， 提交表单时默认为 `true` |
-| gutter | `Number` | 否 | `16` | 表单字段的间隔。在 `is-look` 为 `true` 时默认为 `12`，在 `use-type` 为 `submit` 时 `y-gap` 默认为 `0`|
-| 其他参数 | [`Form-Props`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | | `NForm` 组件参数 |
+| 名称 | 类型 | 必传 | 默认 | 说明 |
+| --- | --- | :--: | :--: | --- |
+| v-model 或 model-value | `object` | 否 | | 表单绑定数据 |
+| operation-span | `number` | 否 | `4` | 操作栏宽度 |
+| form-config | [FormItemConfig[]](/components/form-pro#formitemconfig) | 否 | |表单项配置 |
+| form-props | [FormProps](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) | 否 | `如下` | 表单属性( `model` 除外) |
+| grid-props | [GridProps](https://www.naiveui.com/zh-CN/os-theme/components/grid#Grid-Props) | 否 | `如下` | 表单布局属性 |
 
-### FormOption
+- `form-props` 默认 `{ labelPlacement: "left", labelWidth: 80 }`
+- `grid-props` 默认 `{ xGap: 16 }`
 
-使用 `v-bind` 绑定 `form-config`
+### FormItemConfig
 
-| 名称 | 说明 | 名称 | 说明 |
-| --- | --- | --- | --- |
-| `fields` | 表单字段配置项 `同上` | `rules` | 表单字段验证规则 `同上` |
-| `label-width` | 表单字段标签宽度 `同上` | `show-label` | 是否显示标签 `同上` |
-| `label-placement` | 标签位置 `同上` | `label-align` | 标签对齐方式 `同上` |
-| `show-feedback` | 是否显示错误提示 `同上` | `gutter` | 栅格间隔 `同上` |
+| 名称 | 类型 | 必传 | 默认 | 说明 |
+| --- | --- | :--: | :--: | --- |
+| name | `string` | 是 | | 字段名 |
+| label | `string` | 否 | | 标签 (不传则不显示) |
+| span | `number` | 否 | `4` | 栅格宽度 |
+| dict | `string` | 否 | | 字典 |
+| hidden | `boolean` | 否 | `false` | 是否隐藏 |
+| label-message | `string` | 否 | | 提示信息 |
+| component | [component Type](/components/form-pro#组件类型) | 否 | `input` | 组件 |
+| props | [component Props](/components/form-pro#组件属性和插槽) | 否 | `{}` | 组件属性 |
+| slots | [component Slots](/components/form-pro#组件属性和插槽) | 否 | `{}` | 组件插槽 |
+| form-item-props | [FormItemGi Props](https://www.naiveui.com/zh-CN/os-theme/components/form#FormItemGi-Props) | 否 | `{}` | FormItemGi 属性 |
 
-### 表单项配置 `FormItem<V>`
+::: tip 💡 提示
+`form-item-props` 中排除了 `path` `label` `span` 属性
+:::
 
-| 名称 | 类型 | 必传 | 默认值 | 说明 |
-| --- | --- | :--: | --- | --- |
-| field | `keyof V` | 是 | `/` | 表单字段名称 |
-| label-message | `String` | 否 | `""` | 表单字段标签提示信息 |
-| type | [`FormItemType`](/components/form-pro#表单项类型-formitemtype) | 否 | `input` | 表单字段标签 |
-| label | `String` | 否 | `""` | 输入框标题 |
-| show-label | `Boolean` | 否 | `true` | 是否显示标签 |
-| col-span | `Number` | 否 | 在 `use-type` 为 `submit` 默认 `24`，否则 `4` | 表单字段宽度，最大值：24 |
-| disabled | `Boolean` | 否 | `false` | 是否可修改 |
-| readonly | `Boolean` | 否 | `false` | 是否只读 |
-| clearable | `Boolean` | 否 | `true` | 是否可清空 |
-| placeholder | `String` | 否 | `请输入{label}` 或 `请选择{label}` | 输入框提示信息 |
-| options | [`Array<ItemOption>`](/components/form-pro#选择器选项-itemoption) | 否 | `[]` | 选择器的选项 |
-| dict | `String` | 否 | `""` | 字典选项，传递后会从字典中获取选项，`options` 将无效 |
-| is-hidden | `Boolean` | 否 | `false` | 是否隐藏 |
-| slot-name | `String` | 否 | `""` | 自定义插槽名称 `优先展示` |
-| other-options | `{ [key: string]: any }` | 否 | `{}` | 表单项其他配置 |
-| other-events | `{ [key: string]: (...args: any[]) => any }` | 否 | `{}` | 表单事件配置 |
+### 组件类型
 
-### 表单项类型 `FormItemType`
+支持的组件类型有
 
-| 名称 | 类型 | 名称 | 类型 |
-| --- | --- | --- | --- |
-| input | `文本输入框` | number | `数字输入框` |
-| password | `密码输入框` | textarea | `多行文本输入框` |
-| select | `下拉选择器` | datepicker | `日期选择器` |
-| timepicker | `时间选择器` | switch | `开关` |
-| radio | `单选框` | checkbox | `复选框` |
-| tree-select | `树形选择器` | text | `文本` |
+- `input` 输入框
+- `textarea` 多行输入框
+- `number` 数字输入框
+- `password` 密码输入框
+- `select` 下拉框
+- `radio` 单选按钮组
+- `checkbox` 多选按钮组
+- `date` 日期选择框
+- `time` 时间选择框
+- `switch` 开关控件
+- `treeSelect` 树形选择框
+- `text` 纯文本
+- `Component` 自定义组件
+- `() => VNode` 自定义组件
 
-### 选择器选项 `ItemOption`
+### 组件属性和插槽
 
-| 名称 | 类型 | 说明 |
-| --- | --- | --- |
-| label | `String` | 选项标签 |
-| value | `String` | 选项值 |
-| disabled | `Boolean` | 是否禁用 |
+| 组件 | Props | Slots |
+| :--: | --- | --- |
+| `input` `textarea` `password` | [Input Props](https://www.naiveui.com/zh-CN/os-theme/components/input#Input-Props) | [Input Slots](https://www.naiveui.com/zh-CN/os-theme/components/input#Input-Slots) |
+| `select` | [Select Props](https://www.naiveui.com/zh-CN/os-theme/components/select#Select-Props) | [Select Slots](https://www.naiveui.com/zh-CN/os-theme/components/select#Select-Slots) |
+| `radio` | [Radio Props](https://www.naiveui.com/zh-CN/os-theme/components/radio#Radio-Props) | [Radio Slots](https://www.naiveui.com/zh-CN/os-theme/components/radio#Radio-Slots) |
+| `checkbox` | [Checkbox Props](https://www.naiveui.com/zh-CN/os-theme/components/checkbox#Checkbox-Props) | [Checkbox Slots](https://www.naiveui.com/zh-CN/os-theme/components/checkbox#Checkbox-Slots) |
+| `date` | [DatePicker Props](https://www.naiveui.com/zh-CN/os-theme/components/date-picker#通用的-Props) | [DatePicker Slots](https://www.naiveui.com/zh-CN/os-theme/components/date-picker#DatePicker-Slots) |
+| `time` | [TimePicker Props](https://www.naiveui.com/zh-CN/os-theme/components/time-picker#TimePicker-Props) | [TimePicker Slots](https://www.naiveui.com/zh-CN/os-theme/components/time-picker#TimePicker-Slots) |
+| `switch` | [Switch Props](https://www.naiveui.com/zh-CN/os-theme/components/switch#Switch-Props) | [Switch Slots](https://www.naiveui.com/zh-CN/os-theme/components/switch#Switch-Slots) |
+| `treeSelect` | [TreeSelect Props](https://www.naiveui.com/zh-CN/os-theme/components/tree-select#TreeSelect-Props) | [TreeSelect Slots](https://www.naiveui.com/zh-CN/os-theme/components/tree-select#TreeSelect-Slots) |
+| `text` | [Text Props](https://www.naiveui.com/zh-CN/os-theme/components/gradient-text#GradientText-Props) | [Test Slots](https://www.naiveui.com/zh-CN/os-theme/components/gradient-text#GradientText-Slots) |
 
 ## Slots
 
 | 属性 | 参数 | 说明 |
 | --- | --- | --- |
-| header | `()` | 头部内容，展示在表单上方 |
+| operation | `()` | 操作区按钮 |
+| \[name\] | `()` | 表单项插槽 |
 
 ## Methods
 
-::: tip 💡 提示
-触发方法返回的 `val` 类型为传递的 `v-model` 绑定值类型
-:::
-
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
-| submit | `(val) => void` | 触发搜索 |
-| reset | `(val) => void` | 重置表单 |
+| validate | `() => Promise<void>` | 触发校验 |
+| reset | `() => void` | 重置表单 |
