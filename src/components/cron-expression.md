@@ -1,39 +1,50 @@
 ---
-title: Copy 指令
-tags: [指令]
+title: Cron 组件
+description: 创建和编辑 Cron 表达式，我猜你可能用不到
+tags: [组件]
 ---
 
-## 介绍
-
-Copy 指令采用 [`useClipboard`](https://vueuse.org.cn/core/useclipboard/#useclipboard) 实现，用于复制内容到剪贴板
-
-::: warning ⚠️ 注意
-
-#### 剪贴板 API 兼容性
-
-- 剪贴板 API（如 `navigator.clipboard` ）在部分浏览器中只有在 `HTTPS` 或 `localhost` 下才可用。
-- 如果你部署到服务器后用 `HTTP` 访问，很多现代浏览器会禁用剪贴板 API，导致 `isSupported.value` 为 `false`
-
-#### 解决建议
-
-- 确保使用 `HTTPS` 访问 ：将你的站点配置为 `HTTPS`，绝大多数浏览器只在 `HTTPS` 下开放剪贴板 API。
-- 检查浏览器兼容性 ：确保你用的浏览器版本支持剪贴板 API。可以在 [MDN](https://developer.mozilla.org/zh-CN/docs/Web) 文档 查看兼容性。
-- 本地开发和生产环境差异 ：本地开发通常是 `localhost`，浏览器会放宽安全限制；生产环境如果不是 `HTTPS`，API 就不可用。
-
-#### 临时方案
-
-- 如果暂时无法上 `HTTPS`，可以考虑降级使用 `document.execCommand('copy')` 作为兼容方案，但该方法已被废弃且未来可能无法使用
-
-:::
+- 采用 [NModal](https://www.naiveui.com/zh-CN/os-theme/components/modal) 模态框组件
 
 ## 示例
 
 ```vue [vue]
 <template>
-  <div v-copy="msg">点击复制</div>
+  <div>
+    <n-input-group>
+      <n-input
+        v-model:value="cronExpression"
+        placeholder="请输入或生成表达式"
+        clearable
+      />
+      <n-button type="primary" @click="() => crontabRef?.open()">
+        <template #icon>
+          <Icones icon="ant-design:clock-circle-outlined" />
+        </template>
+        生成表达式
+      </n-button>
+    </n-input-group>
+
+    <!-- 表达式生成器 -->
+    <Crontab ref="crontab" v-model="cronExpression" />
+  </div>
 </template>
 
 <script lang="ts" setup>
-const msg = `Too many of us are not living our dreams because we are living our fears.`;
+const crontabRef = useTemplateRef("crontab");
+
+const cronExpression = ref("0 0 0 * * ?");
 </script>
 ```
+
+## Props
+
+| 名称 | 类型 | 必传 | 默认值 | 说明 |
+| --- | --- | :--: | --- | --- |
+| v-model | `String` | 否 | `""` | Cron表达式 |
+
+## Expose
+
+| 函数名 | 参数 | 说明 |
+| --- | --- | --- |
+| open | `() => void` | 打开表达式生成器模态框方法 |
