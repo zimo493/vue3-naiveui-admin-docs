@@ -248,7 +248,14 @@ const formConfig: FormPro.FormItemConfig[] = [
 
 ## Custom Component
 
-If you want to render your own custom component, you can!
+- Some users may ask: "What if I want to render my own custom component?"
+- Of course you can!
+
+::: tip 💡 Note
+
+The `component` property can accept not only basic component types, but also a function that returns a component, or you can directly pass a component object.
+
+:::
 
 ```ts
 /** Simple component to render msg info */
