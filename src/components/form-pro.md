@@ -344,7 +344,7 @@ const formConfig: FormPro.FormItemConfig[] = [
 | operation | `()` | 操作区按钮 |
 | \[name\] | `()` | 表单项插槽 |
 
-## Methods
+## Expose
 
 | 名称 | 类型 | 说明 |
 | --- | --- | --- |
