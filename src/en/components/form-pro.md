@@ -1,5 +1,5 @@
 ---
-title: FormPro Form
+title: FormPro
 description: Easily create a form with simple configuration
 tags: [Component, Form]
 ---
