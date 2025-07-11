@@ -1,5 +1,5 @@
 ---
-title: 搜索表格 SearchTable
+title: 表格 TablePro
 description: 搜索表格组件包含表单、表格、分页组件
 tags: [组件, 表单, 表格]
 ---
