@@ -93,7 +93,7 @@ const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
     collapsed: false,
     items: [
       { text: "FormPro", link: "form-pro" },
-      { text: "SearchTable", link: "search-table" },
+      { text: "TablePro", link: "table-pro" },
       { text: "DrawerForm", link: "drawer-form" },
       { text: "DialogForm", link: "dialog-form" },
       { text: "UploadFile", link: "upload-file" },
