@@ -43,7 +43,9 @@ const gitLogConfig = {
   ],
 };
 
-// 配置文章 post 路径
+/**
+ * 需要统计文章的路径
+ */
 const postsUrl = [
   "components/**/*.md", // 匹配组件文档
   "guide/**/*.md", // 匹配指南文档
@@ -52,4 +54,10 @@ const postsUrl = [
   "en/**/!(index|archive|tags).md", // 匹配英文文档
 ];
 
-export { coreMembers, gitLogConfig, postsUrl };
+/**
+ * 排除 Git 记录
+ * 控制哪些文档中不显示 Git 的贡献者和页面历史
+ */
+const excludeGitChange = ["index.md", "archive.md", "tags.md"];
+
+export { coreMembers, gitLogConfig, postsUrl, excludeGitChange };

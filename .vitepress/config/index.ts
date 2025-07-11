@@ -9,7 +9,7 @@ import { shared } from "./shared";
 import { zh } from "./zh";
 import { en } from "./en";
 
-import { gitLogConfig } from "../../config";
+import { gitLogConfig, excludeGitChange } from "../../config";
 
 const { repoURL, mapAuthors } = gitLogConfig;
 
@@ -48,8 +48,7 @@ export default defineConfig({
       }),
       GitChangelogMarkdownSection({
         // exclude: (id) => id.endsWith("index.md"), // 排除 index.md 结尾的文件
-        exclude: (id) =>
-          ["index.md", "archive.md", "tags.md"].some((ext) => id.endsWith(ext)),
+        exclude: (id) => excludeGitChange.some((ext) => id.endsWith(ext)),
       }),
     ],
   },
