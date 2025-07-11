@@ -14,42 +14,46 @@ tags: [Component, Form]
   <!-- Add/Edit -->
   <DrawerForm
     ref="drawerForm"
-    :form-config="editConfig"
-    :model-value="modelValue"
-    :width="580"
+    v-model="modelValue"
+    :form="editFormConfig"
     :loading="spin"
     @submit="submitForm"
   />
 </template>
 
 <script setup lang="ts">
-import { spin, executeAsync } from "@/utils";
+import { spin, startSpin, endSpin, executeAsync } from "@/utils";
 import UserAPI from "@/api/system/user";
 
 /** Form configuration */
-const editConfig = ref<TablePro.FormOption<DictType.Form>>({
-  fields: [
-    { field: "username", label: "Username" },
-    { field: "nickname", label: "Nickname" },
+const editFormConfig: DialogForm.Form = {
+  config: [
+    { name: "username", label: "Username" },
+    { name: "nickname", label: "Nickname" },
     {
-      field: "status",
+      name: "status",
       label: "Status",
-      type: "radio",
-      options: [
-        { label: "Active", value: 1 },
-        { label: "Disabled", value: 0 },
+      component: "radio",
+      props: {
+        options: [
+          { label: "Active", value: 1 },
+          { label: "Disabled", value: 0 },
+        ],
+      },
+    },
+  ],
+  props: {
+    rules: {
+      username: [
+        { required: true, message: "Username cannot be empty", trigger: "blur" },
+      ],
+      nickname: [
+        { required: true, message: "Nickname cannot be empty", trigger: "blur" },
       ],
     },
-    { field: "remark", label: "Remark", type: "textarea" },
-  ],
-  labelWidth: 80,
-  rules: {
-    username: [{ required: true, message: "Username cannot be empty", trigger: "blur" }],
-    nickname: [
-      { required: true, message: "Nickname cannot be empty", trigger: "blur" },
-    ],
+    // Other form property configurations
   },
-});
+};
 
 /** Initialize form */
 const modelValue = ref<User.Form>({
@@ -58,19 +62,19 @@ const modelValue = ref<User.Form>({
 
 /** Open drawer */
 const drawerFormRef = useTemplateRef("drawerForm");
+
 const openDrawer = (row?: User.VO) => {
   drawerFormRef.value?.open(row ? "Edit User" : "Add User", modelValue.value);
 
   if (row) {
-    drawerFormRef.value?.startLoading();
+    startSpin();
     UserAPI.getFormData(row.id)
       .then((data) => {
         modelValue.value = { ...data };
       })
-      .finally(() => drawerFormRef.value?.hideLoading());
+      .finally(() => endSpin());
   }
 };
-
 /** Submit form */
 const submitForm = (val: User.Form) =>
   executeAsync(
@@ -83,16 +87,39 @@ const submitForm = (val: User.Form) =>
 </script>
 ```
 
+## No Validation Needed
+
+If you don't need validation or other form configurations, just pass the form item configuration `form-config` without passing `form`.
+
+```vue [vue]
+<template>
+  <!-- Add/Edit -->
+  <DrawerForm
+    ref="drawerForm"
+    v-model="modelValue"
+    :form-config="editFormConfig.config"
+    :loading="spin"
+    @submit="submitForm"
+  />
+</template>
+```
+
 ## Props
 
 | Name | Type | Required | Default | Description |
-| --- | --- | :--: | --- | --- |
-| v-model or model-value | `Object` | Yes | | Form data |
-| form-config | [`FormOption<T>`](/en/components/form-pro#formoption) | Yes | | Form configuration |
-| placement | `'top' \| 'right' \| 'bottom' \| 'left'` | No | `right` | Drawer display position |
-| width | `Number` | No | `502` | Drawer width |
-| is-look | `Boolean` | No | `false` | View-only mode |
-| loading | `Boolean` | No | `false` | Form loading state |
+| --- | --- | :--: | :--: | --- |
+| props | [Drawer Props](https://www.naiveui.com/en-US/os-theme/components/drawer#Drawer-Props) | No | `{}` | Drawer properties except `show` |
+| form | [Same as TablePro's form](/en/components/table-pro#formpro-props) | No | `{}` | Form configuration |
+| form-config | [FormItemConfig[]](/en/components/form-pro#formitemconfig) | No | `[]` | Form item configuration |
+| loading | `boolean` | No | `false` | Loading state |
+| use-type | `submit`, `view` | No | `submit` | Usage type |
+
+::: tip 💡 Note
+
+- `loading` will also affect the loading state of the `Submit` and `Cancel` buttons
+- `use-type` is the usage type. If set to `view`, the bottom buttons will not be displayed
+
+:::
 
 ## Slots
 
@@ -102,12 +129,11 @@ const submitForm = (val: User.Form) =>
 | footer | `()` | Content below the form |
 
 ## Expose
+
 | Function Name | Params | Description |
 | --- | --- | --- |
-| open | `(title: string, data: Object) => void` | Method to open the drawer. `title` is the drawer title, `data` is the form data |
+| open | `(title: string, data: object) => void` | Method to open the drawer.<br />`title` is the drawer title<br />`data` is the form data |
 | close | `() => void` | Close the drawer. Will reset the form |
-| startLoading | `() => void` | Start loading |
-| hideLoading | `() => void` | Stop loading |
 
 ## Events
 
