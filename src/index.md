@@ -14,10 +14,10 @@ hero:
       link: /guide/introduction
     - theme: alt
       text: Github
-      link:
+      link: https://github.com/zimo493/vue3-naiveui-admin
     - theme: alt
       text: 在线预览
-      link:
+      link: 
 
 features:
   - title: 快速上手

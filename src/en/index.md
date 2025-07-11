@@ -14,7 +14,7 @@ hero:
       link: /en/guide/introduction
     - theme: alt
       text: Github
-      link:
+      link: https://github.com/zimo493/vue3-naiveui-admin
     - theme: alt
       text: Live Preview
       link:
