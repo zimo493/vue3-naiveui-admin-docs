@@ -26,13 +26,15 @@ features:
     link: /guide/introduction
     linkText: 去查看
 
+  - title: 组件封装
+    icon: 🎈
+    details: 基于 Naive 二次封装 FormPro、基于 FormPro 封装 TablePro、DrawerForm、ModalForm 组件。在一定程度上提高您的开发效率
+    link: /components/form-pro
+    linkText: 去查看
+
   - title: 系统功能
     icon: ⚙️
     details: 提供用户管理、角色管理、菜单管理、部门管理、字典管理等功能模块
-
-  - title: 网络请求
-    icon: 🛠️
-    details: 使用 TypeScript 对 Axios 整个二次封装，请求拦截、响应拦截、错误处理等
 
   - title: 权限管理
     icon: 🔒
@@ -44,7 +46,7 @@ features:
 
   - title: 代码规范
     icon: 📝
-    details: 遵循 Airbnb JavaScript Style Guide 的代码规范，使用 Eslint、Prettier 等工具保证代码质量
+    details: 遵循 Airbnb JavaScript Style Guide 的代码规范，使用 Eslint、Prettier、Stylelelint 等工具保证代码质量
 ---
 
 <script setup>

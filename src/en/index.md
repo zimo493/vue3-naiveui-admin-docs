@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "Vue3 Naive Admin"
-  text: "Manage Template"
+  text: "Admin Template"
   tagline: Vue3, TypeScript, NaiveUI
   image:
     src: /logo.svg
@@ -26,35 +26,38 @@ features:
     link: /en/guide/introduction
     linkText: Learn More
 
+  - title: Component Encapsulation
+    icon: 🎈
+    details: FormPro is built on Naive, and TablePro, DrawerForm, and ModalForm are further built on FormPro. This greatly improves development efficiency.
+    link: /en/components/form-pro
+    linkText: Learn More
+
   - title: System Features
     icon: ⚙️
-    details: Provides functional modules such as user management, role management, menu management, department management, and dictionary management.
-
-  - title: Network Requests
-    icon: 🛠️
-    details: Comprehensive TypeScript-based encapsulation of Axios, including request interception, response interception, error handling, etc.
+    details: Provides modules such as user management, role management, menu management, department management, and dictionary management.
 
   - title: Permission Management
     icon: 🔒
-    details: Robust permission management supporting dynamic routing, button permissions, role permissions, and data permissions.
+    details: Comprehensive permission management supporting dynamic routing, button permissions, role permissions, and data permissions.
 
   - title: Theme Adaptation
     icon: 🎨
-    details: Elegant UI design supporting light, dark, and auto modes while maintaining NaiveUI style.
+    details: Beautiful page design supporting light, dark, and auto modes, keeping the NaiveUI style.
 
   - title: Code Standards
     icon: 📝
-    details: Follows Airbnb JavaScript Style Guide with tools like Eslint and Prettier to ensure code quality.
+    details: Follows Airbnb JavaScript Style Guide, using Eslint, Prettier, Stylelint, and other tools to ensure code quality.
 ---
 
-<script setup> 
-import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme' 
-import { coreMembers } from '../../config' 
+<script setup>
+import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme'
+import { coreMembers } from '../../config'
 </script>
-<VPTeamPage> 
-  <VPTeamPageTitle> 
-    <template #title>Our Team</template> 
+
+<VPTeamPage>
+  <VPTeamPageTitle>
+    <template #title>Our Team</template>
     <template #lead>🚀 Committed to building efficient development & application solutions</template>
-  </VPTeamPageTitle> 
-  <VPTeamMembers :members="coreMembers" /> 
+  </VPTeamPageTitle>
+  <VPTeamMembers :members="coreMembers" />
 </VPTeamPage>
