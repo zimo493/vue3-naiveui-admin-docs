@@ -95,7 +95,7 @@ const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
       { text: "FormPro", link: "form-pro" },
       { text: "TablePro", link: "table-pro" },
       { text: "DrawerForm", link: "drawer-form" },
-      { text: "DialogForm", link: "dialog-form" },
+      { text: "ModalForm", link: "modal-form" },
       { text: "UploadFile", link: "upload-file" },
       { text: "DictTag", link: "dict-tag" },
       { text: "CronExpression", link: "cron-expression" },
