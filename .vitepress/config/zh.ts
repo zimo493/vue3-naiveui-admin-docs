@@ -89,7 +89,7 @@ const sidebarComponent = (): DefaultTheme.SidebarItem[] => [
     collapsed: false,
     items: [
       { text: "FormPro (表单)", link: "form-pro" },
-      { text: "SearchTable (搜索表格)", link: "search-table" },
+      { text: "TablePro (搜索表格)", link: "table-pro" },
       { text: "DrawerForm (抽屉表单)", link: "drawer-form" },
       { text: "DialogForm (模态框表单)", link: "dialog-form" },
       { text: "UploadFile (文件上传)", link: "upload-file" },
