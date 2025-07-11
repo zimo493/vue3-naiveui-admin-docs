@@ -5,7 +5,7 @@ tags: [组件, 表单]
 ---
 
 - 表单组件基于 [FormPro](/components/form-pro) 封装
-- 对话框组件采用 [NModal](https://www.naiveui.com/zh-CN/os-theme/components/modal) 组件
+- 模态框组件采用 [NModal](https://www.naiveui.com/zh-CN/os-theme/components/modal) 组件
 
 ## 基本使用
 
