@@ -47,7 +47,9 @@ export default defineConfig({
         mapAuthors,
       }),
       GitChangelogMarkdownSection({
-        exclude: (id) => id.endsWith("index.md"), // 排除 index.md
+        // exclude: (id) => id.endsWith("index.md"), // 排除 index.md 结尾的文件
+        exclude: (id) =>
+          ["index.md", "archive.md", "tags.md"].some((ext) => id.endsWith(ext)),
       }),
     ],
   },
