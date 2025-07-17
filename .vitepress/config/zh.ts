@@ -144,7 +144,10 @@ const sidebarFAQ = (): DefaultTheme.SidebarItem[] => [
     items: [
       {
         text: "常见问题汇总",
-        items: [{ text: "页面白屏", link: "white-screen" }],
+        items: [
+          { text: "页面白屏", link: "white-screen" },
+          { text: "其他问题", link: "other-faq" },
+        ],
       },
     ],
   },
