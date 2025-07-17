@@ -146,6 +146,7 @@ const sidebarFAQ = (): DefaultTheme.SidebarItem[] => [
         text: "常见问题汇总",
         items: [
           { text: "页面白屏", link: "white-screen" },
+          { text: "KeepAlive缓存", link: "keep-alive" },
           { text: "其他问题", link: "other-faq" },
         ],
       },
