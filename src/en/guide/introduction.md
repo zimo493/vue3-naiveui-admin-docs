@@ -36,7 +36,7 @@ tags: [Project]
 
 ## Browser Support 💻
 
-- **Local Development** Recommended to use [Chrome latest version](https://www.google.cn/chrome/) browser
+- **Local Development** Recommended to use [Chrome latest version](https://www.google.com/chrome/) browser
 
 - **Production Environment** Supports modern browsers, does not support IE.
 
