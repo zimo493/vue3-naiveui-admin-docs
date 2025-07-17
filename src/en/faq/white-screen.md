@@ -1,6 +1,6 @@
 ---
 title: White Screen Issue
-tags: [Error Troubleshooting]
+tags: [Faq]
 ---
 
 ## Console Error Troubleshooting

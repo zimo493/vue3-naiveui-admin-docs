@@ -148,7 +148,10 @@ const sidebarFAQ = (): DefaultTheme.SidebarItem[] => [
     items: [
       {
         text: "Frequently Asked Questions",
-        items: [{ text: "White Screen", link: "white-screen" }],
+        items: [
+          { text: "White Screen", link: "white-screen" },
+          { text: "Other FAQ", link: "other-faq" },
+        ],
       },
     ],
   },
