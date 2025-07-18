@@ -118,7 +118,7 @@ const submitForm = (val: User.Form) =>
 ::: tip 💡 提示
 
 - `loading` 会连同 `提交`、`取消` 按钮的 `loading` 状态
-- `use-type` 为使用的类型。为 `view` 时则不会显示底部按钮
+- `use-type` 为使用的类型。为 `view` 时仅显示底部的 `取消` 按钮
 
 :::
 
