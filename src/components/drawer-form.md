@@ -112,7 +112,7 @@ const submitForm = (val: User.Form) =>
 | form | [同 TablePro 的 form](/components/table-pro#formpro-props) | 否 | `{}` | 表单配置项 |
 | form-config | [FormItemConfig[]](/components/form-pro#formitemconfig) | 否 | `[]` | 表单项配置 |
 | loading | `boolean` | 否 | `fasle` | 加载状态 |
-| use-type | `submit`、`view` | 否 | `submit` | 使用类型 |
+| use-type | `submit` `view` | 否 | `submit` | 使用类型 |
 
 ::: tip 💡 提示
 
