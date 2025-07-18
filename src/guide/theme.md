@@ -5,7 +5,7 @@ tags: [配置]
 
 ## 系统设置
 
-在 `src/store/models/app/index.ts` 中修改对应的配置即可
+在 `src/store/models/app.ts` 中修改对应的配置即可
 
 - `footerText`: 页脚文字
 - `theme`: 全局组件库主题变量
@@ -34,9 +34,9 @@ tags: [配置]
 
 ## 组件库样式
 
-修改 `src/store/models/app/theme.ts` ，添加你需要的样式变量，具体可参考 [Naive-UI](https://www.naiveui.com/zh-CN/dark/docs/customize-theme#调整组件主题变量)
+修改 `src/utils/theme.ts` ，添加你需要的样式变量，具体可参考 [Naive-UI](https://www.naiveui.com/zh-CN/dark/docs/customize-theme#调整组件主题变量)
 
-```ts [src/store/models/app/theme.ts]
+```ts [src/utils/theme.ts]
 import type { GlobalThemeOverrides } from "naive-ui";
 
 /** 默认主色 */
