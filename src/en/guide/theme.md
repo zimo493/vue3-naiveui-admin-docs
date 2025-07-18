@@ -5,7 +5,7 @@ tags: [Configuration]
 
 ## System Settings
 
-Modify the corresponding configuration in `src/store/models/app/index.ts` as needed:
+Modify the corresponding configuration in `src/store/models/app.ts` as needed:
 
 - `footerText`: Footer text
 - `theme`: Global component library theme variable
@@ -34,9 +34,9 @@ Modify the corresponding configuration in `src/store/models/app/index.ts` as nee
 
 ## Component Library Styles
 
-Modify `src/store/models/app/theme.ts` to add the style variables you need. For details, refer to [Naive-UI](https://www.naiveui.com/zh-CN/dark/docs/customize-theme#%E8%B0%83%E6%95%B4%E7%BB%84%E4%BB%B6%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8F)
+Modify `src/utils/theme.ts` to add the style variables you need. For details, refer to [Naive-UI](https://www.naiveui.com/zh-CN/dark/docs/customize-theme#%E8%B0%83%E6%95%B4%E7%BB%84%E4%BB%B6%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8F)
 
-```ts [src/store/models/app/theme.ts]
+```ts [src/utils/theme.ts]
 import type { GlobalThemeOverrides } from "naive-ui";
 
 /** Default primary color */
