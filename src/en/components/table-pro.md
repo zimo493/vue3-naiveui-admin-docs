@@ -116,6 +116,7 @@ const rules = {
 | show-table | `boolean` | No | `true` | Whether to show the table |
 | operation-span | `number` | No | `4` | Operation column grid width |
 | operation-button-position | `left`, `right` | No | `right` | Operation button position |
+| pagination-position | `left`, `center`, `right` | No | `left` | Pagination position |
 | collapse-rows | `number` | No | `3` | Collapse search item breakpoint |
 | form | [FormPro Props](/en/components/table-pro#formpro-props) | No | `{}` | Form configuration options |
 
