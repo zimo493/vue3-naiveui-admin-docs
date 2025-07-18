@@ -117,7 +117,7 @@ If you don't need validation or other form configurations, just pass the form it
 ::: tip 💡 Note
 
 - `loading` will also affect the loading state of the `Submit` and `Cancel` buttons
-- `use-type` is the usage type. If set to `view`, the bottom buttons will not be displayed
+- `use-type` determines the usage type. When set to `view`, only the Cancel button is displayed at the bottom
 
 :::
 
