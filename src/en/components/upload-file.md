@@ -92,7 +92,7 @@ This is just a common usage. For more, see [example](https://gitee.com/zimo493/v
 
 | Name | Type | Required | Default | Description |
 | --- | --- | :--: | --- | --- |
-| value | `string[] \| string \| FileInfo[] \| FileInfo` | No | `[]` | File list |
+| value | `string[]`<br/>`string`<br/>`FileInfo[]`<br/>`FileInfo` | No | `[]` | File list |
 | data | `Object` | No | `{}` | Data to be attached to the form submission |
 | name | `String` | No | `file` | Parameter name for uploaded file |
 | limit | `Number` | No | `10` | File upload quantity limit |
