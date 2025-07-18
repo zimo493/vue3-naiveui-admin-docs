@@ -2,7 +2,7 @@
 title: 目录结构
 ---
 
-```text [vue3-naiveui-admin]
+```ini [vue3-naiveui-admin]
 ├─ .husky                   # Git 提交钩子
 ├─ .vscode                  # VSCode 推荐配置
 ├─ build                    # 构建文件配置
