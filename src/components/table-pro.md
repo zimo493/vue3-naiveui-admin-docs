@@ -115,7 +115,8 @@ const rules = {
 | table-props | [DataTable Props](https://www.naiveui.com/zh-CN/os-theme/components/data-table#DataTable-Props) | 否 | `{}` | 表格额外属性 |
 | show-table | `boolean` | 否 | `true` | 是否显示表格 |
 | operation-span | `number` | 否 | `4` | 操作列栅格宽度 |
-| operation-button-position | `left`、`right` | 否 | `right` | 操作按钮位置 |
+| operation-button-position | `left` `right` | 否 | `right` | 操作按钮位置 |
+| pagination-position | `left` `center` `right` | 否 | `left` | 分页位置 |
 | collapse-rows | `number` | 否 | `3` | 折叠搜索项断点 |
 | form | [FormPro Props](/components/table-pro#formpro-props) | 否 | `{}` | 表单配置项 |
 
