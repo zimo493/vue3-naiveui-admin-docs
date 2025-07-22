@@ -19,11 +19,13 @@ tags: [配置]
 - `loadFlag`: 页面重载标识，默认 `true`
 - `showLogo`: 是否显示 logo，默认 `true`
 - `showTabs`: 是否显示 tagsView，默认 `true`
+- `showTabsIcon`: 是否显示Tab页签的图标，默认 `true`
 - `showFooter`: 是否显示页脚，默认 `false`
 - `showProgress`: 是否显示进度条，默认 `true`
 - `showBreadcrumb`: 是否显示面包屑，默认 `true`
 - `showBreadcrumbIcon`: 是否显示面包屑图标，默认 `true`
 - `showWatermark`: 是否显示水印，默认 `false`
+- `watermarkText`: 水印文本，可在 `系统设置` 中编辑
 - `transitionAnimation`: 页面过度动画，默认 `fade-slide`
 - `layoutMode`: 布局模式，默认 `LayoutMode.LEFT`
 - `contentFullScreen`: 内容区域是否全屏，默认 `false`
@@ -31,6 +33,7 @@ tags: [配置]
 - `sideCollapsedWidth`: 侧边栏折叠宽度，默认 `50`
 - `sideTrigger`: 侧边栏触发器，默认 `bar`
 - `placement`: message 消息提示位置，默认 `top`
+- `inverted`: 菜单和下来菜单是否反转主题，默认 `false`
 
 ## 组件库样式
 
