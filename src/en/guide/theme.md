@@ -37,7 +37,7 @@ Modify the corresponding configuration in `src/store/models/app.ts`.
 
 ## Component Library Styles
 
-Modify `src/utils/theme.ts` to add the style variables you need. For details, refer to [Naive-UI](https://www.naiveui.com/zh-CN/dark/docs/customize-theme#%E8%B0%83%E6%95%B4%E7%BB%84%E4%BB%B6%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8F)
+Modify `src/utils/theme.ts` to add the style variables you need. For details, refer to [Naive-UI](https://www.naiveui.com/en-US/dark/docs/customize-theme#Customizing-component-theme-vars)
 
 ```ts [src/utils/theme.ts]
 import type { GlobalThemeOverrides } from "naive-ui";
