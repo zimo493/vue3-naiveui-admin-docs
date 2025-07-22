@@ -5,13 +5,13 @@ tags: [Configuration]
 
 ## System Settings
 
-Modify the corresponding configuration in `src/store/models/app.ts` as needed:
+Modify the corresponding configuration in `src/store/models/app.ts`.
 
 - `footerText`: Footer text
-- `theme`: Global component library theme variable
+- `theme`: Global component library theme variables
 - `lang`: Language (to be developed)
 - `borderRadius`: Component border radius, default `4px`
-- `followPrimary`: Whether the component library info color follows the primary color, default `false`
+- `followPrimary`: Whether the component library info color follows the theme color, default `false`
 - `collapsed`: Whether the sidebar is collapsed, default `false`
 - `grayMode`: Whether to enable gray mode, default `false`
 - `colorWeak`: Whether to enable color weak mode, default `false`
@@ -19,18 +19,21 @@ Modify the corresponding configuration in `src/store/models/app.ts` as needed:
 - `loadFlag`: Page reload flag, default `true`
 - `showLogo`: Whether to show the logo, default `true`
 - `showTabs`: Whether to show tagsView, default `true`
+- `showTabsIcon`: Whether to show icons on tab pages, default `true`
 - `showFooter`: Whether to show the footer, default `false`
 - `showProgress`: Whether to show the progress bar, default `true`
-- `showBreadcrumb`: Whether to show the breadcrumb, default `true`
-- `showBreadcrumbIcon`: Whether to show the breadcrumb icon, default `true`
-- `showWatermark`: Whether to show the watermark, default `false`
+- `showBreadcrumb`: Whether to show breadcrumbs, default `true`
+- `showBreadcrumbIcon`: Whether to show breadcrumb icons, default `true`
+- `showWatermark`: Whether to show watermark, default `false`
+- `watermarkText`: Watermark text, can be edited in System Settings
 - `transitionAnimation`: Page transition animation, default `fade-slide`
 - `layoutMode`: Layout mode, default `LayoutMode.LEFT`
-- `contentFullScreen`: Whether the content area is full screen, default `false`
+- `contentFullScreen`: Whether the content area is fullscreen, default `false`
 - `sideWidth`: Sidebar width, default `200`
 - `sideCollapsedWidth`: Sidebar collapsed width, default `50`
 - `sideTrigger`: Sidebar trigger, default `bar`
-- `placement`: Message prompt position, default `top`
+- `placement`: Message notification position, default `top`
+- `inverted`: Whether the menu and dropdown menu use inverted theme, default `false`
 
 ## Component Library Styles
 
