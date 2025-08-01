@@ -1,6 +1,6 @@
 {
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "package.json": "package-lock.json, pnpm*,"
+    "package.json": "package-lock.json, pnpm*, .npmrc*"
   }
 }
