@@ -151,6 +151,7 @@ const sidebarFAQ = (): DefaultTheme.SidebarItem[] => [
         items: [
           { text: "White Screen", link: "white-screen" },
           { text: "KeepAlive Cache", link: "keep-alive" },
+          { text: "Electron Integration", link: "electron" },
           { text: "Other FAQ", link: "other-faq" },
         ],
       },
