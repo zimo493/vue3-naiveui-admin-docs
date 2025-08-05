@@ -147,6 +147,7 @@ const sidebarFAQ = (): DefaultTheme.SidebarItem[] => [
         items: [
           { text: "页面白屏", link: "white-screen" },
           { text: "KeepAlive缓存", link: "keep-alive" },
+          { text: "Electron集成", link: "electron" },
           { text: "其他问题", link: "other-faq" },
         ],
       },
