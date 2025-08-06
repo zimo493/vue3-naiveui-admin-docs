@@ -70,17 +70,19 @@ pnpm i
 
 ### 修改配置
 
-修改 `electron-app/package.json` 中 `build` 的 `appId`、`productName`和`copyright`
+应用使用 electron-builder 进行打包，主要配置如下：
 
 - `appId`：应用 ID，用于标识应用程序的唯一性。
 - `productName`：应用程序的名称，安装包、安装后显示的应用名称等。
 - `copyright`：版权信息。
+- `icon.ico`：应用图标
 
 ```json [package.json]
 "build": {
   "appId": "com.zimo.todo",
   "productName": "待办事项清单",
   "copyright": "Copyright © 2025 zimo",
+  "icon": "build/icon.ico",
 }
 ```
 
