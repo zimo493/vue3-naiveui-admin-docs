@@ -75,7 +75,7 @@ pnpm i
 - `appId`：应用 ID，用于标识应用程序的唯一性。
 - `productName`：应用程序的名称，安装包、安装后显示的应用名称等。
 - `copyright`：版权信息。
-- `icon.ico`：应用图标
+- `icon`：应用图标
 
 ```json [package.json]
 "build": {
