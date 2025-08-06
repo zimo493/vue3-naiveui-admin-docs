@@ -75,7 +75,7 @@ The application uses `electron-builder` for packaging, with the main configurati
 - `appId`: Application ID, used to uniquely identify the application.
 - `productName`: Application name, displayed in the installer and after installation.
 - `copyright`: Copyright information.
-- `icon.ico`: Application icon
+- `icon`: Application icon
 
 ```json [package.json]
 "build": {
