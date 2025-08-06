@@ -70,17 +70,19 @@ Delete all files under `electron-app/src/*`, and copy all files from the previou
 
 ### Modify Configuration
 
-Modify the `appId`, `productName`, and `copyright` in the `build` section of `electron-app/package.json`
+The application uses `electron-builder` for packaging, with the main configurations as follows:
 
 - `appId`: Application ID, used to uniquely identify the application.
 - `productName`: Application name, displayed in the installer and after installation.
 - `copyright`: Copyright information.
+- `icon.ico`: Application icon
 
 ```json [package.json]
 "build": {
   "appId": "com.zimo.todo",
   "productName": "To-Do List",
   "copyright": "Copyright © 2025 zimo",
+  "icon": "build/icon.ico",
 }
 ```
 
