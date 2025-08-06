@@ -70,7 +70,7 @@ pnpm i
 
 ### 修改配置
 
-应用使用 electron-builder 进行打包，主要配置如下：
+应用使用 `electron-builder` 进行打包，主要配置如下：
 
 - `appId`：应用 ID，用于标识应用程序的唯一性。
 - `productName`：应用程序的名称，安装包、安装后显示的应用名称等。
