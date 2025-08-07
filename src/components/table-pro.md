@@ -40,7 +40,7 @@ const getList = async () => {
     const { data } = await getUserList(queryParams.value);
     tableData.value = data.list;
     total.value = data.total;
-  } ffinally {
+  } finally {
     loading.value = false;
   }
 };
