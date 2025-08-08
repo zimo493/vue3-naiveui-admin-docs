@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: "Vue3 Naive Admin"
+  name: "Vue3 NaiveUI Admin"
   text: "中后台管理模板"
   tagline: Vue3、TypeScript、NaiveUI
   image:
     src: /logo.svg
-    alt: Vue3 Naive Admin
+    alt: Vue3 NaiveUI Admin
   actions:
     - theme: brand
       text: 起步 🚀
@@ -56,7 +56,7 @@ import { coreMembers } from '../config'
 
 <VPTeamPage>
   <VPTeamPageTitle>
-    <template #title>我们的团队</template>
+    <!-- <template #title>我们的团队</template> -->
     <template #lead>🚀致力于构建高效开发应用解决方案</template>
   </VPTeamPageTitle>
   <VPTeamMembers :members="coreMembers" />

@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 import { groupIconMdPlugin } from "vitepress-plugin-group-icons";
 
 export const shared = defineConfig({
-  title: "Vue3 Naive Admin",
+  title: "Vue3 NaiveUI Admin",
   lastUpdated: true,
   cleanUrls: true,
   metaChunk: true,

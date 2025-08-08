@@ -8,7 +8,6 @@ const coreMembers = [
     title: "Do everything with love.",
     links: [
       { icon: "github", link: "https://github.com/zimo493" },
-      // { icon: 'linkedin', link: 'https://linkedin.com/in/user1' }
       { icon: "gitee", link: "https://gitee.com/zimo493" },
     ],
   },
@@ -17,8 +16,9 @@ const coreMembers = [
     name: "李四",
     title: "团队成员",
     links: [
-      { icon: "github", link: "https://github.com/user2" },
-      { icon: "twitter", link: "https://twitter.com/user2" },
+      { icon: "github", link: "#" },
+      { icon: "twitter", link: "#" },
+      { icon: 'linkedin', link: '#' }
     ],
   },
 ];

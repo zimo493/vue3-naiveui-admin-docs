@@ -1,10 +1,10 @@
-# Vue3 Naive Admin 文档站点
+# Vue3 NaiveUI Admin 文档站点
 
-基于 `VitePress` 构建的 Vue3 Naive Admin 中后台管理系统文档站点。
+基于 `VitePress` 构建的 Vue3 NaiveUI Admin 中后台管理系统文档站点。
 
 ## 项目介绍
 
-> Vue3 Naive Admin 是一个基于 `Vue3` `TypeScript` `NaiveUI` `UnoCSS` 等最新技术栈开发的中后台管理系统模板。本仓库为其官方文档站点，提供了详细的使用指南和 API 文档。
+> Vue3 NaiveUI Admin 是一个基于 `Vue3` `TypeScript` `NaiveUI` `UnoCSS` 等最新技术栈开发的中后台管理系统模板。本仓库为其官方文档站点，提供了详细的使用指南和 API 文档。
 
 ## 技术栈
 
