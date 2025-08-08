@@ -57,7 +57,7 @@ title: 目录结构
 │     └── index.ts           # 实例化路由导出
 │  ├─ store                 # pinia store
 │     ├── modules            # store模块
-│         ├── app.ts     # 样式布局设置相关存储
+│         ├── app.ts          # 样式布局设置相关存储
 │         ├── auth.ts         # 用户权限相关存储
 │         ├── dict.ts         # 字典相关存储
 │         ├── routes.ts       # 路由相关存储
