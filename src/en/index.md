@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: "Vue3 Naive Admin"
+  name: "Vue3 NaiveUI Admin"
   text: "Admin Template"
   tagline: Vue3, TypeScript, NaiveUI
   image:
     src: /logo.svg
-    alt: Vue3 Naive Admin
+    alt: Vue3 NaiveUI Admin
   actions:
     - theme: brand
       text: Get Started 🚀
@@ -56,7 +56,7 @@ import { coreMembers } from '../../config'
 
 <VPTeamPage>
   <VPTeamPageTitle>
-    <template #title>Our Team</template>
+    <!-- <template #title>Our Team</template> -->
     <template #lead>🚀 Committed to building efficient development & application solutions</template>
   </VPTeamPageTitle>
   <VPTeamMembers :members="coreMembers" />
