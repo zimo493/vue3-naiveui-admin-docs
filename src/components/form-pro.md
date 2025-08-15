@@ -310,7 +310,7 @@ const formConfig: FormPro.FormItemConfig[] = [
 
 ::: tip 💡 提示
 
-- `block-message` 除了接收 `string` 类型以外还支持 `Component` 和 `() => VNode` 类型。为了美观，在 [**TablePro**]('/components/table-pro') 组件表单配置中无效，请使用 `label-message` 替代
+- `block-message` 除了接收 `string` 类型以外还支持 `Component` 和 `() => VNode` 类型。为了美观，在 [**TablePro**](/components/table-pro) 组件表单配置中无效，请使用 `label-message` 替代
 
 - `form-item-props` 中排除了 `path` `label` `span` 属性
 
