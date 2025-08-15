@@ -52,7 +52,7 @@ const reset = () => formProRef.value?.reset();
 ## Form Validation
 
 - Pass `rules` in `form-props` to enable form validation.
-- Supports all [`Form Props`](https://www.naiveui.com/en-US/os-theme/components/form#Form-Props) parameters.
+- Supports all [`Form Props`](https://www.naiveui.com/en-US/os-theme/components/form#Form-Props) parameters except `model`.
 
 ```vue [vue]{6}
 <template>
@@ -302,13 +302,18 @@ const formConfig: FormPro.FormItemConfig[] = [
 | dict | `string` | No | | Dictionary |
 | hidden | `boolean` | No | `false` | Whether hidden |
 | label-message | `string` | No | | Tip message |
+| block-message | `string` | No | | Block message |
 | component | [component Type](/en/components/form-pro#component-types) | No | `input` | Component |
 | props | [component Props](/en/components/form-pro#component-props-and-slots) | No | `{}` | Component props |
 | slots | [component Slots](/en/components/form-pro#component-props-and-slots) | No | `{}` | Component slots |
 | form-item-props | [FormItemGi Props](https://www.naiveui.com/en-US/os-theme/components/form#FormItemGi-Props) | No | `{}` | FormItemGi props |
 
 ::: tip 💡 Note
-`form-item-props` excludes `path`, `label`, and `span` properties.
+
+- `block-message` supports both `Component` and `() => VNode` types. This configuration is invalid in [**TablePro**]('/en/components/table-pro') for aesthetic reasons, please use `label-message` instead
+
+- `form-item-props` excludes `path`, `label`, and `span` properties.
+
 :::
 
 ### Component Types
