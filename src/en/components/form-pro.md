@@ -310,7 +310,7 @@ const formConfig: FormPro.FormItemConfig[] = [
 
 ::: tip 💡 Note
 
-- `block-message` supports both `Component` and `() => VNode` types. This configuration is invalid in [**TablePro**]('/en/components/table-pro') for aesthetic reasons, please use `label-message` instead
+- `block-message` supports both `Component` and `() => VNode` types. This configuration is invalid in [**TablePro**](/en/components/table-pro) for aesthetic reasons, please use `label-message` instead
 
 - `form-item-props` excludes `path`, `label`, and `span` properties.
 
