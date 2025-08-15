@@ -52,7 +52,7 @@ const reset = () => formProRef.value?.reset();
 ## 表单校验
 
 - 传递 `form-props` 中 `rules` 为参数，即可实现表单校验。
-- 支持所有的 [`Form Props`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) 参数
+- 支持所有除 `model` 以外的 [`Form Props`](https://www.naiveui.com/zh-CN/os-theme/components/form#Form-Props) 参数
 
 ```vue [vue]{6}
 <template>
@@ -302,13 +302,18 @@ const formConfig: FormPro.FormItemConfig[] = [
 | dict | `string` | 否 | | 字典 |
 | hidden | `boolean` | 否 | `false` | 是否隐藏 |
 | label-message | `string` | 否 | | 提示信息 |
+| block-message | `string` | 否 | | 块状提示信息 |
 | component | [component Type](/components/form-pro#组件类型) | 否 | `input` | 组件 |
 | props | [component Props](/components/form-pro#组件属性和插槽) | 否 | `{}` | 组件属性 |
 | slots | [component Slots](/components/form-pro#组件属性和插槽) | 否 | `{}` | 组件插槽 |
 | form-item-props | [FormItemGi Props](https://www.naiveui.com/zh-CN/os-theme/components/form#FormItemGi-Props) | 否 | `{}` | FormItemGi 属性 |
 
 ::: tip 💡 提示
-`form-item-props` 中排除了 `path` `label` `span` 属性
+
+- `block-message` 除了接收 `string` 类型以外还支持 `Component` 和 `() => VNode` 类型。为了美观，在 [**TablePro**]('/components/table-pro') 组件表单配置中无效，请使用 `label-message` 替代
+
+- `form-item-props` 中排除了 `path` `label` `span` 属性
+
 :::
 
 ### 组件类型
