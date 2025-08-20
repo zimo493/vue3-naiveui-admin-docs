@@ -28,7 +28,7 @@ import { createRouter, createWebHashHistory } from "vue-router"; // [!code ++]
 
 export const router = createRouter({
   history: createWebHistory(), // [!code --]
-  history: createWebHashHistory(),, // [!code ++]
+  history: createWebHashHistory(), // [!code ++]
 });
 ```
 
