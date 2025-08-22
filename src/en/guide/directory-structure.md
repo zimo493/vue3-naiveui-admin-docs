@@ -25,8 +25,6 @@ title: Directory Structure
 │  ├─ assets                # Static assets
 │     └── svg-icons          # Custom SVG icon resources (local icon source for icon picker)
 │  ├─ components            # Global components
-│     ├── common             # Internal components
-│     └── custom             # Custom components
 │  ├─ directives            # Global directive files
 │  ├─ enums                 # Enum files
 │  ├─ hooks                 # Common Hooks encapsulation
