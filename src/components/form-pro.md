@@ -331,7 +331,7 @@ const formConfig: FormPro.FormItemConfig[] = [
 - `date` 日期选择框
 - `time` 时间选择框
 - `switch` 开关控件
-- `treeSelect` 树形选择框
+- `tree-select` 树形选择框
 - `text` 纯文本
 - `Component` 自定义组件
 - `() => VNode` 自定义组件
@@ -342,12 +342,12 @@ const formConfig: FormPro.FormItemConfig[] = [
 | :--: | --- | --- |
 | `input` `textarea` `password` | [Input Props](https://www.naiveui.com/zh-CN/os-theme/components/input#Input-Props) | [Input Slots](https://www.naiveui.com/zh-CN/os-theme/components/input#Input-Slots) |
 | `select` | [Select Props](https://www.naiveui.com/zh-CN/os-theme/components/select#Select-Props) | [Select Slots](https://www.naiveui.com/zh-CN/os-theme/components/select#Select-Slots) |
-| `radio` | [Radio Props](https://www.naiveui.com/zh-CN/os-theme/components/radio#Radio-Props) | [Radio Slots](https://www.naiveui.com/zh-CN/os-theme/components/radio#Radio-Slots) |
+| `radio` `radio-button` | [RadioGroup Props](https://www.naiveui.com/zh-CN/os-theme/components/radio#RadioGroup-Props) | `undefined` |
 | `checkbox` | [Checkbox Props](https://www.naiveui.com/zh-CN/os-theme/components/checkbox#Checkbox-Props) | [Checkbox Slots](https://www.naiveui.com/zh-CN/os-theme/components/checkbox#Checkbox-Slots) |
 | `date` | [DatePicker Props](https://www.naiveui.com/zh-CN/os-theme/components/date-picker#通用的-Props) | [DatePicker Slots](https://www.naiveui.com/zh-CN/os-theme/components/date-picker#DatePicker-Slots) |
 | `time` | [TimePicker Props](https://www.naiveui.com/zh-CN/os-theme/components/time-picker#TimePicker-Props) | [TimePicker Slots](https://www.naiveui.com/zh-CN/os-theme/components/time-picker#TimePicker-Slots) |
 | `switch` | [Switch Props](https://www.naiveui.com/zh-CN/os-theme/components/switch#Switch-Props) | [Switch Slots](https://www.naiveui.com/zh-CN/os-theme/components/switch#Switch-Slots) |
-| `treeSelect` | [TreeSelect Props](https://www.naiveui.com/zh-CN/os-theme/components/tree-select#TreeSelect-Props) | [TreeSelect Slots](https://www.naiveui.com/zh-CN/os-theme/components/tree-select#TreeSelect-Slots) |
+| `tree-select` | [TreeSelect Props](https://www.naiveui.com/zh-CN/os-theme/components/tree-select#TreeSelect-Props) | [TreeSelect Slots](https://www.naiveui.com/zh-CN/os-theme/components/tree-select#TreeSelect-Slots) |
 | `text` | [Text Props](https://www.naiveui.com/zh-CN/os-theme/components/gradient-text#GradientText-Props) | [Test Slots](https://www.naiveui.com/zh-CN/os-theme/components/gradient-text#GradientText-Slots) |
 
 ## Slots
