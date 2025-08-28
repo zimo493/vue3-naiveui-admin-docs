@@ -326,6 +326,7 @@ Supported component types:
 - `password` Password input
 - `select` Select
 - `radio` Radio group
+- `radio-button` Radio button group
 - `checkbox` Checkbox group
 - `date` Date picker
 - `time` Time picker
