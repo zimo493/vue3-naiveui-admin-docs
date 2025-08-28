@@ -331,7 +331,7 @@ Supported component types:
 - `date` Date picker
 - `time` Time picker
 - `switch` Switch
-- `treeSelect` Tree select
+- `tree-select` Tree select
 - `text` Plain text
 - `Component` Custom component
 - `() => VNode` Custom component
@@ -342,12 +342,12 @@ Supported component types:
 | :--: | --- | --- |
 | `input` `textarea` `password` | [Input Props](https://www.naiveui.com/en-US/os-theme/components/input#Input-Props) | [Input Slots](https://www.naiveui.com/en-US/os-theme/components/input#Input-Slots) |
 | `select` | [Select Props](https://www.naiveui.com/en-US/os-theme/components/select#Select-Props) | [Select Slots](https://www.naiveui.com/en-US/os-theme/components/select#Select-Slots) |
-| `radio` | [Radio Props](https://www.naiveui.com/en-US/os-theme/components/radio#Radio-Props) | [Radio Slots](https://www.naiveui.com/en-US/os-theme/components/radio#Radio-Slots) |
+| `radio` `radio-button` | [RadioGroup Props](https://www.naiveui.com/en-US/os-theme/components/radio#RadioGroup-Props) | `undefined` |
 | `checkbox` | [Checkbox Props](https://www.naiveui.com/en-US/os-theme/components/checkbox#Checkbox-Props) | [Checkbox Slots](https://www.naiveui.com/en-US/os-theme/components/checkbox#Checkbox-Slots) |
 | `date` | [DatePicker Props](https://www.naiveui.com/en-US/os-theme/components/date-picker#General-Props) | [DatePicker Slots](https://www.naiveui.com/en-US/os-theme/components/date-picker#DatePicker-Slots) |
 | `time` | [TimePicker Props](https://www.naiveui.com/en-US/os-theme/components/time-picker#TimePicker-Props) | [TimePicker Slots](https://www.naiveui.com/en-US/os-theme/components/time-picker#TimePicker-Slots) |
 | `switch` | [Switch Props](https://www.naiveui.com/en-US/os-theme/components/switch#Switch-Props) | [Switch Slots](https://www.naiveui.com/en-US/os-theme/components/switch#Switch-Slots) |
-| `treeSelect` | [TreeSelect Props](https://www.naiveui.com/en-US/os-theme/components/tree-select#TreeSelect-Props) | [TreeSelect Slots](https://www.naiveui.com/en-US/os-theme/components/tree-select#TreeSelect-Slots) |
+| `tree-select` | [TreeSelect Props](https://www.naiveui.com/en-US/os-theme/components/tree-select#TreeSelect-Props) | [TreeSelect Slots](https://www.naiveui.com/en-US/os-theme/components/tree-select#TreeSelect-Slots) |
 | `text` | [Text Props](https://www.naiveui.com/en-US/os-theme/components/gradient-text#GradientText-Props) | [Text Slots](https://www.naiveui.com/en-US/os-theme/components/gradient-text#GradientText-Slots) |
 
 ## Slots
