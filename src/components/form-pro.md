@@ -325,8 +325,9 @@ const formConfig: FormPro.FormItemConfig[] = [
 - `number` 数字输入框
 - `password` 密码输入框
 - `select` 下拉框
-- `radio` 单选按钮组
-- `checkbox` 多选按钮组
+- `radio` 单选组
+- `radio-button` 单选按钮组
+- `checkbox` 多选组
 - `date` 日期选择框
 - `time` 时间选择框
 - `switch` 开关控件
