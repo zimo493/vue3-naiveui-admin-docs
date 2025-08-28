@@ -72,4 +72,4 @@ pnpm preview
 
 ## 贡献指南
 
-欢迎提交 Issue 或 Pull Request 来帮助改进文档！
+欢迎提交 [🔗Issue](https://github.com/zimo493/vue3-naiveui-admin-docs/issues/new) 或 [🔗Pull Request](https://github.com/zimo493/vue3-naiveui-admin-docs/pulls) 来帮助改进文档！
