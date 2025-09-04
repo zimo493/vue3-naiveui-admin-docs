@@ -14,29 +14,25 @@ This document provides notes and troubleshooting methods for the cache handling 
 ## Core Mechanism Explanation
 
 ### Cache Handling Process
-
-1. **Listen for route cache changes**: Synchronize `tabStore.cacheRoutes` to local `currentCacheRoutes` in real time
-2. **Listen for loadFlag changes**: When `loadFlag` changes from `false` to `true`, trigger cache handling
-3. **Temporarily remove cache**: Remove the current route from `currentCacheRoutes`
-4. **Restore cache**: Restore the cache list after `nextTick`
+1. **Listen for loadFlag changes**: When `loadFlag` changes from `false` to `true`, trigger cache handling
+2. **Temporarily remove cache**: Remove the current route from `tabStore.cacheRoutes`
+3. **Restore cache**: Restore the cache list after `nextTick`
 
 ### Key Code Logic
 
 ```ts
 // When loadFlag changes from false to true (page refresh complete)
 if (!oldVal && newVal) {
-  const currentRouteName = String(route.fullPath);
+  const currentRouteName = route.fullPath;
 
   // If the current route is in the cache list, temporarily remove it to force re-render
   if (currentRouteName && tabStore.cacheRoutes.includes(currentRouteName)) {
     // Temporarily remove the current route from the cache
-    currentCacheRoutes.value = tabStore.cacheRoutes.filter(
-      (name) => name !== currentRouteName
-    );
+    tabsStore.delCache(currentRouteName);
 
     // Restore the cache after the next tick
     nextTick(() => {
-      currentCacheRoutes.value = [...tabStore.cacheRoutes];
+      tabsStore.addCache(currentRouteName);
     });
   }
 }
