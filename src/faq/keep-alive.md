@@ -44,26 +44,6 @@ if (!oldVal && newVal) {
 
 ## 注意事项
 
-### 路由命名规范
-
-::: warning ⚠️ **重要**
-确保组件的 `name` 属性与路由的 `name` 一致，这是 `KeepAlive` 缓存的关键
-:::
-
-```vue{2}
-<script setup lang="ts">
-defineOptions({ name: "User" }); // 必须
-</script>
-```
-
-### 多级菜单缓存
-
-使用 `KeepCache` 组件代替 `KeepAlive`，确保每一级的父级菜单都有 `name` 属性
-
-::: tip 💡 提示
-在系统菜单中开启菜单缓存时如果子菜单开启缓存，父级菜单没有开启缓存，则子菜单的缓存依然会生效
-:::
-
 ### 内存泄漏或性能问题
 
 **可能原因：**
