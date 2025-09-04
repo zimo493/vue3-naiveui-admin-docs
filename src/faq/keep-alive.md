@@ -15,7 +15,7 @@ tags: [错误排查]
 
 ### 缓存处理流程
 
-1. **监听路由缓存变化**：实时同步 `routeStore.cacheRoutes` 到本地 `currentCacheRoutes`
+1. **监听路由缓存变化**：实时同步 `tabStore.cacheRoutes` 到本地 `currentCacheRoutes`
 2. **监听 loadFlag 变化**：当 `loadFlag` 从 `false` 变为 `true` 时触发缓存处理
 3. **临时移除缓存**：将当前路由从 `currentCacheRoutes` 中移除
 4. **恢复缓存**：在 `nextTick` 后恢复缓存列表
@@ -25,18 +25,18 @@ tags: [错误排查]
 ```ts
 // 当loadFlag从false变为true时（页面刷新完成）
 if (!oldVal && newVal) {
-  const currentRouteName = route.name as string;
+  const currentRouteName = String(route.fullPath);
 
   // 如果当前路由在缓存列表中，临时移除它以强制重新渲染
-  if (currentRouteName && routeStore.cacheRoutes.includes(currentRouteName)) {
+  if (currentRouteName && tabsStore.cacheRoutes.includes(currentRouteName)) {
     // 临时从缓存中移除当前路由
-    currentCacheRoutes.value = routeStore.cacheRoutes.filter(
+    currentCacheRoutes.value = tabsStore.cacheRoutes.filter(
       (name) => name !== currentRouteName
     );
 
     // 下一个tick后恢复缓存
     nextTick(() => {
-      currentCacheRoutes.value = [...routeStore.cacheRoutes];
+      currentCacheRoutes.value = [...tabsStore.cacheRoutes];
     });
   }
 }
