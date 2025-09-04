@@ -44,26 +44,6 @@ if (!oldVal && newVal) {
 
 ## Notes
 
-### Route Naming Convention
-
-::: warning ⚠️ **Important**
-Make sure the component's `name` property matches the route's `name`. This is key for `KeepAlive` caching.
-:::
-
-```vue{2}
-<script setup lang="ts">
-defineOptions({ name: "User" }); // Required
-</script>
-```
-
-### Multi-level Menu Caching
-
-Use the `KeepCache` component instead of `KeepAlive` to ensure each parent menu level has a `name` property.
-
-::: tip 💡 Tip
-If menu caching is enabled in the system menu and a child menu enables caching but the parent does not, the child menu's cache will still take effect.
-:::
-
 ### Memory Leaks or Performance Issues
 
 **Possible causes:**
