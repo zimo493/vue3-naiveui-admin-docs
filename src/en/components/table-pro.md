@@ -122,7 +122,7 @@ const rules = {
 
 ::: tip 💡 Note
 
-- `table-props` accepts all [`DataTable Props`](https://www.naiveui.com/en-US/os-theme/components/data-table#DataTable-Props) except `data` and `columns`
+- `table-props` accepts all [`DataTable Props`](https://www.naiveui.com/en-US/os-theme/components/data-table#DataTable-Props) except `data` `columns` `striped` `single-column` `single-line`
 - `operation-span` sets the grid width of the operation buttons, default is 4. Usually, you don't need to set it manually, as it will be automatically calculated based on the length of `form-config`.
 - `operation-button-position` sets the position of the operation column. If set to `left`, the operation column will be displayed next to the search items. If set to `right`, it will be displayed at the far right.
 - `collapse-rows` is the breakpoint for collapsing search items. Default is 3, meaning if the number of search items is less than 3, the expand/collapse button will not be shown.
