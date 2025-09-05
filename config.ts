@@ -4,7 +4,7 @@
 const coreMembers = [
   {
     avatar: "https://gitee.com/zimo493.png",
-    name: "zimo493",
+    name: "NuyOah",
     title: "Do everything with love.",
     links: [
       { icon: "github", link: "https://github.com/zimo493" },
@@ -18,7 +18,7 @@ const coreMembers = [
     links: [
       { icon: "github", link: "#" },
       { icon: "twitter", link: "#" },
-      { icon: 'linkedin', link: '#' }
+      { icon: "linkedin", link: "#" },
     ],
   },
 ];
@@ -30,7 +30,7 @@ const gitLogConfig = {
   repoURL: "https://gitee.com/zimo493/vue3-naiveui-admin-docs",
   mapAuthors: [
     {
-      name: "zimo493",
+      name: "NuyOah",
       username: "zimo493",
       avatar: "https://gitee.com/zimo493.png",
       links: [
