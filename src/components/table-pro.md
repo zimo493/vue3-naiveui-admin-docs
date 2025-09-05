@@ -122,7 +122,7 @@ const rules = {
 
 ::: tip 💡 提示
 
-- `table-props` 接受除 `data` `columns` 以外所有的 [`DataTable Props`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#DataTable-Props) 属性
+- `table-props` 接受除 `data` `columns` `striped` `single-column` `single-line` 以外所有的 [`DataTable Props`](https://www.naiveui.com/zh-CN/os-theme/components/data-table#DataTable-Props) 属性
 - `operation-span` 设置的是操作按钮的栅格宽度，默认为 4，一般不用手动设置，因为 `operation-span` 默认会根据 `form-config` 的长度自动计算剩余宽度
 - `operation-button-position` 设置的是操作列的位置，如果设置为 `left`，则操作列会紧挨着搜索项显示，如果设置为 `right`，则操作列会远离搜索项最右侧显示
 - `collapse-rows` 折叠搜索项断点，默认为 `3`，即当搜索项长度小于 `3` 时，不会显示 `展开` 和 `收起` 按钮
