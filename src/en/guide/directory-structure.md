@@ -59,7 +59,8 @@ title: Directory Structure
 │         ├── auth.ts        # User permissions related storage
 │         ├── dict.ts        # Dictionary related storage
 │         ├── routes.ts      # Route related storage
-│         └── tab.ts         # Tab page related storage
+│         ├── tab.ts         # Tab page related storage
+│         └── watermark.ts   # Watermark related storage 
 │     └── index.ts           # Store instance export
 │  ├─ styles                # Global style files
 │     ├── index.css          # Unified export entry
