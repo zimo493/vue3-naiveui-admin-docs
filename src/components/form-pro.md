@@ -332,6 +332,7 @@ const formConfig: FormPro.FormItemConfig[] = [
 - `time` 时间选择框
 - `switch` 开关控件
 - `tree-select` 树形选择框
+- `color-picker` 颜色选择框
 - `text` 纯文本
 - `Component` 自定义组件
 - `() => VNode` 自定义组件
@@ -348,6 +349,7 @@ const formConfig: FormPro.FormItemConfig[] = [
 | `time` | [TimePicker Props](https://www.naiveui.com/zh-CN/os-theme/components/time-picker#TimePicker-Props) | [TimePicker Slots](https://www.naiveui.com/zh-CN/os-theme/components/time-picker#TimePicker-Slots) |
 | `switch` | [Switch Props](https://www.naiveui.com/zh-CN/os-theme/components/switch#Switch-Props) | [Switch Slots](https://www.naiveui.com/zh-CN/os-theme/components/switch#Switch-Slots) |
 | `tree-select` | [TreeSelect Props](https://www.naiveui.com/zh-CN/os-theme/components/tree-select#TreeSelect-Props) | [TreeSelect Slots](https://www.naiveui.com/zh-CN/os-theme/components/tree-select#TreeSelect-Slots) |
+| `color-picker` | [ColorPicker Props](https://www.naiveui.com/zh-CN/os-theme/components/color-picker#ColorPicker-Props) | [ColorPicker Slots](https://www.naiveui.com/zh-CN/os-theme/components/color-picker#ColorPicker-Slots) |
 | `text` | [Text Props](https://www.naiveui.com/zh-CN/os-theme/components/gradient-text#GradientText-Props) | [Test Slots](https://www.naiveui.com/zh-CN/os-theme/components/gradient-text#GradientText-Slots) |
 
 ## Slots
