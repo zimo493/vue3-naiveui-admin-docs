@@ -333,6 +333,7 @@ Supported component types:
 - `switch` Switch
 - `tree-select` Tree select
 - `color-picker` Color picker
+- `slider` Slider
 - `text` Plain text
 - `Component` Custom component
 - `() => VNode` Custom component
@@ -350,6 +351,7 @@ Supported component types:
 | `switch` | [Switch Props](https://www.naiveui.com/en-US/os-theme/components/switch#Switch-Props) | [Switch Slots](https://www.naiveui.com/en-US/os-theme/components/switch#Switch-Slots) |
 | `tree-select` | [TreeSelect Props](https://www.naiveui.com/en-US/os-theme/components/tree-select#TreeSelect-Props) | [TreeSelect Slots](https://www.naiveui.com/en-US/os-theme/components/tree-select#TreeSelect-Slots) |
 | `color-picker` | [ColorPicker Props](https://www.naiveui.com/en-US/os-theme/components/color-picker#ColorPicker-Props) | [ColorPicker Slots](https://www.naiveui.com/en-US/os-theme/components/color-picker#ColorPicker-Slots) |
+| `slider` | [Slider Props](https://www.naiveui.com/en-US/os-theme/components/slider#Slider-Props) | [Slider Slots](https://www.naiveui.com/en-US/os-theme/components/slider#Slider-Slots) |
 | `text` | [Text Props](https://www.naiveui.com/en-US/os-theme/components/gradient-text#GradientText-Props) | [Text Slots](https://www.naiveui.com/en-US/os-theme/components/gradient-text#GradientText-Slots) |
 
 ## Slots
