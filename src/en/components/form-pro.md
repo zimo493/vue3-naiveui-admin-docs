@@ -302,6 +302,7 @@ const formConfig: FormPro.FormItemConfig[] = [
 | dict | `string` | No | | Dictionary |
 | hidden | `boolean` | No | `false` | Whether hidden |
 | label-message | `string` | No | | Tip message |
+| label-reverse | `boolean` | No | `false` | Reverse label layout |
 | block-message | `string` | No | | Block message |
 | component | [component Type](/en/components/form-pro#component-types) | No | `input` | Component |
 | props | [component Props](/en/components/form-pro#component-props-and-slots) | No | `{}` | Component props |
@@ -309,6 +310,8 @@ const formConfig: FormPro.FormItemConfig[] = [
 | form-item-props | [FormItemGi Props](https://www.naiveui.com/en-US/os-theme/components/form#FormItemGi-Props) | No | `{}` | FormItemGi props |
 
 ::: tip 💡 Note
+
+- `label-reverse` defaults to `false`, with the prompt information in front and the label behind; when `true`, the prompt information is behind and the label is in front.
 
 - `block-message` supports both `Component` and `() => VNode` types. This configuration is invalid in [**TablePro**](/en/components/table-pro) for aesthetic reasons, please use `label-message` instead
 
