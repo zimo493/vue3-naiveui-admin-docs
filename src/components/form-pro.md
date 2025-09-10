@@ -302,6 +302,7 @@ const formConfig: FormPro.FormItemConfig[] = [
 | dict | `string` | 否 | | 字典 |
 | hidden | `boolean` | 否 | `false` | 是否隐藏 |
 | label-message | `string` | 否 | | 提示信息 |
+| label-reverse | `boolean` | 否 | `false` | 反转标签 |
 | block-message | `string` | 否 | | 块状提示信息 |
 | component | [component Type](/components/form-pro#组件类型) | 否 | `input` | 组件 |
 | props | [component Props](/components/form-pro#组件属性和插槽) | 否 | `{}` | 组件属性 |
@@ -309,6 +310,8 @@ const formConfig: FormPro.FormItemConfig[] = [
 | form-item-props | [FormItemGi Props](https://www.naiveui.com/zh-CN/os-theme/components/form#FormItemGi-Props) | 否 | `{}` | FormItemGi 属性 |
 
 ::: tip 💡 提示
+
+- `label-reverse` 默认为 `false` 提示信息在前，标签在后； 为 `true` 时，提示信息在后，标签在前。
 
 - `block-message` 除了接收 `string` 类型以外还支持 `Component` 和 `() => VNode` 类型。为了美观，在 [**TablePro**](/components/table-pro) 组件表单配置中无效，请使用 `label-message` 替代
 
