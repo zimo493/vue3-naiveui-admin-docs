@@ -87,8 +87,9 @@ You can configure `props`, `slots`, and `formItemProps` for each form item indiv
 
 **props** and **slots** depend on the `component` you use.
 
-> If `component` is not set, the default is `NInput`'s [Input-Props](https://www.naiveui.com/en-US/os-theme/components/input#Input-Props) and [Input-Slots](https://www.naiveui.com/en-US/os-theme/components/input#Input-Slots).<br />
-> If `component` is set to `select`, only [NSelect](https://www.naiveui.com/en-US/os-theme/components/select#Select-Props) props and slots are available.
+- If `component` is not set, the default is `NInput`'s [Input-Props](https://www.naiveui.com/en-US/os-theme/components/input#Input-Props) and [Input-Slots](https://www.naiveui.com/en-US/os-theme/components/input#Input-Slots).<br />
+- If `component` is set to `select`, only [NSelect](https://www.naiveui.com/en-US/os-theme/components/select#Select-Props) props and slots are available.
+- Even if you don't know what configurations are available for each component's `props` and `slots`, you don't need to worry as there will be TS prompts. If code prompts don't appear, simply type `"` to list all available properties. Or visit the [Naïve UI](https://www.naiveui.com/en-US/os-theme) official website to view them.
 
 **formItemProps** accepts all [FormItem](https://www.naiveui.com/en-US/os-theme/components/form#FormItem-Props) and [GridItem](https://www.naiveui.com/en-US/os-theme/components/grid#GridItem-Props) props except `path`, `span`, and `label`.
 
