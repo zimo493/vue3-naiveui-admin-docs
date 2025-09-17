@@ -87,8 +87,9 @@ const formProps: FormProps = {
 
 **props** 和 **slots** 是根据你使用的 `component` 决定的
 
-> 如果未配置 `component`，默认使用的是 `NInput` 的 [Input-Props](https://www.naiveui.com/zh-CN/os-theme/components/input#Input-Props) 和 [Input-Slots](https://www.naiveui.com/zh-CN/os-theme/components/input#Input-Slots)<br />
-> 如果配置 `component` 为 `select`， 则只能使用 `NSelect` 的 [Select-Props](https://www.naiveui.com/zh-CN/os-theme/components/select#Select-Props) 和 [Select-Slots](https://www.naiveui.com/zh-CN/os-theme/components/select#Select-Slots)
+- 如果未配置 `component`，默认使用的是 `NInput` 的 [Input-Props](https://www.naiveui.com/zh-CN/os-theme/components/input#Input-Props) 和 [Input-Slots](https://www.naiveui.com/zh-CN/os-theme/components/input#Input-Slots)
+- 如果配置 `component` 为 `select`， 则只能使用 `NSelect` 的 [Select-Props](https://www.naiveui.com/zh-CN/os-theme/components/select#Select-Props) 和 [Select-Slots](https://www.naiveui.com/zh-CN/os-theme/components/select#Select-Slots)
+- 即使你不知道每个组件的 `props` 和 `slots` 有哪些配置，你也不用担心，会有TS提示。如果没有出现代码提示，只需要输入 `"` 就可以列出所有可用的属性。或者打开 [Naïve UI](https://www.naiveui.com/zh-CN/os-theme) 的官方网站查看
 
 **formItemProps** 接受 [FormItem](https://www.naiveui.com/zh-CN/os-theme/components/form#FormItem-Props) 和 [GridItem](https://www.naiveui.com/zh-CN/os-theme/components/grid#GridItem-Props) 所有除 `path`、`span`、`label` 以外的 Props
 
