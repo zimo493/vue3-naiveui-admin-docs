@@ -10,11 +10,11 @@
   },
   "devDependencies": {
     "@css-render/vue3-ssr": "^0.15.14",
-    "@fancyapps/ui": "^5.0.36",
+    "@fancyapps/ui": "^6.0.32",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",
     "@nolebase/vitepress-plugin-git-changelog": "^2.18.2",
-    "@types/node": "^24.3.0",
-    "naive-ui": "^2.42.0",
+    "@types/node": "^24.5.2",
+    "naive-ui": "^2.43.1",
     "vitepress": "^1.6.4",
     "vitepress-plugin-group-icons": "^1.6.3"
   },
