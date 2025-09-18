@@ -1,14 +1,14 @@
 .fancybox__container[theme="light"] {
-  --fancybox-backdrop-bg: rgba(255, 255, 255, 0.5);
-  --f-button-bg: rgba(0, 0, 0, 0.1);
-  --f-arrow-bg: rgba(0, 0, 0, 0.1);
+  --fancybox-backdrop-bg: rgba(240, 240, 240, 0.8);
+  --f-button-bg: rgba(220, 220, 220, 0.75);
+  --f-arrow-bg: rgba(220, 220, 220, 0.65);
   backdrop-filter: blur(4px);
   opacity: 0.96;
 }
 
 .dark .fancybox__container {
   --fancybox-color: #dbdbdb;
-  --fancybox-backdrop-bg: rgba(24, 24, 27, 0.5);
+  --fancybox-backdrop-bg: rgba(24, 24, 27, 0.8);
   --f-toolbar-color: #ddd;
   --f-toolbar-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
   --f-toolbar-font-weight: 500;
