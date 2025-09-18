@@ -45,34 +45,33 @@ export const bindFancybox = async () => {
     image.setAttribute("data-caption", altString);
   });
 
-  Fancybox.bind('[data-fancybox="gallery"]', {
+  Fancybox.bind("[data-fancybox]", {
+    theme: "light", // 亮色主题，暗黑主题在CSS中定义
+    zoomEffect: true,
     Hash: false, // 禁用hash导航
-    caption: false, // 更换标题
-    Thumbs: {
-      type: "classic", // 经典缩略图，"modern" 现代缩略图
-      showOnStart: false, // 开始不显示缩略图列表
-    },
-    Images: {
-      Panzoom: {
-        maxScale: 4, // 最大缩放比例
-      },
-    },
     Carousel: {
       transition: "slide",
-    },
-    Toolbar: {
-      display: {
-        left: ["infobar"],
-        middle: [
-          "zoomIn",
-          "zoomOut",
-          "toggle1to1",
-          "rotateCCW",
-          "rotateCW",
-          "flipX",
-          "flipY",
-        ],
-        right: ["slideshow", "thumbs", "close"], // 'slideshow' 自动播放
+      Autoplay: {
+        autoStart: false,
+      },
+      Thumbs: {
+        type: "classic", // 经典缩略图，"modern" 现代缩略图
+        showOnStart: false, // 开始不显示缩略图列表
+      },
+      Toolbar: {
+        display: {
+          middle: [
+            "zoomIn",
+            "zoomOut",
+            "toggle1to1",
+            "rotateCCW",
+            "rotateCW",
+            "flipX",
+            "flipY",
+            "reset",
+          ],
+          right: ["autoplay", "fullscreen", "thumbs", "close"],
+        },
       },
     },
   });

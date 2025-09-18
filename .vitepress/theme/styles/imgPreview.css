@@ -1,61 +1,40 @@
-img[data-fancybox="gallery"] {
-  cursor: pointer;
-}
-
-.is-compact .fancybox__footer .fancybox__caption {
-  text-align: center;
-}
-
-.fancybox__container {
-  --fancybox-bg: none;
-}
-
-.fancybox__container .fancybox__toolbar {
-  --f-button-bg: none;
-}
-
-.fancybox__container {
-  --fancybox-color: rgba(0, 0, 0, 0.6);
-  --fancybox-hover-color: none;
-}
-
-.fancybox__toolbar {
-  --f-button-hover-bg: rgba(0, 0, 0, 0.1);
-  --f-button-active-bg: rgba(0, 0, 0, 0.2);
+.fancybox__container[theme="light"] {
+  --fancybox-backdrop-bg: rgba(255, 255, 255, 0.5);
+  --f-button-bg: rgba(0, 0, 0, 0.1);
+  --f-arrow-bg: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  opacity: 0.96;
 }
 
 .dark .fancybox__container {
-  --fancybox-color: rgba(255, 255, 255, 1);
-  --fancybox-hover-color: none;
-}
-
-.dark .fancybox__toolbar {
-  --f-button-hover-bg: rgba(255, 255, 255, 0.1);
-  --f-button-active-bg: rgba(255, 255, 255, 0.2);
-}
-
-.f-button[disabled] {
-  cursor: not-allowed;
-}
-
-.fancybox__container::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(var(--vp-c-bg-rgb), 0.5);
-  opacity: 0.96;
-  backdrop-filter: blur(10px);
-}
-
-.fancybox__caption {
-  color: var(--vp-c-text-1);
-}
-
-.f-thumbs__slide__img {
-  width: auto;
-  height: auto;
-  margin: auto;
+  --fancybox-color: #dbdbdb;
+  --fancybox-backdrop-bg: rgba(24, 24, 27, 0.5);
+  --f-toolbar-color: #ddd;
+  --f-toolbar-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+  --f-toolbar-font-weight: 500;
+  --f-html-color: #222;
+  --f-html-bg: #fff;
+  --f-error-color: #fff;
+  --f-error-bg: #333;
+  --f-video-bg: #333;
+  --f-caption-color: var(--fancybox-color, #dbdbdb);
+  --f-spinner-color-1: rgba(255, 255, 255, 0.2);
+  --f-spinner-color-2: rgba(255, 255, 255, 0.8);
+  --f-spinner-border-width: 4px;
+  --f-progressbar-color: rgba(255, 255, 255);
+  --f-button-color: #ddd;
+  --f-button-hover-color: #fff;
+  --f-button-outline-color: rgba(255, 255, 255, 0.75);
+  --f-button-bg: rgba(54, 54, 54, 0.75);
+  --f-button-svg-stroke-width: 1.75;
+  --f-button-svg-filter: drop-shadow(1px 1px 1px rgba(24, 24, 27, 0.01)),
+    drop-shadow(1px 2px 1px rgba(24, 24, 27, 0.05));
+  --f-arrow-bg: rgba(54, 54, 54, 0.65);
+  --f-arrow-color: #ddd;
+  --f-arrow-hover-color: #fff;
+  --f-arrow-svg-stroke-width: 2;
+  --f-close-button-color: #fff;
+  --f-close-button-hover-color: #fff;
+  --f-thumb-focus-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.65);
+  --f-thumb-selected-shadow: inset 0 0 0 2px #fff;
 }
