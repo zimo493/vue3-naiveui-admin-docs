@@ -54,10 +54,4 @@ const postsUrl = [
   "en/**/!(index|archive|tags).md", // 匹配英文文档
 ];
 
-/**
- * 排除 Git 记录
- * 控制哪些文档中不显示 Git 的贡献者和页面历史
- */
-const excludeGitChange = ["index.md", "archive.md", "tags.md"];
-
-export { coreMembers, gitLogConfig, postsUrl, excludeGitChange };
+export { coreMembers, gitLogConfig, postsUrl };
