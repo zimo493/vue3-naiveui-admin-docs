@@ -5,7 +5,7 @@ import Giscus from "@giscus/vue";
 export default defineComponent({
   name: "GiscusComment",
   render: () => {
-    const { isDark } = useData();
+    const { isDark, lang } = useData();
     const route = useRoute();
     return h(
       "div",
@@ -22,7 +22,7 @@ export default defineComponent({
         reactionsEnabled: "1",
         emitMetadata: "0",
         inputPosition: "bottom",
-        lang: "zh-CN",
+        lang: lang.value === "zh-CN" ? "zh-CN" : "en",
         loading: "lazy",
         theme: isDark.value ? "dark_tritanopia" : "light_tritanopia",
       })
