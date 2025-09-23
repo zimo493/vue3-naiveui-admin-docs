@@ -9,6 +9,9 @@ import {
 
 import PostMate from "./PostMate";
 
+// 评论模块
+import GiscusComment from "./GiscusComment";
+
 // 导入git-changelog插件的样式
 import "@nolebase/vitepress-plugin-git-changelog/client/style.css";
 // 导入增强阅读abilities样式
@@ -28,6 +31,7 @@ export default {
       "nav-screen-content-after": () =>
         h(NolebaseEnhancedReadabilitiesScreenMenu),
       "doc-before": () => h(PostMate),
+      "doc-after": () => h(GiscusComment),
     });
   },
 };
