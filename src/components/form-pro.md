@@ -356,7 +356,7 @@ const formConfig: FormPro.FormItemConfig[] = [
 | `tree-select` | [TreeSelect Props](https://www.naiveui.com/zh-CN/os-theme/components/tree-select#TreeSelect-Props) | [TreeSelect Slots](https://www.naiveui.com/zh-CN/os-theme/components/tree-select#TreeSelect-Slots) |
 | `color-picker` | [ColorPicker Props](https://www.naiveui.com/zh-CN/os-theme/components/color-picker#ColorPicker-Props) | [ColorPicker Slots](https://www.naiveui.com/zh-CN/os-theme/components/color-picker#ColorPicker-Slots) |
 | `slider` | [Slider Props](https://www.naiveui.com/zh-CN/os-theme/components/slider#Slider-Props) | [Slider Slots](https://www.naiveui.com/zh-CN/os-theme/components/slider#Slider-Slots) |
-| `text` | [Text Props](https://www.naiveui.com/zh-CN/os-theme/components/gradient-text#GradientText-Props) | [Test Slots](https://www.naiveui.com/zh-CN/os-theme/components/gradient-text#GradientText-Slots) |
+| `text` | [Text Props](https://www.naiveui.com/zh-CN/os-theme/components/gradient-text#GradientText-Props) | [Text Slots](https://www.naiveui.com/zh-CN/os-theme/components/gradient-text#GradientText-Slots) |
 
 ## Slots
 
