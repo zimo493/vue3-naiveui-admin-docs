@@ -35,7 +35,8 @@ title: Directory Structure
 │     ├── useDict.ts         # Get dictionary data
 │     ├── useKeepTicking.ts  # Composable timer hook
 │     ├── useLoading.ts      # Composable for loading
-│     └── useRange.ts        # List search time range processing method
+│     ├── useRange.ts        # List search time range processing method
+│     └── useResponsive.ts   # Responsive layout
 │  ├─ layout                # Framework layout module
 │     ├── components         # Layout internal components
 │     ├── main               # Layout framework
