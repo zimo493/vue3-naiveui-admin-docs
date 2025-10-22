@@ -4,7 +4,7 @@
 const coreMembers = [
   {
     avatar: "https://gitee.com/zimo493.png",
-    name: "NuyOah",
+    name: "nuyoah",
     title: "Do everything with love.",
     links: [
       { icon: "github", link: "https://github.com/zimo493" },
@@ -30,7 +30,7 @@ const gitLogConfig = {
   repoURL: "https://gitee.com/zimo493/vue3-naiveui-admin-docs",
   mapAuthors: [
     {
-      name: "NuyOah",
+      name: "nuyoah",
       username: "zimo493",
       avatar: "https://gitee.com/zimo493.png",
       links: [
