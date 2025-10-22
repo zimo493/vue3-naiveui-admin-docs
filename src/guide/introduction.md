@@ -7,32 +7,58 @@ tags: [项目]
 
 ## 项目介绍 📖
 
-[vue3-naiveui-admin](https://gitee.com/zimo493/vue3-naiveui-admin) 基于 [`Vue3`](https://github.com/vuejs/core)、[`Vite`](https://github.com/vitejs/vite)、[`TypeScript`](https://www.typescriptlang.org/) 和 [`Naive UI`](https://www.naiveui.com/zh-CN/os-theme) 搭建的极简开箱即用企业级后台管理前端模板。 配套 Java 后端 [youlai-boot](https://gitee.com/youlaiorg/youlai-boot) 和 Node 后端 [youlai-nest](https://gitee.com/youlaiorg/youlai-nest) 。 提供 [`Element Plus`](https://element-plus.org/zh-CN/) 三版本供开发者快速开发。
+🚀 **vue3-naiveui-admin** 是一个基于 [`Vue3`](https://github.com/vuejs/core)、[`Vite`](https://github.com/vitejs/vite)、[`TypeScript`](https://www.typescriptlang.org/) 和 [`Naive UI`](https://www.naiveui.com/zh-CN/os-theme) 构建的 **极简开箱即用** 的企业级后台管理前端模板。 
 
-- **标准版:** [vue3-element-admin](https://gitee.com/youlaiorg/vue3-element-admin)
-- **精简版:** [vue3-element-template](https://gitee.com/youlaiorg/vue3-element-template)
-- **JS 版本:** [vue3-element-admin-js](https://gitee.com/youlaiorg/vue3-element-admin)
+### 生态系统
+
+| 项目 | 说明 | 技术栈 |
+|------|------|--------|
+| [**vue3-naiveui-admin**](https://gitee.com/zimo493/vue3-naiveui-admin) | 🎯 当前项目 | Vue3 + NaiveUI + TypeScript |
+| [youlai-boot](https://gitee.com/youlaiorg/youlai-boot) | ☕ Java 后端 | Spring Boot + MyBatis Plus |
+| [youlai-nest](https://gitee.com/youlaiorg/youlai-nest) | 🟢 Node 后端 | Nest.js + TypeORM |
+
+### 多版本支持  
+> 💡 **Element Plus 版本同步更新**
+
+| 版本 | 说明 | 仓库地址 |
+|------|------|----------|
+| **标准版** | 功能完整的管理系统 | [vue3-element-admin](https://gitee.com/youlaiorg/vue3-element-admin) |
+| **精简版** | 轻量级开发模板 | [vue3-element-template](https://gitee.com/youlaiorg/vue3-element-template) |
+| **JS 版** | JavaScript 版本 | [vue3-element-admin-js](https://gitee.com/youlaiorg/vue3-element-admin-js) |
 
 ## 在线体验 👀
 
-- Link：/
+- **Link：** https://vue.youlai.tech/naiveui
 
 ## 代码仓库 ⭐
 
 - **Gitee：** https://gitee.com/zimo493/vue3-naiveui-admin
 - **GitHub：** https://github.com/zimo493/vue3-naiveui-admin
-- **GitCode：** -
 
-## 项目功能 🔨
+## 核心特性 🎈
 
-- **基于** `Vue3.5` `Vite6` `TypeScript` `NaiveUI` `UnoCSS` `tsx` 等最新技术栈开发
-- **基于** `Naive` 二次封装 `FormPro`， 基于 `FormPro` 封装 `SearchTable` `DialogForm` `DrawerForm` 组件，在一定程度上提高您的开发效率
-- **使用** `KeepAlive` 对页面进行缓存
-- **使用** `Pinia` 替代 `Vuex`，轻量、简单、易用，集成 `Pinia` 持久化插件
-- **使用** `TypeScript` 对 `Axios` 整个二次封装（请求拦截、常用请求封装…）
-- **使用** `ESLint` + `Prettier` + `Stylelint` + `EditorConfig` 约束和统一代码规范
-- **集成** `Husky` + `lint-staged` + `commitlint` + `commitizen` + `cz-git` 配置 `Git` 提交规范
-- **支持** `自定义主题色` `页面过渡` 等超多设置，黑暗主题适配，界面样式保持 Naive 风格
+### 技术栈
+- **前端框架：** `Vue 3.5` + `Vite 7` + `TypeScript` + `TSX`
+- **UI 组件库：** `Naive UI` - 简洁、现代的 Vue 3 组件库  
+- **CSS 框架：** `UnoCSS` - 原子化 CSS 引擎
+- **状态管理：** `Pinia` + 持久化插件 - 替代 Vuex
+- **网络请求：** `Axios` - 完整的 TypeScript 封装
+
+### 组件封装
+- **表单组件：** 基于 `Naive UI` 二次封装的 `FormPro` 组件
+- **表格组件：** 基于 `FormPro` 封装的 `TablePro` 组件  
+- **弹窗组件：** `DrawerForm`、`ModalForm` - 提升开发效率
+- **页面缓存：** `KeepAlive` 支持多级缓存
+
+### 界面设计
+- **主题适配：** 浅色/深色/自动模式，保持 `Naive UI` 原生风格
+- **自定义主题：** 支持主题色自定义和页面过渡动效
+- **响应式布局：** 完美适配桌面端和移动端
+
+### 代码规范
+- **代码约束：** `ESLint` + `Prettier` + `Stylelint` + `EditorConfig`  
+- **Git 规范：** `Husky` + `Lint-staged` + `Commitlint` + `Commitizen`
+- **提交格式：** 使用 `cz-git` 规范化 Git 提交信息
 
 ## 浏览器支持 💻
 
