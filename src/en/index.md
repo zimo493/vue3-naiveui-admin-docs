@@ -17,7 +17,7 @@ hero:
       link: https://github.com/zimo493/vue3-naiveui-admin
     - theme: alt
       text: Live Preview
-      link:
+      link: https://vue.youlai.tech/naiveui
 
 features:
   - title: Quick Start

@@ -17,8 +17,8 @@ hero:
       link: https://github.com/zimo493/vue3-naiveui-admin
     - theme: alt
       text: 在线预览
-      link: 
-
+      link: https://vue.youlai.tech/naiveui
+      
 features:
   - title: 快速上手
     icon: 🚀
