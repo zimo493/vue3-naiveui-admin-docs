@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [{ "src": "package.json", "use": "@vercel/static-build" }],
   "buildCommand": "pnpm run build",
-  "outputDirectory": ".vitepress/dist",
+  "outputDirectory": "vitepress/dist",
   "routes": [
     {
       "src": "/(.*)",
