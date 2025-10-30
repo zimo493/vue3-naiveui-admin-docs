@@ -2,11 +2,5 @@
   "version": 2,
   "buildCommand": "pnpm build",
   "outputDirectory": ".vitepress/dist",
-  "routes": [
-    { "handle": "filesystem" },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
