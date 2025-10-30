@@ -2,14 +2,16 @@
   "version": 2,
   "buildCommand": "pnpm build",
   "outputDirectory": ".vitepress/dist",
-  "cleanUrls": true,
-  "trailingSlash": false,
   "routes": [
     {
       "handle": "filesystem"
     },
     {
-      "src": "/.*",
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
       "dest": "/index.html"
     }
   ]
