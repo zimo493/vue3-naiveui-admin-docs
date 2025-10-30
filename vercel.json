@@ -3,13 +3,7 @@
   "buildCommand": "pnpm build",
   "outputDirectory": ".vitepress/dist",
   "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
+    { "handle": "filesystem" },
     {
       "src": "/(.*)",
       "dest": "/index.html"
