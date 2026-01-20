@@ -59,56 +59,72 @@ router.afterEach((to) => {
 
 Development environment variables are variables that are only switched during development, such as setting the request prefix. Define these variables in the `.env.development` file.
 
-#### VITE_BASE_URL
+#### Base path
+
+`VITE_BASE_URL`
 
 - **Type**: `string`
 - **Default**: `/`
 
 If your project is deployed under a subpath, set `VITE_BASE_URL` to the subpath, such as `/admin`.
 
-#### VITE_APP_PORT
+#### Dev server port
+
+`VITE_APP_PORT`
 
 - **Type**: `number`
 - **Default**: `5173`
 
 By default, Vite runs the dev server on port `5173`. Set `VITE_APP_PORT` to your project port, such as `8080`.
 
-#### VITE_APP_BASE_API
+#### API request prefix
+
+`VITE_APP_BASE_API`
 
 - **Type**: `string`
 - **Default**: `/dev-api`
 
 Configure the API request prefix, such as `/dev-api`.
 
-#### VITE_APP_TIMEOUT
+#### API request timeout
+
+`VITE_APP_TIMEOUT`
 
 - **Type**: `number`
 - **Default**: `6000`
 
 Configure the API request timeout, such as `6000`.
 
-#### VITE_APP_API_URL
+#### Backend API URL
+
+`VITE_APP_API_URL`
 
 - **Type**: `string`
 - **Default**: `http://localhost:8989`
 
 Proxy forwarding real API address.
 
-#### VITE_APP_WS_ENDPOINT
+#### WebSocket endpoint
+
+`VITE_APP_WS_ENDPOINT`
 
 - **Type**: `string`
 - **Default**: `ws://localhost:8989/ws`
 
 Configure the WebSocket address.
 
-#### VITE_DEFAULT_LANG (in progress)
+#### Default language (in progress)
+
+`VITE_DEFAULT_LANG`
 
 - **Type**: `zhCN` `enUS` `zhTW`
 - **Default**: `zhCN`
 
 Configure the default language, default is Simplified Chinese.
 
-#### VITE_STORAGE_PREFIX
+#### Storage prefix
+
+`VITE_STORAGE_PREFIX`
 
 - **Type**: `string`
 - **Default**: `store-`
