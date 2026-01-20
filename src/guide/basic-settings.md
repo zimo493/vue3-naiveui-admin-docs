@@ -1,6 +1,6 @@
 ---
 title: 项目基本配置
-tags: [项目 ,配置]
+tags: [项目, 配置]
 ---
 
 ## 修改项目名称
@@ -59,56 +59,72 @@ router.afterEach((to) => {
 
 开发环境变量是只有在开发中才会切换的变量，例如设置请求前缀等。在 `.env.development` 文件中定义这些变量
 
-#### VITE_BASE_URL
+#### 基础路径
+
+`VITE_BASE_URL`
 
 - **类型**：`string`
 - **默认值**：`/`
 
 如果你的项目是部署在子路径下，请将 `VITE_BASE_URL` 设置为子路径，例如 `/admin`
 
-#### VITE_APP_PORT
+#### 开发服务器端口
+
+`VITE_APP_PORT`
 
 - **类型**：`number`
 - **默认值**：`5173`
 
 默认情况下，Vite 会在端口 `5173` 上运行开发服务器。请将 `VITE_APP_PORT` 设置为项目端口，例如 `8080`
 
-#### VITE_APP_BASE_API
+#### 接口请求前缀
+
+`VITE_APP_BASE_API`
 
 - **类型**：`string`
 - **默认值**：`/dev-api`
 
 配置接口请求前缀，例如 `/dev-api`
 
-#### VITE_APP_TIMEOUT
+#### 接口请求超时时间
+
+`VITE_APP_TIMEOUT`
 
 - **类型**：`number`
 - **默认值**：`6000`
 
 配置接口请求超时时间，例如 `6000`
 
-#### VITE_APP_API_URL
+#### 后端接口地址
+
+`VITE_APP_API_URL`
 
 - **类型**：`string`
 - **默认值**：`http://localhost:8989`
 
 代理转发真实接口地址
 
-#### VITE_APP_WS_ENDPOINT
+#### WebSocket 地址
+
+`VITE_APP_WS_ENDPOINT`
 
 - **类型**：`string`
 - **默认值**：`ws://localhost:8989/ws`
 
 配置 WebSocket 地址
 
-#### VITE_DEFAULT_LANG (实现中)
+#### 默认语言
+
+`VITE_DEFAULT_LANG`
 
 - **类型**：`zhCN` `enUS` `zhTW`
 - **默认值**：`zhCN`
 
 配置默认语言，默认为中文简体
 
-#### VITE_STORAGE_PREFIX
+#### 存储前缀
+
+`VITE_STORAGE_PREFIX`
 
 - **类型**：`string`
 - **默认值**：`store-`
