@@ -70,15 +70,36 @@ export const shared = defineConfig({
     ],
   },
   markdown: {
-    // 代码块行号显示
+    /** 代码块行号显示 */
     lineNumbers: true,
-    // 图片懒加载
+    /** 图片懒加载 */
     image: {
       lazyLoading: true,
     },
-    // 代码框内复制按钮的 title 提示
-    codeCopyButtonTitle: "复制代码",
     config(md) {
+      /** 原始的 fence 渲染函数 */
+      const fence = md.renderer.rules.fence!;
+      /** * 自定义代码块复制按钮标题 */
+      const copyButtonTitleByLocale: Record<string, string> = {
+        en: "Copy Code",
+        zh: "复制代码",
+      };
+      /** 自定义代码块渲染函数，添加复制按钮标题 */
+      md.renderer.rules.fence = function (tokens, idx, options, env, self) {
+        /** 获取当前语言，默认中文 */
+        const localeIndex = env?.localeIndex ?? "zh";
+        /** 获取当前语言的复制按钮标题 */
+        const copyButtonTitle =
+          copyButtonTitleByLocale[localeIndex] ?? copyButtonTitleByLocale.zh;
+
+        /** 调用原始的 fence 渲染函数 */
+        const html = fence(tokens, idx, options, env, self);
+        /** 如果是复制按钮标题为 Copy Code，则返回原始的 html */
+        if (copyButtonTitle === "Copy Code") return html;
+
+        /** 否则，将复制按钮标题替换为自定义的标题 */
+        return html.replace(/title="Copy Code"/, `title="${copyButtonTitle}"`);
+      };
       md.use(groupIconMdPlugin);
     },
   },
