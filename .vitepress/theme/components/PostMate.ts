@@ -7,7 +7,7 @@ import langText from "./utils/language";
 import { NEl, NFlex, NH1, NTag, NText } from "naive-ui";
 
 export default {
-  name: "Layout",
+  name: "PostMate",
   render: () => {
     const { page, lang } = useData();
 
