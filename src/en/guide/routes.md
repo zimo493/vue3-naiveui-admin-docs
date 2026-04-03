@@ -5,21 +5,21 @@ tags: [Routing, Permission, Configuration]
 
 ## Static Routes
 
-These are routes that do not require dynamic permission checks, such as login page, 404, and other common pages. Configure the corresponding public routes in `src/router/modules/routes.ts`.
+Routes that do not require dynamic permission checks—such as the login page, 404, and other shared pages. Configure the corresponding public routes in `src/router/modules/ruotes.ts`.
 
 ## Dynamic Routes
 
-These are routes that require dynamic permission checks based on the user and are dynamically added via `addRoutes`. The frontend loads the backend API route configuration in `src/store/models/route.ts`.
+Routes that must be resolved per user permissions and added dynamically via `addRoutes`. The backend route configuration is loaded in `src/store/models/route.ts`.
 
-::: tip Note
+::: tip Tip
 
-Dynamic routes can be added and modified in `System Management / Menu Management`. The frontend will automatically request the API to get the menu information and convert it into the corresponding frontend routes.
+You can add or edit dynamic routes under **System Management / Menu Management**. On startup, the frontend requests the menu API and maps the result to the corresponding frontend routes.
 
 :::
 
 ## Route Whitelist
 
-In some cases, certain routes can be accessed without login, such as `/login`, `/404`, etc. You can add them to the whitelist in `src/router/modules/guard.ts`.
+Some routes should be reachable without signing in—for example `/login` and `/404`. Register them in the whitelist in `src/router/modules/guard.ts`.
 
 ```ts [src/router/modules/guard.ts]
 const whiteList = ["/login", "/404"];
@@ -27,28 +27,28 @@ const whiteList = ["/login", "/404"];
 
 ## Route Data Structure
 
-```ts [src/types/router.d.ts]
+```ts [src/types/ruoter.d.ts]
 declare namespace AppRoute {
-  /** RouteVO, route object */
+  /** RouteVO: route object */
   interface RouteVO {
-    /** Child route list */
+    /** Child routes */
     children: RouteVO[];
     /** Component path */
     component?: string;
-    /** Route attributes */
+    /** Route meta */
     meta?: AppRoute.RouteMeta;
     /** Route name */
     name?: string;
     /** Route path */
     path: string;
-    /** Redirect link */
+    /** Redirect target */
     redirect?: string;
   }
 
-  /** Meta information carried by a single route */
+  /** Meta attached to a single route */
   interface RouteMeta {
     /**
-     * Menu name
+     * Menu title
      * @example 'Dashboard'
      */
     title?: string;
@@ -67,14 +67,14 @@ declare namespace AppRoute {
     hidden?: boolean;
 
     /**
-     * Always show the parent menu, even if there is only one child menu
-     * true: show parent menu, false: hide parent menu, show only the single child node
+     * Always show the parent menu, even if there is only one child
+     * true: show parent, false: hide parent and show the single child
      * @default false
      */
     alwaysShow?: boolean;
 
     /**
-     * Whether to cache the page
+     * Whether to cache the page (keep-alive)
      * true: cache, false: do not cache
      * @default false
      */
@@ -82,8 +82,15 @@ declare namespace AppRoute {
 
     /** Route parameters */
     params?: Recordable;
-    /** Whether to affix in tab */
+
+    /** Whether the tab is affixed (pinned) */
     affix?: boolean;
+
+    /**
+     * Which menu should stay active for this route
+     * @example '/dashboard'
+     */
+    activeMenu?: string;
   }
 }
 ```
