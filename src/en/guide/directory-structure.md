@@ -13,13 +13,11 @@ title: Directory Structure
 │  ├─ optimizeDepsOptions.ts # Dependency optimization configuration
 │  ├─ pluginsOptions.ts      # Plugin configuration
 │  ├─ resolveOptions.ts      # Path configuration
-│  ├─ rollupOptions.ts       # Rollup configuration
-│  ├─ serverOptions.ts       # Development server configuration
-│  └─ terserOptions.ts       # Terser configuration
+│  └─ serverOptions.ts       # Development server configuration
 ├─ locales                  # Internationalization files
-├─ public                   # Static assets (this folder will not be bundled)
+├─ public                   # Static assets (this folder is not bundled)
 ├─ sql                      # Database scripts
-│  └─ youlai_boot.sql        # Base database script
+│  └─ youlai_admin.sql       # Base database script
 ├─ src                      # Source code
 │  ├─ api                   # API management
 │  ├─ assets                # Static assets
@@ -28,27 +26,27 @@ title: Directory Structure
 │  ├─ directives            # Global directive files
 │  ├─ enums                 # Enum files
 │  ├─ hooks                 # Common Hooks encapsulation
-│     ├── useWebsocket/*     # Websocket
-│     ├── index.ts           # Unified export
+│     ├── useSse/*           # SSE subscription
+│     ├── index.ts           # Unified export of global Hooks
 │     ├── useBoolean.ts      # Composable for Boolean
 │     ├── useCompRef.ts      # Composable for ref
 │     ├── useDict.ts         # Get dictionary data
 │     ├── useKeepTicking.ts  # Composable timer hook
 │     ├── useLoading.ts      # Composable for loading
-│     ├── useRange.ts        # List search time range processing method
+│     ├── useRange.ts        # List search time range handling
 │     └── useResponsive.ts   # Responsive layout
 │  ├─ layout                # Framework layout module
 │     ├── components         # Layout internal components
 │     ├── main               # Layout framework
-│     └── index.txs          # Layout component base
+│     └── index.txs          # Layout component shell
 │  ├─ modules               # Global module registration
 │     ├── assets.ts          # Static resources
 │     ├── directives.ts      # Directives
-│     └── i18n.ts            # Multilingual
+│     └── i18n.ts            # Internationalization
 │  ├─ plugins               # Global plugin registration
 │     ├── appVersion.ts      # App update prompt refresh
-│     ├── websocket.ts       # WebSocket
-│     └── index.ts           # Unified export
+│     ├── index.ts           # Unified export
+│     └── sse.ts             # SSE subscription
 │  ├─ router                # Route management
 │     ├── modules            # Route modules
 │         ├── guard.ts        # Route guard configuration
@@ -56,53 +54,53 @@ title: Directory Structure
 │     └── index.ts           # Route instance export
 │  ├─ store                 # Pinia store
 │     ├── modules            # Store modules
-│         ├── app.ts         # Style layout settings related storage
-│         ├── auth.ts        # User permissions related storage
-│         ├── dict.ts        # Dictionary related storage
-│         ├── routes.ts      # Route related storage
-│         ├── tab.ts         # Tab page related storage
-│         └── watermark.ts   # Watermark related storage 
+│         ├── app.ts     # Style/layout settings storage
+│         ├── auth.ts         # User permissions storage
+│         ├── dict.ts         # Dictionary storage
+│         ├── routes.ts       # Route-related storage
+│         ├── tab.ts          # Tab storage
+│         └── watermark.ts    # Watermark storage
 │     └── index.ts           # Store instance export
 │  ├─ styles                # Global style files
 │     ├── index.css          # Unified export entry
-│     ├── naive.css          # Modify NaiveUI original styles
+│     ├── naive.css          # Override NaiveUI default styles
 │     ├── reset.css          # Reset CSS
 │     ├── transition.css     # Transition styles
 │     └── wangEditor.css     # wangEditor rich text editor styles
-│  ├─ types                 # Global TS declarations
-│  ├─ typings               # Auto-import type files (this directory can be deleted, automatically generated after project startup)
-│     ├── auto-imports.d.ts  # Auto-import method type file
-│     └── components.d.ts    # Auto-import component type file
+│  ├─ types                 # Global TypeScript declarations
+│  ├─ typings               # Auto-import type files (this directory can be deleted; regenerated on project start)
+│     ├── auto-imports.d.ts  # Auto-import methods type file
+│     └── components.d.ts    # Auto-import components type file
 │  ├─ utils                 # Common utility library
 │     ├── comm.ts            # Common utility methods
 │     ├── i18n.ts            # Internationalization methods
 │     ├── icon.ts            # Icon utilities
 │     ├── index.ts           # Utility class unified export entry
-│     ├── is.ts              # Various judgment methods
-│     ├── jsencrypt.ts       # Encrypt/decrypt methods
+│     ├── is.ts              # Various type checks
+│     ├── jsencrypt.ts       # Encrypt/decrypt helpers
 │     ├── request.ts         # Axios request encapsulation
 │     ├── router.ts          # Route utilities
-│     ├── spin.ts            # Loading animation and common async operation encapsulation tools
-│     ├── storage.ts         # Storage encapsulation tools
+│     ├── spin.ts            # Loading animation and common async operation helpers
+│     ├── storage.ts         # Storage encapsulation
 │     └── theme.ts           # Theme configuration
 │  ├─ views                 # All project pages
 │  ├─ App.tsx               # APP root component
 │  └─ main.ts               # Project entry file
 ├─ .env.development        # Development environment configuration
 ├─ .env.production         # Production environment configuration
-├─ .eslintrc-auto-import.json  # ESLint auto-import configuration file
-├─ .gitignore              # Ignore Git commits
+├─ .eslintrc-auto-import.json  # ESLint auto-import configuration
+├─ .gitignore              # Git ignore rules
 ├─ .prettierignore         # Prettier ignore
-├─ .prettierrc.yaml        # Prettier rule configuration
 ├─ .stylelintignore        # Stylelint ignore
-├─ .stylelintrc.cjs        # Stylelint rule configuration
-├─ commitlint.config.cjs   # Code commit rule configuration
-├─ eslint.config.ts        # ESLint rule configuration
+├─ commitlint.config.mjs   # Commit message rules
+├─ eslint.config.ts        # ESLint rules configuration
 ├─ index.html              # Entry HTML
 ├─ LICENSE                 # Open source license file
-├─ package.json            # Dependency package management
-├─ pnpm-lock.json          # Dependency package version lock file
+├─ package.json            # Dependency management
+├─ pnpm-lock.json          # Dependency lock file
+├─ prettier.config.mjs     # Prettier rules configuration
 ├─ README.md               # README introduction
+├─ stylelint.config.mjs    # Stylelint rules configuration
 ├─ tsconfig.json           # TypeScript global configuration
 ├─ unocss.config.js        # UnoCSS configuration
 └─ vite.config.ts          # Vite global configuration file
