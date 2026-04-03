@@ -13,13 +13,11 @@ title: 目录结构
 │  ├─ optimizeDepsOptions.ts # 依赖优化配置
 │  ├─ pluginsOptions.ts      # 插件配置
 │  ├─ resolveOptions.ts      # 路径配置
-│  ├─ rollupOptions.ts       # rollup 配置
-│  ├─ serverOptions.ts       # 开发服务器配置
-│  └─ terserOptions.ts       # terser 配置
+│  └─ serverOptions.ts       # 开发服务器配置
 ├─ locales                  # 国际化文件
 ├─ public                   # 静态资源文件（该文件夹不会被打包）
 ├─ sql                      # 数据库脚本
-│  └─ youlai_boot.sql        # 基础数据库脚本
+│  └─ youlai_admin.sql       # 基础数据库脚本
 ├─ src                      # 源代码
 │  ├─ api                   # API 接口管理
 │  ├─ assets                # 静态资源文件
@@ -28,7 +26,7 @@ title: 目录结构
 │  ├─ directives            # 全局指令文件
 │  ├─ enums                 # 枚举文件
 │  ├─ hooks                 # 常用 Hooks 封装
-│     ├── useWebsocket/*     # Websocket
+│     ├── useSse/*           # SSE 订阅
 │     ├── index.ts           # 统一导出全局 Hooks
 │     ├── useBoolean.ts      # 组合式使用 Boolean
 │     ├── useCompRef.ts      # 组合式使用 ref
@@ -47,8 +45,8 @@ title: 目录结构
 │     └── i18n.ts            # 多语言
 │  ├─ plugins               # 全局插件注册
 │     ├── appVersion.ts      # App更新提示刷新
-│     ├── websocket.ts       # WebSocket
-│     └── index.ts           # 统一导出
+│     ├── index.ts           # 统一导出
+│     └── sse.ts             # SSE 订阅
 │  ├─ router                # 路由管理
 │     ├── modules            # 路由模块
 │         ├── guard.ts        # 路由守卫配置
@@ -56,7 +54,7 @@ title: 目录结构
 │     └── index.ts           # 实例化路由导出
 │  ├─ store                 # pinia store
 │     ├── modules            # store模块
-│         ├── app.ts          # 样式布局设置相关存储
+│         ├── app.ts     # 样式布局设置相关存储
 │         ├── auth.ts         # 用户权限相关存储
 │         ├── dict.ts         # 字典相关存储
 │         ├── routes.ts       # 路由相关存储
@@ -93,16 +91,16 @@ title: 目录结构
 ├─ .eslintrc-auto-import.json  # eslint 自动引入配置文件
 ├─ .gitignore              # 忽略 git 提交
 ├─ .prettierignore         # prettier 忽略文件
-├─ .prettierrc.yaml        # prettier 规则配置
 ├─ .stylelintignore        # stylelint 忽略文件
-├─ .stylelintrc.cjs        # stylelint 规则配置
-├─ commitlint.config.cjs   # 代码提交规则配置
+├─ commitlint.config.mjs   # 代码提交规则配置
 ├─ eslint.config.ts        # eslint 规则配置
 ├─ index.html              # 入口 html
 ├─ LICENSE                 # 开源协议文件
 ├─ package.json            # 依赖包管理
 ├─ pnpm-lock.json          # 依赖包包版本锁定文件
+├─ prettier.config.mjs     # prettier 规则配置
 ├─ README.md               # README 介绍
+├─ stylelint.config.mjs    # stylelint 规则配置
 ├─ tsconfig.json           # typescript 全局配置
 ├─ unocss.config.js        # unocss 配置
 └─ vite.config.ts          # vite 全局配置文件
