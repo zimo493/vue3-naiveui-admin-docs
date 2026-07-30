@@ -16,6 +16,8 @@ const { repoURL, mapAuthors } = gitLogConfig;
 const fileAndStyles: Record<string, string> = {};
 
 export default defineConfig({
+  // 部署的基础路径
+  base: "/docs/naiveui/",
   ...shared,
   locales: {
     root: { label: "简体中文", ...zh },
